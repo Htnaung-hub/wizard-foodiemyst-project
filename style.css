@@ -42,6 +42,7 @@
 }
 .icon1:hover,.icon2:hover,.icon3:hover,.icon4:hover{
     transition: 5s ;
+    transform: scale(1.3);
     transform: rotate(360deg);
 }
 .icon2{
@@ -98,9 +99,9 @@
     justify-content: center;
 }
 .content{
-    width: 95%;
+    width: 90%;
     height:auto;
-    margin: 30px;
+    margin: 30px 5%;
     padding: 20px;
      border: 1px outset rgb(159, 159, 159);
     border-radius: 20px; 
@@ -113,20 +114,29 @@
     border-bottom: 1px solid black;
    
 }
-.content:hover,.content:focus{
-    background-color:#ff333322 ;
+.box2:hover,.box2:focus{
+    background-color:#ff000022 ;
+    border: 3px solid #ffce80;
+    font-size: 1.1rem;
 }
 .box2{
     font-size: 1rem;
-   color: antiquewhite;
+    width:400px;
+    padding: 50px;
+   background-color: #ff51004f;
+   border: 2px outset #ffce80;
+   border-radius: 0 20%  ;
+}
+.box2 h1{
+    color: black;
+    font-size: 1.5rem;
 }
 
 .box1,.box2,.boxm{ 
-    color: antiquewhite;
+    color: rgb(250, 241, 229);
     text-shadow: 2px  rgb(27, 0, 0);
     margin: 10px 20px;
-    padding: 10px  ;
-    width:330px;
+    width:350px;
     height: 400px;
     background-color: ;
     display: flex;
@@ -142,11 +152,38 @@ h1{
     padding: 10px;
 }
 img{
-    width: 330px;
-    height: 330px;
+    width: 350px;
+    height: 350px;
     border-radius: 50%;
+    border: 1px solid rgb(255, 106, 106);
     box-shadow: 1px 1px 3px brown;
 }
 ::marker{
     
+}
+@media (max-width:740px) {
+    .icon1,.icon2,.icon3,.icon4{
+    width: 80px;
+    height: 80px;
+    z-index: 5;
+    margin:10px 20px;  
+}
+.icon{
+    height: 300px;
+      overflow: hidden;
+}
+img{
+    width: 260px;
+    height: 260px;
+}
+.box1,.box2,.boxm{ 
+    margin: 5px 10px;
+    padding: 10px  ;
+    width:330px;
+    height: 330px;
+}
+.box2{
+    padding-inline-start: 40px;
+}
+
 }
