@@ -1,0 +1,238 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+  font-family: "Montserrat", sans-serif;
+}
+
+body {
+  margin: 0;
+  background: #F38F43;
+}
+
+ /*Empty Section*/
+.CandF {
+  margin: 0; 
+  padding: 0;
+  height: 530px; 
+  background-image: linear-gradient(rgba(243, 143, 67,0.3),rgba(0, 0, 0,0.7)),
+   url('Timor img/timorbg.jpg'); 
+  background-size: cover; 
+  background-position: center; 
+  background-repeat: no-repeat; 
+  background-attachment: fixed; 
+}
+.country-name {
+  display: inline-flex;
+  align-items: center;
+  gap: 30px;                 
+  background-color: #F38F43;    
+  color: #373735;
+  border: none;
+  padding: 3px 16px;
+  font-size: 20px;
+  font-weight: 600;
+  margin-top: 120px;        
+}
+
+.country-name .profile {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+}
+
+.gallery {
+  position: relative;
+  margin-left: 40%;
+  margin-top: 5%;
+  width: 250px;
+  height: 180px;
+  transform-style: preserve-3d;
+  animation: rotate 35s linear infinite;
+}
+
+@keyframes rotate {
+  from {
+    transform: perspective(1200px) rotateY(0deg);
+  }
+
+  to {
+    transform: perspective(1200px) rotateY(360deg);
+  }
+}
+
+span {
+  position: absolute;
+  width: 90%;
+  height: 90%;
+  top: 0;
+  left: 0;
+  transform-origin: center;
+  transform-style: preserve-3d;
+  transform: rotateY(calc(var(--i) * 45deg)) translateZ(300px);
+}
+
+.g-img {
+  position: absolute;
+  width: 80%;
+  height: 80%;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Food Image Gallery */
+.gallery-note {
+  background: rgba(255, 255, 255, 0.35);
+  color: #373735;
+  padding: 12px 20px;
+  border-radius: 16px;
+  font-size: 18px;
+  font-weight: 600;
+  text-align: center;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.25);
+  display: inline-block;
+  margin: auto;
+  border: 1px solid #555454;
+}
+
+.food-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  background: #D28254;
+  padding: 20px;
+  font-size: 18px;
+  border-radius: 20px;
+  margin-top: 20px;
+}
+
+.food-card {
+  position: relative;
+  width: 250px;
+  height: 280px;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  border: 2px solid #222222;
+}
+
+.food-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 15px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  transition: transform 0.3s ease;
+  opacity: 0.7;
+}
+
+.food-img:hover {
+  transform: scale(1.05);
+  opacity: 1.0;
+}
+
+.food-name {
+  position: relative;
+  z-index: 2;
+  background-color: rgba(182, 178, 178, 0.5);
+  color: #373735;
+  font-size: 1.2em;
+  font-weight: bold;
+  text-align: center;
+  padding: 15px;
+  margin: 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+.food-link{
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #dd7c4f;
+  color: #373735;
+  border-radius: 16px;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.50);
+  margin: auto;
+  font-size: 15px;
+  text-decoration: none;
+  transition: transform 0.3s ease;
+}
+.food-link:hover{
+  background-color: #ad7e7e;
+  transform: scale(1.05);
+}
+
+.recipe-box {
+  display: none;
+  padding: 10px;
+  background: #bb7b7b;
+  margin-top: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background-image: url('Timor img/441da4f404f11bdfbdab2bbfb38b8e6d.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: black;
+  font-size: 18px;
+}
+
+/* When section is targeted via link */
+.recipe-box:target {
+  display: block;
+}
+
+h2 {
+  margin-top: 0;
+}
+
+@media (max-width: 768px) {
+  .g-img {
+    width: 80%;
+    height: 80%;
+  }
+
+  .recipe-box {
+    font-size: 16px;
+    padding: 8px;
+    border-radius: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+
+  .recipe-box {
+    font-size: 15px;
+    padding: 10px;
+    border-radius: 8px;
+  }
+}
+
+@media (max-width:740px) {
+  .gallery {
+    width: 50%;
+    height: 200px;
+    margin: auto;
+  }
+
+  .gallery span {
+    width: 50%;
+    height: 80px;
+    margin: 20% 20%;
+    transform-origin: center;
+    transform-style: preserve-3d;
+    transform: rotateY(calc(var(--i) * 45deg)) translateZ(180px);
+  }
+}
+@media (max-width:500px){
+  .gallery{
+    margin-top: 15%;
+  }
+}

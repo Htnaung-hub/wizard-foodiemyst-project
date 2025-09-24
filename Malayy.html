@@ -1,0 +1,999 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Witzard Foodiemyst</title>
+  <link rel="icon" href="Images/favicon.ico">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+    integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="navi.css">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      overflow-x: hidden;
+      font-family: "Segoe UI", sans-serif;
+      background-color: #F38F43;
+      line-height: 1.6;
+      color: #373735;
+    }
+
+    p {
+      margin: 20px 0;
+      font-size: 1.1em;
+      color: #373735;
+      text-align: justify;
+      margin-left: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      margin-top: 20px;
+      color: #fadbc3;
+    }
+
+    h2 {
+      text-align: center;
+      margin-top: 20px;
+      color: black;
+    }
+
+
+    #back {
+      padding-top: 5%;
+      background: linear-gradient(rgba(210, 130, 84, 0.512), rgba(10, 6, 5, 0.679)), url('https://lh4.googleusercontent.com/proxy/RbR6AKZl3fX9dtxKJNe3wgXP4KKTYSJl1GBXHRLVGPCsesZyOl-ZpYFVO7ruYMv1c0oXDRAFv2srzJMOaIEzh5uoODsYAbz78c8kXYcv-UEThA');
+      background-size: cover;
+      background-position: center;
+      width: 100%;
+      position: relative;
+    }
+
+    section {
+      padding: 0;
+      scroll-margin-top: 100px;
+    }
+
+
+    marquee {
+      color: palegoldenrod;
+      font-size: 2em;
+      font-weight: bold;
+      margin-top: 20px;
+      padding: 20px;
+      background-color: #373735;
+      behavior: alternate;
+      text-align: center;
+      position: absolute;
+      bottom: 0;
+
+    }
+
+    .container {
+      display: flex;
+      width: 100%;
+      margin: 3%;
+
+    }
+
+    .left {
+
+      background-color: wheat;
+      padding: 10px;
+      width: 56%;
+      height: auto;
+      margin-right: 30px;
+    }
+
+    .right {
+
+
+      padding: 10px;
+      padding-left: 20px;
+      width: 36%;
+      height: auto;
+
+    }
+
+    .bottom {
+      margin: 3%;
+      padding: 10px;
+      background-color: #f4f4f4;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .read-more-box {
+      background-color: #f5f5f5;
+      padding: 15px;
+      margin-bottom: 50px;
+      border-radius: 8px;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+
+
+    }
+
+    .read-more-box input[type="checkbox"] {
+      display: none;
+    }
+
+    .read-more-box .more-text {
+      display: none;
+    }
+
+    .read-more-box input[type="checkbox"]:checked~.more-text {
+      display: block;
+    }
+
+    .read-more-box .read-more-label {
+      color: black;
+      cursor: pointer;
+      display: inline-block;
+      margin-top: 10px;
+    }
+
+    .gallery {
+
+      position: relative;
+      margin-left: 40%;
+      margin-top: 10%;
+      width: 300px;
+      height: 500px;
+      transform-style: preserve-3d;
+      animation: rotate 35s linear infinite;
+      z-index: 5;
+    }
+
+    @keyframes rotate {
+      from {
+        transform: perspective(1200px) rotateY(0deg);
+      }
+
+      to {
+        transform: perspective(1200px) rotateY(360deg);
+      }
+    }
+
+    .gallery span {
+      position: absolute;
+      width: 100%;
+      height: 150px;
+      transform-origin: center;
+      transform-style: preserve-3d;
+      transform: rotateY(calc(var(--i) * 45deg)) translateZ(350px);
+    }
+
+    .gallery span img {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      padding-left: 10%;
+      padding-right: 10%;
+      border-radius: 15%;
+    }
+
+    .slider-container {
+      margin-bottom: 59px;
+
+
+    }
+
+    .slider {
+      position: relative;
+      width: 100%;
+      height: 300px;
+      overflow: hidden;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .slides {
+      display: flex;
+      width: 100%;
+      height: 100%;
+      animation: slide 12s infinite;
+    }
+
+    .slide {
+      width: 100%;
+      height: auto;
+      flex-shrink: 0;
+    }
+
+    .slide img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      border-radius: 10px;
+      object-fit: contain;
+    }
+
+    @keyframes slide {
+      0% {
+        transform: translateX(0%);
+      }
+
+      33% {
+        transform: translateX(-100%);
+      }
+
+      66% {
+        transform: translateX(-200%);
+      }
+
+      100% {
+        transform: translateX(0%);
+      }
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+      }
+
+      .left,
+      .right {
+        width: 100%;
+        margin-right: 0;
+        padding: 10px 15px;
+      }
+
+      /*  gallery responsive */
+      .gallery {
+        width: 50%;
+        height: 200px;
+        margin: auto;
+      }
+
+      .gallery span {
+        width: 50%;
+        height: 80px;
+        margin: 20% 20%;
+        transform-origin: center;
+        transform-style: preserve-3d;
+        transform: rotateY(calc(var(--i) * 45deg)) translateZ(180px);
+      }
+
+      /* Slider adjustments */
+      .slider-container {
+        width: 100%;
+        height: auto;
+      }
+
+      .slider {
+        height: 200px;
+      }
+
+      .slider img {
+        object-fit: cover;
+      }
+
+      .slider .slides {
+        flex-direction: row;
+      }
+
+      .slider .slide {
+        width: 100%;
+        height: 100%;
+      }
+
+      .slider .slide img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      /* Text and read-more box */
+      .read-more-box {
+        padding: 15px;
+      }
+
+      .read-more-label {
+        font-size: 1.2rem;
+      }
+
+      p {
+        margin-left: 10px;
+        margin-right: 10px;
+      }
+    }
+
+    @media (max-width: 480px) {
+
+      h1,
+      h2 {
+        padding: 20px;
+        font-size: 1.5rem;
+      }
+
+      p {
+        font-size: 0.9rem;
+      }
+      #back{
+        height: 100vh;
+      }
+
+      .gallery {
+        width: 60%;
+        height: 180px;
+        margin-top: 5%;
+      }
+
+      .gallery span {
+        height: 70px;
+        transform: rotateY(calc(var(--i) * 45deg)) translateZ(150px);
+      }
+
+      .slider {
+        height: 150px;
+      }
+
+      .read-more-label {
+        font-size: 1rem;
+      }
+
+    }
+
+    @media (max-width: 360px) {
+      .gallery {
+        width: 70%;
+        height: 150px;
+      }
+
+      .gallery span {
+        height: 60px;
+        transform: rotateY(calc(var(--i) * 45deg)) translateZ(120px);
+      }
+
+      .slider {
+        height: 120px;
+      }
+
+      .read-more-label {
+        font-size: 0.9rem;
+      }
+
+      p {
+        font-size: 0.85rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="body1">
+    <header>
+      <div class="navbar">
+        <div class="logo"><a href="#">Witzard Foodiemyst</a></div>
+        <ul class="links">
+          <li><a href="index.html"><i class="fa-solid fa-house"></i>Home</a></li>
+          <li><a href="countryNew.html"><i class="fa-solid fa-bowl-rice"></i></i>Country Foods</a></li>
+          <li><a href="reviewmainpage (1).html"><i class="fa-solid fa-receipt"></i>Review</a></li>
+          <li><a href="repro.html"><i class="fa-solid fa-address-card"></i></i>About Us</a></li>
+        </ul>
+        <div class="toggle-btn">
+          <i class="fa-solid fa-bars"></i>
+        </div>
+      </div>
+      <div class="dropdown-menu">
+        <li><a href="index.html"><i class="fa-solid fa-house"></i>Home</a></li>
+        <li><a href="countryNew.html"><i class="fa-solid fa-bowl-rice"></i></i>Country Foods</a></li>
+        <li><a href="reviewmainpage (1).html"><i class="fa-solid fa-receipt"></i>Review</a></li>
+        <li><a href="repro.html"><i class="fa-solid fa-address-card"></i></i>About Us</a></li>
+      </div>
+    </header>
+  </div>
+  <!-- nav section end -->
+
+
+  <div class="section" id="back">
+    <h1 class="text-center mt-4">Popular Malaysian Dishes</h1>
+    <p style="color: #fff; margin-left: 15%;">Malaysia's cuisine is a unique and flavorful blend of Malay, Chinese,
+      Indian, and other ethnic cultures.<br> The dishes often feature chilies, Indian spices, and coconut milk, creating
+      rich and diverse flavors.</p>
+    <p style="color: #fff; margin-left: 15%;">Malaysian food is known for its bold, spicy, sweet, and savory flavors,
+      combining influences from multiple cultures.<br> It’s a must-try for food lovers around the world!</p>
+
+    <div class="gallery">
+      <span style="--i:1;">
+        <img src="https://foodandroad.com/wp-content/uploads/2021/04/nasi-lemak-malasia-malaysian-food-2.jpg"
+          alt="Nasi Lemak" />
+      </span>
+      <span style="--i:2;">
+        <img src="https://foodandroad.com/wp-content/uploads/2021/04/charkoayteow-malasia-malaysian-food-2.jpg"
+          alt="Nasi Lemak" />
+      </span>
+      <span style="--i:3;">
+        <img src="https://migrationology.com/wp-content/uploads/2014/01/nasi-lemak.jpg" alt="Nasi Lemak" />
+      </span>
+      <span style="--i:4;">
+        <img src="https://foodandroad.com/wp-content/uploads/2021/04/rice-noodle-roll-malasia-malaysian-food-2.jpg"
+          alt="Nasi Lemak" />
+      </span>
+      <span style="--i:5;">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqt_UC62O_iGdVtghgT5yauqXEvwDxNWG5jg&s"
+          alt="Nasi Lemak" />
+      </span>
+      <span style="--i:6;">
+        <img
+          src="https://malaydiary.com/wp-content/uploads/2024/07/what-is-the-difference-between-thai-and-malaysian-cuisine.jpg"
+          alt="Nasi Lemak" />
+      </span>
+      <span style="--i:7;">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRkFxTxb2JSPekix7Ie4I8yNA2dfi4KBwyheA&s"
+          alt="Nasi Lemak" />
+      </span>
+      <span style="--i:8;">
+        <img src="https://www.willflyforfood.net/wp-content/uploads/2021/02/hokkien-mee.jpg.webp" alt="Nasi Lemak" />
+      </span>
+    </div>
+    <marquee direction="left" scrollamount="10">There are Top (10) Malaysia’s Signature and Most Popular Dishes.
+    </marquee>
+  </div>
+  <div class="container">
+    <div class="left">
+      <div class="read-more-box">
+        <h2>Nasi Lemak </a></h2>
+        <p>Nasi lemak is a fragrant rice dish cooked in coconut milk, originating from Malaysia and commonly found in
+          neighboring countries like Singapore and Southern Thailand.
+          It is considered the national dish of Malaysia. The rice is typically flavored with pandan leaves, and the
+          dish is served with a variety of accompaniments, most notably
+          sambal (a spicy chili paste), fried anchovies, peanuts, cucumber slices, and a hard-boiled or fried egg.</p>
+
+        <input type="checkbox" id="toggle1">
+        <div class="more-text">
+          <pre>
+          Ingredients:
+- Coconut milk rice
+- Sambal (chili paste with anchovies)
+- Fried anchovies (ikan bilis)
+- Roasted peanuts
+- Hard-boiled egg
+- Cucumber slices
+- Optional: Fried chicken/rendang
+
+       Preparation:
+1. Cook rice with coconut milk and pandan leaves
+2. Prepare sambal by blending chilies, shallots, garlic, and frying with anchovies
+3. Fry anchovies and peanuts separately
+4. Serve all components together
+        </pre>
+        </div>
+        <label for="toggle1" class="read-more-label">Read more</label>
+      </div>
+    </div>
+    <div class="right">
+      <div class="slider-container">
+        <div class="slider">
+          <div class="slides">
+            <div class="slide"><img
+                src="https://images.getrecipekit.com/20231116072724-c2-a9andy_cooks_thumbnails_nasi_lemak_01.jpg?aspect_ratio=4:3&quality=90&"
+                alt="Nasi Lemak"></div>
+            <div class="slide"><img
+                src="https://www.seriouseats.com/thmb/jurw_XoUko0sLM17lhIWseKvsyM=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/20230309-NasiLemak-MichelleYip-Option1-8d0b9468c998495f91ef4ff6d3b5ab6b.jpg"
+                alt="Nasi Lemak"></div>
+            <div class="slide"><img
+                src="https://www.malaysianchinesekitchen.com/wp-content/uploads/2017/06/NasiLemakBungkus-1-480x270.jpg"
+                alt="Nasi Lemak"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="left">
+      <div class="read-more-box">
+        <h2>Roti Canai</h2>
+        <p>Roti canai, or roti prata (in Singapore), also known as roti chanai and roti cane, is a flatbread dish of
+          Indian origin found in several countries in Southeast Asia, especially Brunei, Indonesia, Malaysia, Singapore,
+          and Thailand.
+          It is usually served with dal or other types of curry but can also be cooked in a range of sweet or savoury
+          variations made with different ingredients, such as meat, eggs, or cheese.</p>
+
+        <input type="checkbox" id="toggle2">
+        <div class="more-text">
+          <pre>
+            Ingredients:
+- Flour
+- Water
+- Ghee (clarified butter)
+- Egg (optional)
+- Curry or dhal for dipping
+
+Preparation:
+1. Knead dough with flour, water and ghee
+2. Rest dough for several hours
+3. Stretch and flip dough to make it thin
+4. Fold and cook on griddle with ghee
+5. Serve with curry or dhal
+      </pre>
+        </div>
+        <label for="toggle2" class="read-more-label">Read more</label>
+      </div>
+    </div>
+
+    <div class="right">
+      <div class="slider-container">
+        <div class="slider">
+          <div class="slides">
+            <div class="slide"><img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS79ttfSLuRyGjcj7i29cXjAB5mgnSjj-o2nA&s"
+                alt="Roti Canai"></div>
+            <div class="slide"><img
+                src="https://media.freemalaysiatoday.com/wp-content/uploads/2023/09/b6c7fa5c-roti-canai.jpg"
+                alt="Roti Canai"></div>
+            <div class="slide"><img src="https://i.ytimg.com/vi/DnJeoBtmmhw/sddefault.jpg" alt="Roti Canai"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="left">
+      <div class="read-more-box">
+        <h2>Satay</h2>
+        <p>Satay is a Southeast Asian dish, popular in Indonesia, Malaysia, and Thailand, consisting of seasoned,
+          skewered, and grilled meat, typically served with a sauce.
+          The meat is often marinated and grilled over an open flame, resulting in a flavorful and slightly charred
+          exterior.
+          Peanut sauce is a common accompaniment, adding a rich, nutty flavor to the dish.</p>
+
+        <input type="checkbox" id="toggle3">
+        <div class="more-text">
+          <pre>
+           Ingredients:
+- Chicken/beef/lamb cubes
+- Turmeric
+- Lemongrass
+- Cumin
+- Coriander
+- Peanut sauce
+- Ketupat (rice cakes)
+
+Preparation:
+1. Marinate meat in spices for hours
+2. Skewer meat onto bamboo sticks
+3. Grill over charcoal fire
+4. Serve with peanut sauce and ketupat
+     </pre>
+        </div>
+        <label for="toggle3" class="read-more-label">Read more</label>
+      </div>
+    </div>
+
+    <div class="right">
+      <div class="slider-container">
+        <div class="slider">
+          <div class="slides">
+            <div class="slide"><img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhe6R4Fym75E7KW3pXFhDveMEsOOi14ZbQOw&s">
+            </div>
+            <div class="slide"><img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSfHI2gL7EK7KJ_wU95DeZS9qdV3a5Pcnj6Kg&s">
+            </div>
+            <div class="slide"><img
+                src="https://3.bp.blogspot.com/-o22eygTGa3g/Ufx1J_HnppI/AAAAAAAAL7c/8EQqMWAN2Wc/s1600/best+satay+kajang+malaysia.jpg">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="left">
+      <div class="read-more-box">
+        <h2>Char Kway Teow</h2>
+        <p>Char kway teow is a popular Southeast Asian stir-fried noodle dish, particularly prevalent in Malaysia and
+          Singapore, known for its bold, savory flavors and smoky aroma.
+          It typically features flat rice noodles stir-fried with ingredients like prawns, cockles, Chinese sausage,
+          eggs, bean sprouts, and chives, all tossed in a flavorful sauce.
+          The dish is characterized by its high heat cooking method, which imparts a distinctive "wok hei" flavor, a
+          slightly charred taste from the wok.</p>
+
+        <input type="checkbox" id="toggle4">
+        <div class="more-text">
+          <pre>
+            Ingredients:
+- Flat rice noodles
+- Prawns
+- Chinese sausage
+- Bean sprouts
+- Chives
+- Eggs
+- Dark soy sauce
+- Chili paste
+
+Preparation:
+1. Heat oil in wok
+2. Stir-fry garlic, then prawns and sausage
+3. Add noodles and sauces
+4. Push aside to cook eggs
+5. Mix everything with bean sprouts and chives
+    </pre>
+        </div>
+        <label for="toggle4" class="read-more-label">Read more</label>
+      </div>
+    </div>
+
+    <div class="right">
+      <div class="slider-container">
+        <div class="slider">
+          <div class="slides">
+            <div class="slide"><img src="https://rasamalaysia.com/wp-content/uploads/2009/11/char-koay-teow-thumb.jpg">
+            </div>
+            <div class="slide"><img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfkhLrQ5QjgJa6v0AV6WdjsL2hsj9B0tjEYg&s">
+            </div>
+            <div class="slide"><img
+                src="https://christieathome.com/wp-content/uploads/2022/04/Penang-Char-Kway-Teow-2-10.jpg"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="left">
+      <div class="read-more-box">
+        <h2>Laksa</h2>
+        <p>Laksa is a spicy noodle dish popular in Southeast Asia. Laksa consists of various types of noodles, most
+          commonly thick rice noodles, with toppings such as chicken, prawns or fish.
+          Most variations of laksa are prepared with a rich and spicy coconut curry soup or a broth seasoned with a
+          souring ingredient like tamarind or asam gelugur.
+          Originating from Peranakan Chinese cuisine,laksa recipes are commonly served in Singapore,Indonesia, and
+          Malaysia.</p>
+
+        <input type="checkbox" id="toggle5">
+        <div class="more-text">
+          <pre>
+            Ingredients (Lemak version):
+- Rice noodles
+- Coconut milk
+- Laksa paste (lemongrass, galangal, turmeric)
+- Prawns
+- Fish cakes
+- Bean sprouts
+- Hard-boiled egg
+
+Preparation:
+1. Make broth with laksa paste and coconut milk
+2. Poach seafood in broth
+3. Blanch noodles and beansprouts
+4. Assemble with broth and toppings
+    </pre>
+        </div>
+        <label for="toggle5" class="read-more-label">Read more</label>
+      </div>
+    </div>
+
+    <div class="right">
+      <div class="slider-container">
+        <div class="slider">
+          <div class="slides">
+            <div class="slide"><img
+                src="https://www.elmundoeats.com/wp-content/uploads/2024/03/Penang-asam-laksa-in-a-bowl.jpg"></div>
+            <div class="slide"><img src="https://www.recipetineats.com/tachyon/2020/07/Laksa_1-SQ.jpg?resize=500%2C375">
+            </div>
+            <div class="slide"><img
+                src="https://marleyspoon.com/media/recipes/243444/main_photos/large/easy_fragrant_chicken_laksa-2fc10102b33f75780ffc215ae6e74434.jpeg">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="left">
+      <div class="read-more-box">
+        <h2>Nasi Goreng</h2>
+        <p>Nasi goreng is a significant fried rice dish within Brunei, Malaysian and Singaporean cuisine, known for its
+          versatility and diverse flavor profiles.
+          It is commonly enjoyed at various mealtimes, including breakfast and dinner, and is appreciated for its
+          filling nature and affordability, making it a popular choice among many.
+          Similar to its Indonesian counterparts, nasi goreng in these countries are typically prepared using cooked
+          rice that has been cooled and stir-fried with a small amount of cooking oil or butter.</p>
+
+        <input type="checkbox" id="toggle6">
+        <div class="more-text">
+          <pre>
+           Ingredients:
+- Cooked rice
+- Shallots
+- Garlic
+- Chili
+- Sweet soy sauce
+- Egg
+- Chicken/shrimp
+- Cucumber/tomato garnish
+
+Preparation:
+1. Fry shallots, garlic and chili
+2. Add protein and cook
+3. Add rice and sauces
+4. Push aside to fry egg
+5. Mix everything together 
+     </pre>
+        </div>
+        <label for="toggle6" class="read-more-label">Read more</label>
+      </div>
+    </div>
+
+    <div class="right">
+      <div class="slider-container">
+        <div class="slider">
+          <div class="slides">
+            <div class="slide"><img src="https://dimsimlim.com/wp-content/uploads/2024/12/Spicy-Nasi-Goreng-1.jpg">
+            </div>
+            <div class="slide"><img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqS-Y9cUlM5hlboJWoj86bhR6qGeXJ7r9tSA&s">
+            </div>
+            <div class="slide"><img src="https://images.yummy.ph/yummy/uploads/2019/11/nasigorengrecipe2-1.jpg"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="left">
+      <div class="read-more-box">
+        <h2>Hainanese Chicken Rice</h2>
+        <p>Hainanese chicken rice is a dish of poached chicken and seasoned rice, served with chilli sauce and usually
+          with cucumber garnishes.
+          It was created by immigrants from Hainan in southern China and adapted from the Hainanese dishes of Wenchang
+          chicken and Wenchang chicken rice.</p>
+
+        <input type="checkbox" id="toggle7">
+        <div class="more-text">
+          <pre>
+            Ingredients:
+- Whole chicken
+- Chicken fat rice
+- Ginger paste
+- Chili sauce
+- Cucumber garnish
+- Chicken broth
+
+Preparation:
+1. Poach whole chicken
+2. Cook rice with chicken fat and broth
+3. Make ginger and chili dipping sauces
+4. Serve with sliced chicken and soup
+       </pre>
+        </div>
+        <label for="toggle7" class="read-more-label">Read more</label>
+      </div>
+    </div>
+
+    <div class="right">
+      <div class="slider-container">
+        <div class="slider">
+          <div class="slides">
+            <div class="slide"><img
+                src="https://redhousespice.com/wp-content/uploads/2017/09/easy-hainanese-chicken-rice-scaled.jpg"></div>
+            <div class="slide"><img
+                src="https://www.singaporeanmalaysianrecipes.com/wp-content/uploads/2023/03/hainanese-chicken-rice-recipe-linsfood.jpg">
+            </div>
+            <div class="slide"><img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7TYbH90V16rMuLmPt86aIoTpcHiJtIeQbjw&s">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="left">
+      <div class="read-more-box">
+        <h2>Bak Kut Teh</h2>
+        <p>Bak kut teh, literally "meat bone tea" in Hokkien, is a pork rib dish cooked in a broth of herbs and spices,
+          popular in Malaysia and Singapore.
+          It's a hearty, flavorful dish believed to have originated in China, particularly Fujian province, and brought
+          to Southeast Asia by Hokkien immigrants.
+          There are different variations, such as the peppery Teochew and the more herbal Hokkien styles.</p>
+
+        <input type="checkbox" id="toggle8">
+        <div class="more-text">
+          <pre>
+           Ingredients:
+- Pork ribs
+- Garlic
+- Chinese herbs (star anise, cinnamon, dang gui)
+- Soy sauce
+- Mushrooms (optional)
+- You tiao (fried dough)
+
+Preparation:
+1. Blanch pork ribs
+2. Boil with garlic and herbs for hours
+3. Add seasonings
+4. Serve with rice and you tiao 
+    </pre>
+        </div>
+        <label for="toggle8" class="read-more-label">Read more</label>
+      </div>
+    </div>
+
+    <div class="right">
+      <div class="slider-container">
+        <div class="slider">
+          <div class="slides">
+            <div class="slide"><img
+                src="https://asianinspirations.com.au/wp-content/uploads/2018/08/R01211_Bak-Kut-Teh.jpg"></div>
+            <div class="slide"><img
+                src="https://ucarecdn.com/8f14d798-c7d9-4e06-86f0-8253a6d84128/-/scale_crop/1280x960/center/-/quality/normal/-/format/jpeg/bak-kut-teh-ultimate-guide.jpg">
+            </div>
+            <div class="slide"><img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRkFxTxb2JSPekix7Ie4I8yNA2dfi4KBwyheA&s">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="left">
+      <div class="read-more-box">
+        <h2>Cendol</h2>
+        <p>Cendol is a popular Southeast Asian dessert, especially in countries like Malaysia, Singapore, and Indonesia.
+          It's a refreshing, iced treat featuring green jelly noodles made from rice flour and flavored with pandan,
+          topped with coconut milk and palm sugar syrup.
+          Other common additions include red beans, glutinous rice, or even durian.</p>
+
+        <input type="checkbox" id="toggle9">
+        <div class="more-text">
+          <pre>
+            Ingredients:
+- Coconut milk
+- Palm sugar syrup
+- Green rice flour jelly
+- Shaved ice
+- Red beans (optional)
+
+Preparation:
+1. Make green jelly strands
+2. Prepare palm sugar syrup
+3. Layer ingredients in bowl
+4. Top with coconut milk
+     </pre>
+
+        </div>
+        <label for="toggle9" class="read-more-label">Read more</label>
+      </div>
+    </div>
+
+    <div class="right">
+      <div class="slider-container">
+        <div class="slider">
+          <div class="slides">
+            <div class="slide"><img
+                src="https://www.saveur.com/uploads/2019/04/01/7SD4OZMRAULKZD6Q7HO6XSBJVY.jpg?format=webp&optimize=high&precrop=1%3A1%2Csmart">
+            </div>
+            <div class="slide"><img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpXSzBbo7joCg5oWUZkbprQtyCw0cakmz02g&s">
+            </div>
+            <div class="slide"><img
+                src="https://images.sbs.com.au/dims4/default/dae5516/2147483647/strip/true/crop/4078x2294+0+1704/resize/1280x720!/quality/90/?url=http%3A%2F%2Fsbs-au-brightspot.s3.amazonaws.com%2Fdrupal%2Ffood%2Fpublic%2Fpenanglocal_107_mid_cendol.jpg">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="left">
+      <div class="read-more-box">
+        <h2>Nasi Briyani</h2>
+        <p>Nasi Briyani is a flavorful rice dish with Indian origins, popular in Malaysia and Singapore.
+          It features fragrant basmati rice cooked with various spices, often including cardamom, cloves, and cinnamon,
+          and is typically served with a side of meat (chicken, mutton, beef, or prawns) and sometimes vegetables.
+          The dish is known for its aromatic flavors and rich taste, with the meat and rice often prepared separately.
+        </p>
+        <input type="checkbox" id="toggle10">
+        <div class="more-text">
+          <pre>
+            Ingredients:
+- Black tea leaves
+- Condensed milk
+- Evaporated milk
+
+Preparation:
+1. Brew strong tea
+2. Mix with milks
+3. "Pull" by pouring between cups to aerate
+4. Serve hot or iced
+      </pre>
+        </div>
+        <label for="toggle10" class="read-more-label">Read more</label>
+      </div>
+    </div>
+
+    <div class="right">
+      <div class="slider-container">
+        <div class="slider">
+          <div class="slides">
+            <div class="slide"><img src="https://i.ytimg.com/vi/ZW2osAGvnsU/mqdefault.jpg"></div>
+            <div class="slide"><img
+                src="https://ucarecdn.com/11d9ecaf-f24f-477e-b2fa-fcbb383d83d5/-/scale_crop/1280x960/center/-/quality/normal/-/format/jpeg/nasi-briyani-ayam.jpg">
+            </div>
+            <div class="slide"><img src="https://munchmalaysia.com/wp-content/uploads/2023/05/Nasi_Briyani.jpg"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="bottom">
+    <p>These dishes represent just a fraction of the rich and diverse culinary heritage of Malaysia. Each dish tells a
+      story of the country's history, culture, and the fusion of different culinary traditions.</p>
+    <p>Whether you're a local or a visitor, exploring Malaysian food is an adventure that tantalizes the taste buds and
+      warms the heart.</p>
+  </div>
+
+  <footer>
+    <div class="wave-container">
+      <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+        viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+        <defs>
+          <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+        </defs>
+        <g class="parallax">
+          <use xlink:href="#gentle-wave" x="48" y="0" fill="#DF9881" />
+          <use xlink:href="#gentle-wave" x="48" y="3" fill="#DF9881" />
+          <use xlink:href="#gentle-wave" x="48" y="5" fill="#DF9881" />
+          <use xlink:href="#gentle-wave" x="48" y="7" fill="#F6B38A" />
+        </g>
+      </svg>
+    </div>
+    <div class="footer-content">
+      <div class="footer-section">
+        <ul class="social-icon">
+          <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+          <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
+          <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+        </ul>
+        <ul class="menu">
+          <li><a href="index.html"></i>Home</a></li>
+          <li><a href="countryNew.html"></i>Country Foods</a></li>
+          <li><a href="reviewmainpage (1).html"></i>Review</a></li>
+          <li><a href="repro.html"></i>About Us</a></li>
+        </ul>
+        <p>Copyright ©2025 All rights reserved | We are Together <i class="fa fa-heart" style="color: red;"></i> by
+          Bit-wizards</a></p>
+      </div>
+  </footer>
+  <script>
+    const toggleBtn = document.querySelector('.toggle-btn')
+    const toggleBtnIcon = document.querySelector('.toggle-btn i')
+    const dropDownMenu = document.querySelector('.dropdown-menu')
+
+    toggleBtn.onclick = function () {
+      dropDownMenu.classList.toggle('open')
+      const isOpen = dropDownMenu.classList.contains('open')
+
+      toggleBtnIcon.classList = isOpen
+        ? 'fa-solid fa-xmark'
+        : 'fa-solid fa-bars'
+    }
+  </script>
+</body>
+
+</html>

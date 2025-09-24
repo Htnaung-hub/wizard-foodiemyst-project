@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Witzard Foodiemyst</title>
+  <link rel="icon" href="Images/favicon.ico">
+  <link rel="stylesheet" href="styleVB.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+    integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="navi.css">
+
+  <style>
+    strong {
+      color: rgb(17, 18, 16);
+    }
+
+    .contentB .profile {
+      width: 300px;
+      min-height: 200px;
+      max-height: 200px;
+      border-radius: 20px;
+      overflow: hidden;
+      object-fit: cover;
+    }
+
+    .hero {
+      background: linear-gradient(rgba(125, 45, 2, 0.512), rgba(68, 14, 1, 0.679)), url(https://www.onceinalifetimejourney.com/wp-content/uploads/2018/07/Mosque-at-sunset-copy.jpg);
+    }
+
+    .contentB h1,
+    .contentB h2 {
+      padding: 5%;
+      font-size: 3rem;
+    }
+
+    .contentB p {
+      padding: 5%;
+      font-size: 1.5rem;
+    }
+
+    .recipe-button {
+      background-color: #373735;
+      color: #f38f43;
+      margin: 50px;
+      box-shadow: 1px 1px 5px black;
+    }
+
+    .recipe-button:hover {
+      background-color: #373735;
+      color: #373735;
+    }
+
+    /* Floating recipe card */
+    .recipe-card {
+      background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMaIY1Zl2A2cd_uaGhEcsffhr74NQ1fA2PLw&s);
+      background-repeat: no-repeat;
+      background-size: cover;
+      box-shadow: 3px 2px 10px #0e0e0e;
+      width: 50%;
+      max-width: 400px;
+      max-height: 90vh;
+      overflow-y: hidden;
+      border-radius: 25% 0%;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="body1">
+      <header>
+        <div class="navbar">
+          <div class="logo"><a href="#">Witzard Foodiemyst</a></div>
+          <ul class="links">
+            <li><a href="index.html"><i class="fa-solid fa-house"></i>Home</a></li>
+            <li><a href="countryNew.html"><i class="fa-solid fa-bowl-rice"></i></i>Country
+                Foods</a></li>
+            <li><a href="reviewmainpage (1).html"><i class="fa-solid fa-receipt"></i>Review</a></li>
+            <li><a href="repro.html"><i class="fa-solid fa-address-card"></i></i>About Us</a></li>
+          </ul>
+          <div class="toggle-btn">
+            <i class="fa-solid fa-bars"></i>
+          </div>
+        </div>
+        <div class="dropdown-menu">
+          <li><a href="index.html"><i class="fa-solid fa-house"></i>Home</a></li>
+          <li><a href="countryNew.html"><i class="fa-solid fa-bowl-rice"></i></i>Country Foods</a>
+          </li>
+          <li><a href="reviewmainpage (1).html"><i class="fa-solid fa-receipt"></i>Review</a></li>
+          <li><a href="repro.html"><i class="fa-solid fa-address-card"></i></i>About Us</a></li>
+        </div>
+      </header>
+    </div>
+    <!-- nav section end -->
+
+
+    <section class="hero">
+      <h1>Let's explore the Bruneian food!</h1>
+      <p> <strong>Bruneian</strong>cuisine is characterized by its use of <strong> rice and noodles</strong>, often
+        served with <strong> fish, chicken, or beef</strong>, and influenced by East Asian flavors. Dishes are typically
+        halal and avoid pork. Popular options include nasi katok, beef rendang, and ambuyat, the national dish, which is
+        a sticky sago starch served with a spicy sauce. </p>
+      <div class="gallery">
+        <span style="--i:1;">
+          <a href="#d1"><img src="https://www.kikkoman.com/en/cookbook/assets/img/00055377.jpg" alt="Nasi Lemak" /></a>
+        </span>
+        <span style="--i:2;">
+          <a href="#d2"><img src="https://www.elmundoeats.com/wp-content/uploads/2023/04/A-bowl-of-beef-rendang.jpg"
+              alt="Nasi Lemak" /></a>
+        </span>
+        <span style="--i:3;">
+          <a href="#d3"><img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJVVM5b8t1yHBqImk4NhzQmF0ezMpiexy8Gg&s"
+              alt="Nasi Lemak" /></a>
+        </span>
+        <span style="--i:4;">
+          <a href="#d4"> <img
+              src="https://foodandroad.com/wp-content/uploads/2021/04/rice-noodle-roll-malasia-malaysian-food-2.jpg"
+              alt="Nasi Lemak" /></a>
+        </span>
+        <span style="--i:5;">
+          <a href="#d5"><img src="https://www.tasteatlas.com/Images/Dishes/51f0c02a7b444f15b4ca24bbdb019c81.jpg"
+              alt="Nasi Lemak" /></a>
+        </span>
+        <span style="--i:6;">
+          <a href="#d6"><img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKWSFqp_iHjqGIiSPT44XhEsYheDlLaEo7Ow&s"
+              alt="Nasi Lemak" /></a>
+        </span>
+        <span style="--i:7;">
+          <a href="#d7"> <img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRFmsMsnXPO095dL2q-ChXDXhVDA-76v1QN_g&s"
+              alt="Nasi Lemak" /></a>
+        </span>
+        <span style="--i:8;">
+          <a href="#d8"><img src="https://apicms.thestar.com.my/uploads/images/2024/06/01/2725772.jpg"
+              alt="Nasi Lemak" /></a>
+        </span>
+      </div>
+
+    </section>
+    <section class="button">
+      <button class="traditionTB" id="buttonTB" onclick="opentradition()">Tradition</button>
+      <button class="popularTB" id="buttonPB" onclick="openpopular()">Popular</button>
+    </section>
+    <section id="tradition11">
+      <div class="contentB" id="d1">
+        <h1> Nasi Katok </h1>
+        <img src="https://www.kikkoman.com/en/cookbook/assets/img/00055377.jpg" width="100%" alt="image"
+          class="profile">
+        <p>Nasi Katok is one of the simplest yet most loved dishes in Brunei. It usually consists of a serving of plain
+          white rice, a piece of fried chicken, and a generous spoonful of sambal (spicy chili paste). It is an
+          affordable and quick meal found almost everywhere in Brunei.</p>
+        <button class="recipe-button" onclick="showRecipe('nasikatok')">Recipe</button>
+
+      </div>
+      <div class="contentB" id="d2">
+        <h2>Beef Rendang</h2>
+        <img src="https://www.elmundoeats.com/wp-content/uploads/2023/04/A-bowl-of-beef-rendang.jpg" alt="image"
+          class="profile">
+        <p>Beef Rendang is a rich and flavorful slow-cooked beef dish in coconut milk and spices. Though originally
+          Indonesian, it is also beloved in Brunei and often served during festive occasions.</p>
+        <button class="recipe-button" onclick="showRecipe('beefrendang')">Recipe</button>
+
+      </div>
+      <div class="contentB" id="d3">
+        <h2>Pajeri Nanas</h2>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJVVM5b8t1yHBqImk4NhzQmF0ezMpiexy8Gg&s"
+          alt="image" class="profile">
+        <p>Pajeri Nanas is a sweet and spicy pineapple curry, commonly enjoyed with rice. It is known for its tangy
+          flavor that balances rich meals.</p>
+        <button class="recipe-button" onclick="showRecipe('pajerinanas')">Recipe</button>
+      </div>
+      <div class="contentB" id="d4">
+        <h2>Selurut</h2>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSxY3zS6l1j2FFXqCIpIPp7GIh2Zg9EuUofQ&s"
+          alt="image" class="profile">
+        <p>Selurut is a traditional steamed dessert made from rice flour, coconut milk, and palm sugar, often enjoyed as
+          a sweet snack in Brunei.</p>
+        <button class="recipe-button" onclick="showRecipe('selurut')">Recipe</button>
+      </div>
+
+
+    </section>
+    <section id="popular11">
+      <div class="contentB" id="d5">
+        <h2>Ambuyat</h2>
+        <img src="https://cdn.tasteatlas.com/Images/Dishes/51f0c02a7b444f15b4ca24bbdb019c81.jpg?m=facebook" alt="image"
+          class="profile">
+        <p>Ambuyat is Brunei’s national dish, made from the sago palm starch. It has a sticky texture and is eaten with
+          a bamboo fork called “chandas,” usually dipped in flavorful sauces.</p>
+        <button class="recipe-button" onclick="showRecipe('ambuyat')">Recipe</button>
+      </div>
+      <div class="contentB" id="d6">
+        <h2>Hati Buyah</h2>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKWSFqp_iHjqGIiSPT44XhEsYheDlLaEo7Ow&s"
+          alt="image" class="profile">
+        <p>Hati Buyah is a stir-fried beef lung dish cooked with spices and chili, popular as a street food snack in
+          Brunei.</p>
+        <button class="recipe-button" onclick="showRecipe('hatibuyah')">Recipe</button>
+
+      </div>
+      <div class="contentB" id="d7">
+        <h2>Ketupat</h2>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRFmsMsnXPO095dL2q-ChXDXhVDA-76v1QN_g&s"
+          alt="image" class="profile">
+        <p>Ketupat is a rice cake wrapped in woven palm leaves, commonly eaten during festive seasons with rendang or
+          satay.</p>
+        <button class="recipe-button" onclick="showRecipe('ketupat')">Recipe</button>
+      </div>
+      <div class="contentB" id="d8">
+        <h2>Penyaram</h2>
+        <img src="https://apicms.thestar.com.my/uploads/images/2024/06/01/2725772.jpg" alt="image" class="profile">
+        <p>Penyaram is a traditional fried cake in Brunei, shaped like a flying saucer, sweet and chewy with a hint of
+          caramelized sugar flavor.</p>
+        <button class="recipe-button" onclick="showRecipe('penyaram')">Recipe</button>
+      </div>
+
+    </section>
+    <div class="buttom">
+      <footer>
+        <div class="wave-container">
+          <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+            viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+            <defs>
+              <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+            </defs>
+            <g class="parallax">
+              <use xlink:href="#gentle-wave" x="48" y="0" fill="#DF9881" />
+              <use xlink:href="#gentle-wave" x="48" y="3" fill="#DF9881" />
+              <use xlink:href="#gentle-wave" x="48" y="5" fill="#DF9881" />
+              <use xlink:href="#gentle-wave" x="48" y="7" fill="#F6B38A" />
+            </g>
+          </svg>
+        </div>
+        <div class="footer-content">
+          <div class="footer-section">
+            <ul class="social-icon">
+              <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+              <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
+              <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+            </ul>
+            <ul class="menu">
+              <li><a href="index.html"></i>Home</a></li>
+              <li><a href="countryNew.html"></i>Country Foods</a></li>
+              <li><a href="reviewmainpage (1).html"></i>Review</a></li>
+              <li><a href="repro.html"></i>About Us</a></li>
+            </ul>
+            <p>Copyright ©2025 All rights reserved | We are Together <i class="fa fa-heart" style="color: red;"></i> by
+              Bit-wizards</a></p>
+          </div>
+      </footer>
+    </div>
+  </div>
+  <div class="recipe-card" id="recipeCard" role="dialog" aria-modal="true" aria-labelledby="recipeTitle"
+    aria-describedby="recipeContent">
+    <button class="close-btn" aria-label="Close recipe card" onclick="closeRecipe()">×</button>
+    <h1 id="recipeTitle"></h1>
+    <h2 id="recipeSubtitle"></h2>
+    <div id="recipeContent"></div>
+  </div>
+
+
+  <script>
+    const recipes = {
+      nasikatok: {
+        title: "Nasi Katok",
+        subtitle: "A simple and beloved Bruneian dish with rice, fried chicken, and sambal.",
+        content: `
+      <h3>Ingredients:</h3>
+      <ul>
+        <li>White rice</li>
+        <li>Fried chicken</li>
+        <li>Sambal chili paste</li>
+        <li>Cucumber slices (optional)</li>
+      </ul>
+      <h3>Recipe:</h3>
+      <ol>
+        <li>Cook the white rice until fluffy.</li>
+        <li>Fry the chicken until golden and crispy.</li>
+        <li>Prepare sambal by blending chilies, garlic, and onion, then sautéing with oil.</li>
+        <li>Serve rice with fried chicken and sambal on the side.</li>
+      </ol>
+    `
+      },
+      beefrendang: {
+        title: "Beef Rendang",
+        subtitle: "A rich and flavorful slow-cooked beef dish in coconut milk and spices.",
+        content: `
+      <h3>Ingredients:</h3>
+      <ul>
+        <li>Beef (cubed)</li>
+        <li>Coconut milk</li>
+        <li>Lemongrass, galangal, and kaffir lime leaves</li>
+        <li>Chili paste</li>
+        <li>Shallots and garlic</li>
+      </ul>
+      <h3>Recipe:</h3>
+      <ol>
+        <li>Blend shallots, garlic, and chili into a paste.</li>
+        <li>Cook the paste with lemongrass and spices until fragrant.</li>
+        <li>Add beef and cook until browned.</li>
+        <li>Pour in coconut milk and simmer for 2–3 hours until thick and tender.</li>
+      </ol>
+    `
+      },
+      pajerinanas: {
+        title: "Pajeri Nanas",
+        subtitle: "A sweet and spicy pineapple curry commonly enjoyed with rice.",
+        content: `
+      <h3>Ingredients:</h3>
+      <ul>
+        <li>Pineapple chunks</li>
+        <li>Curry powder</li>
+        <li>Coconut milk</li>
+        <li>Chili paste</li>
+        <li>Garlic, onion, and ginger</li>
+      </ul>
+      <h3>Recipe:</h3>
+      <ol>
+        <li>Sauté garlic, onion, and ginger with curry powder.</li>
+        <li>Add pineapple and chili paste.</li>
+        <li>Pour in coconut milk and cook until thick and flavorful.</li>
+      </ol>
+    `
+      },
+      selurut: {
+        title: "Selurut",
+        subtitle: "A traditional steamed dessert made from rice flour, coconut milk, and palm sugar.",
+        content: `
+      <h3>Ingredients:</h3>
+      <ul>
+        <li>Rice flour</li>
+        <li>Coconut milk</li>
+        <li>Palm sugar (gula melaka)</li>
+        <li>Pandan leaves</li>
+      </ul>
+      <h3>Recipe:</h3>
+      <ol>
+        <li>Mix rice flour and coconut milk into a smooth batter.</li>
+        <li>Boil palm sugar with pandan leaves to make syrup.</li>
+        <li>Pour batter and syrup into molds and steam until cooked.</li>
+      </ol>
+    `
+      },
+      ambuyat: {
+        title: "Ambuyat",
+        subtitle: "Brunei’s national dish made from sago palm starch, eaten with bamboo fork and sauces.",
+        content: `
+      <h3>Ingredients:</h3>
+      <ul>
+        <li>Sago starch</li>
+        <li>Water</li>
+        <li>Sauces for dipping (spicy or sour)</li>
+      </ul>
+      <h3>Recipe:</h3>
+      <ol>
+        <li>Mix sago starch with boiling water until it becomes sticky and translucent.</li>
+        <li>Serve immediately with dipping sauces.</li>
+      </ol>
+    `
+      },
+      hatibuyah: {
+        title: "Hati Buyah",
+        subtitle: "A stir-fried beef lung dish cooked with spices and chili, popular street food in Brunei.",
+        content: `
+      <h3>Ingredients:</h3>
+      <ul>
+        <li>Beef lung (sliced)</li>
+        <li>Chili paste</li>
+        <li>Garlic and onion</li>
+        <li>Soy sauce and spices</li>
+      </ul>
+      <h3>Recipe:</h3>
+      <ol>
+        <li>Boil beef lung until cooked, then slice thinly.</li>
+        <li>Stir-fry with garlic, onion, and chili paste.</li>
+        <li>Season with soy sauce and spices, then serve hot.</li>
+      </ol>
+    `
+      },
+      ketupat: {
+        title: "Ketupat",
+        subtitle: "Rice cake wrapped in woven palm leaves, eaten during festive seasons with rendang or satay.",
+        content: `
+      <h3>Ingredients:</h3>
+      <ul>
+        <li>Rice</li>
+        <li>Palm leaf pouches</li>
+        <li>Water for boiling</li>
+      </ul>
+      <h3>Recipe:</h3>
+      <ol>
+        <li>Fill palm leaf pouches halfway with rice.</li>
+        <li>Boil for 4–5 hours until rice is firm and compact.</li>
+        <li>Cool, cut, and serve with dishes like rendang.</li>
+      </ol>
+    `
+      },
+      penyaram: {
+        title: "Penyaram",
+        subtitle: "Traditional fried cake, sweet and chewy with caramelized sugar flavor.",
+        content: `
+      <h3>Ingredients:</h3>
+      <ul>
+        <li>Rice flour</li>
+        <li>Palm sugar</li>
+        <li>Coconut milk</li>
+        <li>All-purpose flour</li>
+      </ul>
+      <h3>Recipe:</h3>
+      <ol>
+        <li>Dissolve palm sugar in water and mix with coconut milk.</li>
+        <li>Add rice flour and all-purpose flour to form a thick batter.</li>
+        <li>Deep-fry in hot oil until golden and puffy.</li>
+      </ol>
+    `
+      }
+    };
+
+
+    function showRecipe(key) {
+      const recipe = recipes[key];
+      if (!recipe) return;
+
+      const card = document.getElementById("recipeCard");
+      document.getElementById("recipeTitle").textContent = recipe.title;
+      document.getElementById("recipeSubtitle").textContent = recipe.subtitle;
+      document.getElementById("recipeContent").innerHTML = recipe.content;
+
+      card.style.display = "flex";
+      document.body.style.overflow = "hidden"; // prevent background scroll
+    }
+
+    function closeRecipe() {
+      const card = document.getElementById("recipeCard");
+      card.style.display = "none";
+      document.body.style.overflow = "auto";
+    }
+
+    function opentradition() {
+      document.getElementById("tradition11").style.display = "flex";
+      document.getElementById("popular11").style.display = "none";
+      document.getElementById("buttonT").classList.add("active");
+      document.getElementById("buttonP").classList.remove("active");
+    }
+
+    function openpopular() {
+      document.getElementById("popular11").style.display = "flex";
+      document.getElementById("tradition11").style.display = "none";
+      document.getElementById("buttonP").classList.add("active");
+      document.getElementById("buttonT").classList.remove("active");
+    }
+
+    window.onload = () => {
+      opentradition();
+    };
+  </script>
+  <script>
+    const toggleBtn = document.querySelector('.toggle-btn')
+    const toggleBtnIcon = document.querySelector('.toggle-btn i')
+    const dropDownMenu = document.querySelector('.dropdown-menu')
+
+    toggleBtn.onclick = function () {
+      dropDownMenu.classList.toggle('open')
+      const isOpen = dropDownMenu.classList.contains('open')
+
+      toggleBtnIcon.classList = isOpen
+        ? 'fa-solid fa-xmark'
+        : 'fa-solid fa-bars'
+    }
+  </script>
+
+</body>
+
+</html>

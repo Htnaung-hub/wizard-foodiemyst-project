@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Witzard Foodiemyst</title>
+    <link rel="icon" href="Images/favicon.ico">
+    <link rel="stylesheet" href="navi.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #373735
+        }
+
+        body {
+            background-color: #f38f43;
+            color: #373735;
+            line-height: 1.6;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+            gap: 30px;
+        }
+        .links a i{
+            color: rgb(255, 166, 0);
+        }
+        .links a i:hover{
+             color: rgb(234, 228, 217);
+        }
+        .social-icon a i{
+            color: #fff;
+        }
+        /* Header styling */
+        .header {
+            margin-top: 64px;
+            flex: 1 1 100%;
+            text-align: center;
+            padding: 20px;
+            background-color: #D28254;
+            color: white;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        /* Sidebar navigation */
+        .nav-sidebar {
+            flex: 0 0 250px;
+            background: #D28254;
+            border-radius: 12px;
+            padding: 25px 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .nav-tap {
+            padding: 18px 20px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            color: #555;
+            position: relative;
+        }
+
+        .nav-tap.active {
+            background: linear-gradient(135deg, #c93f15 0%, #f15050 100%);
+            color: white;
+            box-shadow: 0 4px 10px rgba(255, 82, 82, 0.3);
+        }
+
+        .nav-tap:not(.active):hover {
+            background-color: #f8f9fa;
+            color: #ff5252;
+        }
+
+        .nav-tap i {
+            margin-right: 12px;
+            font-size: 1.2rem;
+        }
+
+        .nav-tap.active::after {
+            content: '';
+            position: absolute;
+            right: -15px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 0;
+            height: 0;
+            border-top: 15px solid transparent;
+            border-bottom: 15px solid transparent;
+            border-left: 15px solid #ff5252;
+        }
+
+        /* Content styling */
+        .content {
+            flex: 1 1 0;
+            background: #ff7b54;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            min-width: 300px;
+        }
+
+        .content-section {
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .content-section.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            color: white;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #f0f0f0;
+        }
+
+        .content-text p {
+            margin-bottom: 15px;
+            font-size: 1.05rem;
+            color: #444;
+        }
+
+        .icon-highlight {
+            background-color: #fffefe73;
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid #ff5252;
+            margin: 20px 0;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 20px;
+            margin-top: 30px;
+            color: #777;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive design */
+        @media (max-width: 1000px) {
+            .container {
+                flex-direction: column;
+                padding: 15px;
+            }
+
+            .nav-sidebar {
+                flex: 1 1 100%;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+            }
+
+            .nav-tap {
+                flex: 1 1 45%;
+                margin: 5px 0;
+                justify-content: center;
+            }
+
+            .nav-tap.active::after {
+                display: none;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .nav-tap {
+                padding: 12px 15px;
+                font-size: 0.9rem;
+            }
+
+            .section-title {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="body1">
+        <header>
+            <div class="navbar">
+                <div class="logo"><a href="#">Witzard Foodiemyst</a></div>
+                <ul class="links">
+                    <li><a href="index.html"><i class="fa-solid fa-house"></i>Home</a></li>
+                    <li><a href="countryNew.html"><i class="fa-solid fa-bowl-rice"></i></i>Country Foods</a></li>
+                    <li><a href="reviewmainpage (1).html"><i class="fa-solid fa-receipt"></i>Review</a></li>
+                    <li><a href="repro.html"><i class="fa-solid fa-address-card"></i></i>About Us</a></li>
+                </ul>
+                <div class="toggle-btn">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+            </div>
+            <div class="dropdown-menu">
+                <li><a href="index.html"><i class="fa-solid fa-house"></i>Home</a></li>
+                <li><a href="countryNew.html"><i class="fa-solid fa-bowl-rice"></i></i>Country Foods</a></li>
+                <li><a href="reviewmainpage (1).html"><i class="fa-solid fa-receipt"></i>Review</a></li>
+                <li><a href="repro.html"><i class="fa-solid fa-address-card"></i></i>About Us</a></li>
+            </div>
+        </header>
+    </div>
+    <div class="header">
+        <h1>Discover the Cleanliness, Health & Preparation of Indonesia's Culinary Treasures</h1>
+    </div>
+
+    <div class="container">
+        <!-- Navigation Sidebar -->
+        <div class="nav-sidebar">
+            <div class="nav-tap active" data-tab="0">
+                <i class="fas fa-soap"></i> <span>Cleanliness</span>
+            </div>
+            <div class="nav-tap" data-tab="1">
+                <i class="fas fa-heart"></i> <span>Healthiness</span>
+            </div>
+            <div class="nav-tap" data-tab="2">
+                <i class="fas fa-utensils"></i> <span>Preparation</span>
+            </div>
+            <div class="nav-tap" data-tab="3">
+                <i class="fas fa-star"></i> <span>Special</span>
+            </div>
+        </div>
+
+        <!-- Content Area -->
+        <div class="content">
+            <div class="content-section active">
+                <h2 class="section-title">Cleanliness</h2>
+                <div class="content-text">
+                    <p>Hygiene in Indonesia is common in cities and tourist destinations, with government and certain
+                        policies trying to improve hygiene,
+                        leaving trash cans for street trash disposal, and taking care to enforce hygiene rules in
+                        restaurants.</p>
+                    <div class="icon-highlight">
+                        <i class="fas fa-lightbulb"></i>In Indonesia, hygiene is generally well-maintained in cities and
+                        tourist areas, but more attention should
+                        be given to waste management and littering issues in rural and densely populated regions.
+                    </div>
+                    <p>However, problems can still often be encountered outside of urban areas and in densely populated
+                        areas, such as littering and disposal of garbage on the runoff,
+                        and in some places poor proper collection can be detrimental to the sanitation of the natural
+                        environment.</p>
+                </div>
+            </div>
+
+            <div class="content-section">
+                <h2 class="section-title">Healthiness</h2>
+                <div class="content-text">
+                    <p>There are health benefits to Indonesian vegetarian foods, as well as negative effects. The pros
+                        include:</p>
+                    <p>High in fish-based dishes such as mackerel, fried squid, and spicy fish, and rich in Omega-3 and
+                        protein, they are beneficial for cardiovascular and brain health.</p>
+                    <p>Fruits, fruits, and greens are rich in vitamins and fiber, which promote stomach function and
+                        immunity.</p>
+                    <p>The use of spices (turmeric, ginger, garlic, lemongrass) has boosted immunity and has antiviral
+                        and antibacterial properties.</p>
+                    <p>The downside is that there are plenty of fritters and fried foods that are traditionally high in
+                        fat, which can lead to high cholesterol → heart disease.</p>
+                    <p>Drinking sugary drinks (e.g., teh manis, es cendol, etc.) is high in sugar, → can lead to
+                        diabetes and diabetes.</p>
+                    <p>Soft drinks and soy sauce bases can lead to poor storage and high blood pressure.</p>
+                </div>
+            </div>
+
+            <div class="content-section">
+                <h2 class="section-title">Preparation</h2>
+                <div class="content-text">
+                    <p>In Indonesian cuisines, you can find designs that add a variety of dishes, meat, fish, and beans
+                        to a single bowl
+                        (e.g., Nasi Campur, Nasi Padang). The dishes are decorated in natural colors such as red, green,
+                        yellow, etc., making
+                        them attractive to the diners. Some dishes are often used as the main flavors, such as ginger,
+                        graffiti, lemongrass,
+                        tea roots, etc., and are often used as special combination designs. It is beautifully presented
+                        with its leaf-shaped shape and aesthetic design.</p>
+
+
+
+                    <div class="icon-highlight">
+                        <i class="fas fa-info-circle"></i> Indonesian cuisine deserves attention for its colorful
+                        presentation, natural ingredients,
+                        and unique use of spices that make each dish both attractive and flavorful.
+                    </div>
+                </div>
+            </div>
+
+            <div class="content-section">
+                <h2 class="section-title">Special</h2>
+                <div class="content-text">
+                    <p>A unique feature of Indonesia is its rich cultural diversity reflected in colorful cuisine,
+                        traditional arts, and vibrant festivals.</p>
+                    <div class="icon-highlight">
+                        <i class="fas fa-award"></i> Nasi Goreng (Fried Rice): Commonly found at street food stalls,
+                        local markets, and hotels.
+                        Rendang (Spicy Beef Stew): Served at traditional homes, local eateries, and special events.
+                        Satay (Grilled Skewered Meat): Found at street vendors, festivals, and hotel buffets.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>© 2025 Discover Indonesia's Culinary Treasures</p>
+    </div>
+    <footer>
+        <div class="wave-container">
+            <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+                <defs>
+                    <path id="gentle-wave"
+                        d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+                </defs>
+                <g class="parallax">
+                    <use xlink:href="#gentle-wave" x="48" y="0" fill="#DF9881" />
+                    <use xlink:href="#gentle-wave" x="48" y="3" fill="#DF9881" />
+                    <use xlink:href="#gentle-wave" x="48" y="5" fill="#DF9881" />
+                    <use xlink:href="#gentle-wave" x="48" y="7" fill="#F6B38A" />
+                </g>
+            </svg>
+        </div>
+        <div class="footer-content">
+            <div class="footer-section">
+                <ul class="social-icon">
+                    <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+                    <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
+                    <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                </ul>
+                <ul class="menu">
+                    <li><a href="index.html"></i>Home</a></li>
+                    <li><a href="countryNew.html"></i>Country Foods</a></li>
+                    <li><a href="reviewmainpage (1).html"></i>Review</a></li>
+                    <li><a href="repro.html"></i>About Us</a></li>
+                </ul>
+                <p>Copyright ©2025 All rights reserved | We are Together <i class="fa fa-heart" style="color: red;"></i>
+                    by Bit-wizards</a></p>
+            </div>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const tabs = document.querySelectorAll('.nav-tap');
+            const sections = document.querySelectorAll('.content-section');
+
+            tabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    tabs.forEach(t => t.classList.remove('active'));
+                    tab.classList.add('active');
+
+                    sections.forEach(sec => sec.classList.remove('active'));
+                    sections[tab.dataset.tab].classList.add('active');
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

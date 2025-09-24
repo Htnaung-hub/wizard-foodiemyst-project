@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+    integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <title>Witzard Foodiemyst</title>
+  <link rel="icon" href="Images/favicon.ico">
+  <link rel="stylesheet" href="navi.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #f38f43, #f38f43, #f38f43);
+      color: #373735;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    .head {
+      text-align: center;
+      padding: 30px 0;
+      margin-bottom: 20px;
+      margin-top: 50px;
+      animation: fadeSlide 1.2s ease forwards;
+      opacity: 0;
+    }
+
+    .head h1 {
+      font-size: 2.8rem;
+      color: white;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+
+    .head.subtitle {
+      font-size: 1.1rem;
+      color: #f8f4f1;
+      margin-bottom: 25px;
+    }
+
+    /* Navigation */
+    .nav {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-bottom: 30px;
+      background: #d28254;
+      padding: 10px;
+      border-radius: 6px;
+      position: sticky;
+      top: 10%;
+      z-index: 1000;
+      animation: slideDown 0.8s ease forwards;
+      opacity: 0;
+    }
+
+    .nav a {
+      color: white;
+      text-decoration: none;
+      padding: 8px 14px;
+      border-radius: 4px;
+      transition: background 0.3s ease, transform 0.3s ease;
+    }
+
+    .nav a:hover {
+      background: #f38f43;
+      transform: scale(1.05);
+    }
+
+    .content-section {
+      background: #faf8f2;
+      border-radius: 10px;
+      padding: 24px;
+      margin-bottom: 25px;
+      box-shadow: 0 6px 18px rgba(238, 74, 74, 0.08);
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeUp 1s ease forwards;
+    }
+
+    /* delay for section order */
+    #special {
+      animation-delay: 0.2s;
+    }
+
+    #dishes {
+      animation-delay: 0.4s;
+    }
+
+    #regions {
+      animation-delay: 0.6s;
+    }
+
+    #pairings {
+      animation-delay: 0.8s;
+    }
+
+    #tips {
+      animation-delay: 1s;
+    }
+
+    #health {
+      animation-delay: 1.2s;
+    }
+
+    h2 {
+      color: #373735;
+      border-bottom: 2px solid #d97706;
+      padding-bottom: 8px;
+      margin-bottom: 16px;
+      font-size: 1.6rem;
+      text-align: center;
+    }
+
+    h3 {
+      color: #373735;
+      margin: 14px 0 8px;
+      font-size: 1.2rem;
+      text-align: center;
+    }
+
+    p {
+      margin-bottom: 12px;
+      font-size: 1rem;
+    }
+
+    ul,
+    ol {
+      margin-left: 20px;
+      margin-bottom: 14px;
+    }
+
+    li {
+      margin-bottom: 8px;
+    }
+
+
+
+    /* Keyframes */
+    @keyframes fadeSlide {
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes slideDown {
+      from {
+        opacity: 0;
+        transform: translateY(-40px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="body1">
+    <header>
+      <div class="navbar">
+        <div class="logo"><a href="#">Witzard Foodiemyst</a></div>
+        <ul class="links">
+          <li><a href="index.html"><i class="fa-solid fa-house"></i>Home</a></li>
+          <li><a href="countryNew.html"><i class="fa-solid fa-bowl-rice"></i></i>Country Foods</a></li>
+          <li><a href="reviewmainpage (1).html"><i class="fa-solid fa-receipt"></i>Review</a></li>
+          <li><a href="repro.html"><i class="fa-solid fa-address-card"></i></i>About Us</a></li>
+        </ul>
+        <div class="toggle-btn">
+          <i class="fa-solid fa-bars"></i>
+        </div>
+      </div>
+      <div class="dropdown-menu">
+        <li><a href="index.html"><i class="fa-solid fa-house"></i>Home</a></li>
+        <li><a href="countryNew.html"><i class="fa-solid fa-bowl-rice"></i></i>Country Foods</a></li>
+        <li><a href="reviewmainpage (1).html"><i class="fa-solid fa-receipt"></i>Review</a></li>
+        <li><a href="repro.html"><i class="fa-solid fa-address-card"></i></i>About Us</a></li>
+      </div>
+    </header>
+  </div>
+  <div class="container">
+
+    <div class="head">
+      <h1>Cambodia Culinary Review</h1>
+      <p class="subtitle">Explore Cambodian cuisine — balance, tradition, and modern taste. Cambodian food is also
+        called Khmer Food. It is the traditional food of Cambodia. If you visit Cambodia, you can enjoy a variety of
+        delicious dishes that reflect the country's rich culture and history.</p>
+    </div>
+
+    <nav class="nav">
+      <a href="#special">Special</a>
+      <a href="#dishes">Knowledge About Cambodia</a>
+      <a href="#regions">Cleanliness</a>
+      <a href="#pairings">Nutrition Facts</a>
+      <a href="#tips">Health</a>
+      <a href="#health">Conclusion</a>
+    </nav>
+
+    <section id="special" class="content-section">
+      <h2>Special Features</h2>
+      <ul>
+        <li>Balance of sweet, sour, salty, bitter — hallmark of Khmer cooking.</li>
+        <li>Regional storytelling shaped by Tonlé Sap, Mekong, and coastal culture.</li>
+        <li>Chef-style notes and pairing suggestions for modern refinement.</li>
+      </ul>
+    </section>
+
+    <section id="dishes" class="content-section">
+      <h2>Knowledge About Cambodian Food</h2>
+      <h3>Cultural Knowledge</h3>
+      <ul>
+        <li>Food in Cambodia is usually shared family-style, with several dishes eaten together with rice.</li>
+        <li>Fish Amok (a curry steamed in banana leaves) is considered the national dish.</li>
+        <li>Meals often balance the four flavors—sweet, sour, salty, bitter—for harmony.</li>
+      </ul>
+      <p><em>Note:</em> Religious traditions (Buddhism) influence the diet, with respect for food and avoiding waste.
+      </p>
+
+
+
+
+
+
+      <h3>Sources Of Food</h3>
+      <ul>
+        <li>Ingredients mainly come from local farms, rivers, and rice fields. Cambodia is rich in freshwater fish,
+          rice, tropical fruits, and seasonal vegetables, making the food sustainable and closely tied to the natural
+          environment.</li>
+        <li>Local Markets: Fresh produce, herbs, and fish are sourced from bustling markets.</li>
+        <li>Rice Fields: Staple ingredient, with various rice types cultivated across the country.</li>
+        <li>Fishing Communities: Provide a rich supply of freshwater fish and seafood.</li>
+        <li>Cambodia’s food sources are natural and local.</li>
+        <li>Rice is the staple crop, grown in fertile plains.</li>
+        <li>The Tonlé Sap Lake and Mekong River provide an abundance of freshwater fish.</li>
+        <li>Tropical fruits like mangoes, bananas, and coconuts are also widely available.</li>
+        <li>This farm-to-table tradition keeps Cambodian food fresh and authentic.</li>
+    </section>
+
+    <section id="regions" class="content-section">
+      <h2>Cleanliness</h2>
+
+      <p>Most Cambodian dishes are prepared with fresh herbs and vegetables bought daily from local markets.Khmer
+        cuisine is generally healthy because it uses light cooking techniques like steaming, grilling, and boiling.
+        Dishes are often served with herbs, fish, and rice rather than heavy oils or excessive sugar.
+    </section>
+
+    <section id="pairings" class="content-section">
+      <h2>Nutrition Facts</h2>
+      <p>A typical Cambodian meal provides a balance of carbohydrates from rice, protein from fish, chicken, or pork,
+        and vitamins from fresh herbs and vegetables. Fermented foods like prahok (fermented fish paste) also add
+        probiotics that support digestion.</p>
+    </section>
+
+    <section id="tips" class="content-section">
+      <h2>Health & Sustainability</h2>
+      <p>Cambodian food celebrates local fish, rice, and greens. Favor seasonal produce, reduce food waste, and balance
+        coconut-rich curries with vegetables.</p>
+
+      <h3>Possible Side Effects</h3>
+      <p>For people who are not used to fermented or spicy foods, dishes like prahok or chili-based sauces may cause
+        stomach discomfort. Street food, if not handled properly, may sometimes lead to foodborne illness.</p>
+    </section>
+
+    </section>
+    <section id="health" class="content-section">
+      <h2>Conclusion</h2>
+      <p>Overall, Cambodian food is flavorful, nutritious, and deeply connected to the country’s culture and
+        environment. With attention to cleanliness, it can be enjoyed as both a healthy and memorable culinary
+        experience.</p>
+    </section>
+  </div>
+  <footer>
+    <div class="wave-container">
+      <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+        viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+        <defs>
+          <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+        </defs>
+        <g class="parallax">
+          <use xlink:href="#gentle-wave" x="48" y="0" fill="#DF9881" />
+          <use xlink:href="#gentle-wave" x="48" y="3" fill="#DF9881" />
+          <use xlink:href="#gentle-wave" x="48" y="5" fill="#DF9881" />
+          <use xlink:href="#gentle-wave" x="48" y="7" fill="#F6B38A" />
+        </g>
+      </svg>
+    </div>
+    <div class="footer-content">
+      <div class="footer-section">
+        <ul class="social-icon">
+          <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+          <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
+          <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+        </ul>
+        <ul class="menu">
+          <li><a href="index.html"></i>Home</a></li>
+          <li><a href="countryNew.html"></i>Country Foods</a></li>
+          <li><a href="reviewmainpage (1).html"></i>Review</a></li>
+          <li><a href="repro.html"></i>About Us</a></li>
+        </ul>
+        <p>Copyright ©2025 All rights reserved | We are Together <i class="fa fa-heart" style="color: red;"></i>
+          by Bit-wizards</a></p>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>

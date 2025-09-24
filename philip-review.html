@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Witzard Foodiemyst</title>
+    <link rel="icon" href="Images/favicon.ico">
+    <link rel="stylesheet" href="navi.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        :root {
+            --primary: #e74c3c;
+            --secondary: #f39c12;
+            --accent: #27ae60;
+            --dark: #2c3e50;
+            --light: #f8f9fa;
+            --card-bg: rgba(255, 255, 255, 0.92);
+        }
+
+        body {
+            background: linear-gradient(135deg, #F38F43 0%, #F38F43 100%);
+            color: #333;
+            line-height: 1.6;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 400px;
+            background: linear-gradient(to right, #e74c3c, #f39c12);
+            z-index: -1;
+            border-radius: 0 0 50% 50%/0 0 100% 100%;
+            transform: scaleX(1.5);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .head{
+            text-align: center;
+            padding: 60px 20px 40px;
+            margin-bottom: 30px;
+            color: white;
+            position: relative;
+        }
+
+        .logo {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: white;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+            font-weight: 800;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .subtitle {
+            font-size: 1.5rem;
+            max-width: 700px;
+            margin: 0 auto 25px;
+            opacity: 0.95;
+            font-weight: 300;
+            margin-bottom: 7%;
+        }
+
+
+        .nav-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin: 30px 0;
+            flex-wrap: wrap;
+        }
+
+        .tab-btn {
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            padding: 12px 25px;
+            border-radius: 30px;
+            color: white;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(5px);
+            font-weight: 500;
+        }
+
+        .tab-btn:hover,
+        .tab-btn.active {
+            background: white;
+            color: var(--primary);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card-header {
+            padding: 25px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            color: white;
+        }
+
+        .card-header i {
+            font-size: 2rem;
+        }
+
+        .card-content {
+            padding: 25px;
+        }
+
+        .card-content ul {
+            padding-left: 20px;
+            margin: 15px 0;
+        }
+
+        .card-content li {
+            margin-bottom: 12px;
+            position: relative;
+            padding-left: 25px;
+        }
+
+        .card-content li::before {
+            content: "•";
+            color: var(--primary);
+            font-size: 1.5rem;
+            position: absolute;
+            left: 0;
+            top: -5px;
+        }
+
+        .examples {
+            background: rgba(231, 76, 60, 0.05);
+            border-left: 4px solid var(--primary);
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 0 10px 10px 0;
+        }
+
+        .examples-title {
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--dark);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 30px;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .flavor-card {
+            background: var(--card-bg);
+            border-radius: 15px;
+            padding: 25px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .flavor-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .flavor-card i {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+            background: rgba(231, 76, 60, 0.1);
+            width: 80px;
+            height: 80px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+        }
+
+        .dish-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 30px 0;
+            background: var(--card-bg);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .dish-table th {
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            color: white;
+            padding: 15px 20px;
+            text-align: left;
+        }
+
+        .dish-table td {
+            padding: 12px 20px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .dish-table tr:nth-child(even) {
+            background: rgba(231, 76, 60, 0.03);
+        }
+
+        .dish-table tr:hover {
+            background: rgba(243, 156, 18, 0.05);
+        }
+
+        .summary {
+            background: linear-gradient(to right, #2c5049, #4a6491);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin: 40px 0;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .tip-box {
+            background: rgba(39, 69, 167, 0.1);
+            border-left: 4px solid #3498db;
+            padding: 20px;
+            border-radius: 0 10px 10px 0;
+            margin: 25px 0;
+        }
+
+        .food-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 40px 0;
+        }
+
+        .gallery-item {
+            border-radius: 15px;
+            overflow: hidden;
+            height: 200px;
+            box-shadow: 0 8px 20px rgba(164, 29, 85, 0.1);
+            position: relative;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-item .caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 10px;
+            font-size: 0.9rem;
+            text-align: center;
+        }
+
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .social-icons a {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            background: var(--secondary);
+            transform: translateY(-5px);
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            .grid-2,
+            .grid-3 {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-tabs {
+                flex-direction: column;
+            }
+        }
+        h3{
+            margin-bottom: 2%;
+        }
+       
+    </style>
+</head>
+
+<body>
+    <div class="container">
+         <div class="body1">
+        <header>
+            <div class="navbar">
+                <div class="logo"><a href="#">Witzard Foodiemyst</a></div>
+                <ul class="links">
+                    <li><a href="index.html"><i class="fa-solid fa-house"></i>Home</a></li>
+                    <li><a href="countryNew.html"><i class="fa-solid fa-bowl-rice"></i></i>Country Foods</a></li>
+                    <li><a href="reviewmainpage (1).html"><i class="fa-solid fa-receipt"></i>Review</a></li>
+                    <li><a href="repro.html"><i class="fa-solid fa-address-card"></i></i>About Us</a></li>
+                </ul>
+                <div class="toggle-btn">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+            </div>
+            <div class="dropdown-menu">
+                <li><a href="index.html"><i class="fa-solid fa-house"></i>Home</a></li>
+                <li><a href="countryNew.html"><i class="fa-solid fa-bowl-rice"></i></i>Country Foods</a></li>
+                <li><a href="reviewmainpage (1).html"><i class="fa-solid fa-receipt"></i>Review</a></li>
+                <li><a href="repro.html"><i class="fa-solid fa-address-card"></i></i>About Us</a></li>
+            </div>
+        </header>
+    </div>
+        <div class="head">
+            <div class="logo">
+                <i class="fas fa-utensils"></i>
+            </div>
+            <h1>Philippines Cuisine Guide</h1>
+            <p class="subtitle">Best Traditional Dishes in the Philippines</p>
+        </div>
+
+        <div class="nav-tabs">
+            <button class="tab-btn active" data-tab="dietary">Dietary Guide</button>
+            <button class="tab-btn" data-tab="flavors">Flavors</button>
+            <button class="tab-btn" data-tab="health">Health & Safety</button>
+            <button class="tab-btn" data-tab="gallery">Food Gallery</button>
+        </div>
+
+        <div id="dietary" class="tab-content active">
+            <div class="grid-2">
+                <div class="card">
+                    <div class="card-header">
+                        <i class="fas fa-balance-scale"></i>
+                        <h3>For Philippines (Pinggang Pinoy)</h3>
+                    </div>
+                    <div class="card-content">
+                        <p>The Pinggang Pinoy (Filipino Food Plate) provides guidance for a balanced diet:</p>
+                        <ul>
+                            <li>Brown rice over white rice for better nutrition</li>
+                            <li>At least half the plate filled with vegetables and fruits</li>
+                            <li>Lean meat, fish, poultry, eggs, and legumes for protein</li>
+                            <li>Use fats, oils, and sweets in moderation</li>
+                        </ul>
+                        <p><strong>Tip:</strong> Popular Filipino Dishes</p>
+                        <div class="examples">
+                            <div class="examples-title"><i class="fas fa-utensils"></i> Examples:</div>
+                            <p>Adobo, Sinigang, Inihaw na Liempo, Chicken Liver, Ginataang Manok, Halo-Halo</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <i class="fas fa-leaf"></i>
+                        <h3>Indigenous Ingredients</h3>
+                    </div>
+                    <div class="card-content">
+                        <p>Filipino cuisine draws from indigenous ingredients and influences from Chinese, Spanish,
+                            Malay, and American cultures, creating a unique fusion of flavors.</p>
+                        <div class="examples">
+                            <div class="examples-title"><i class="fas fa-utensils"></i> Examples:</div>
+                            <p>Key ingredients include rice, coconut, tamarind, vinegar, fish sauce (patis), and
+                                tropical fruits like mango and banana.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <i class="fas fa-star"></i>
+                        <h3>Notable Foods</h3>
+                    </div>
+                    <div class="card-content">
+                        <p>Filipino cuisine is known for its bold, comforting flavors and hearty meals.</p>
+                        <div class="examples">
+                            <div class="examples-title"><i class="fas fa-utensils"></i> Examples:</div>
+                            <p>Adobo, a savory stew of meat with vinegar, garlic, and soy sauce; Lechon, a whole roasted
+                                pig; and Lumpia, spring rolls filled with vegetables and meat.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <i class="fas fa-fire"></i>
+                        <h3>Preparation Methods</h3>
+                    </div>
+                    <div class="card-content">
+                        <p>Common techniques include stewing, grilling, and frying, often using fresh local ingredients.
+                        </p>
+                        <div class="examples">
+                            <div class="examples-title"><i class="fas fa-utensils"></i> Tip:</div>
+                            <p>While some dishes can be heavy on fats, a variety of fresh vegetables and seafood are
+                                also staples for balance.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="summary">
+                <h3><i class="fas fa-clipboard-check"></i> Summary:</h3>
+                <p>Embrace the diverse and flavorful world of Philippine cuisine by following the Pinggang Pinoy for
+                    balanced meals, incorporating indigenous ingredients, and exploring traditional preparations.</p>
+            </div>
+        </div>
+        <div id="flavors" class="tab-content">
+            <h2 style="text-align: center; margin: 30px 0; color: var(--dark);">
+                Core Flavors of Philippine Cuisine
+            </h2>
+
+            <div class="grid-3">
+                <div class="flavor-card">
+                    <i class="fas fa-pepper-hot"></i>
+                    <h3>Spicy</h3>
+                    <p>While not as dominant as in other Asian cuisines, spice comes from ingredients like chili peppers
+                        in dishes such as Bicol Express, a creamy, fiery pork stew made with coconut milk and labuyo
+                        chilies.</p>
+                </div>
+
+                <div class="flavor-card">
+                    <i class="fas fa-drumstick-bite"></i>
+                    <h3>Savory</h3>
+                    <p>Umami-rich flavors from fish sauce (patis), soy sauce, and fermented shrimp paste (bagoong)
+                        define savory staples like Adobo and Kinilaw (Filipino ceviche with fresh fish and vinegar).</p>
+                </div>
+
+                <div class="flavor-card">
+                    <i class="fas fa-candy-cane"></i>
+                    <h3>Sweet</h3>
+                    <p>Glutinous rice, coconut milk, ube (purple yam), and condensed milk feature prominently in
+                        desserts like Bibingka (rice cake) and Leche Flan (caramel custard).</p>
+                </div>
+
+                <div class="flavor-card">
+                    <i class="fas fa-lemon"></i>
+                    <h3>Tangy & Sour</h3>
+                    <p>Sinigang is the most iconic, a tamarind-based stew with meat or seafood, vegetables, and a
+                        refreshing sour broth that balances richness with acidity.</p>
+                </div>
+
+                <div class="flavor-card">
+                    <i class="fas fa-wind"></i>
+                    <h3>Aromatic</h3>
+                    <p>Fragrant herbs like lemongrass, ginger, garlic, and pandan leaves infuse dishes such as Tinola
+                        (chicken soup) and Adobo with fresh, herbal, and earthy notes.</p>
+                </div>
+
+                <div class="flavor-card">
+                    <i class="fas fa-fire"></i>
+                    <h3>Flavor Profile</h3>
+                    <p>A characteristic blend of salty, sweet, and sour notes, often balanced with garlic, onions, bay
+                        leaves, and black pepper for a comforting depth unique to Filipino cooking.</p>
+                </div>
+            </div>
+
+            <h3 style="text-align: center; margin: 40px 0 20px; color: var(--dark);">Popular Philippine Dishes</h3>
+            <table class="dish-table">
+                <thead>
+                    <tr>
+                        <th>Dish</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Adobo</strong></td>
+                        <td>Meat (chicken, pork, or seafood) stewed in vinegar, soy sauce, garlic, bay leaves, and black
+                            peppercorns for a tangy, savory comfort food.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Sinigang</strong></td>
+                        <td>Sour tamarind-based soup with vegetables, meat or seafood, offering a refreshing balance of
+                            tartness and subtle sweetness.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Inihaw na Liempo</strong></td>
+                        <td>Grilled pork belly marinated in soy sauce and calamansi, delivering a smoky, savory, and
+                            slightly sweet char-grilled flavor.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Chicken Liver</strong></td>
+                        <td>Often prepared as a stir-fry or in adobo-style; very popular alongside gizzards, fish,
+                            chicken, and pork for its rich, iron-packed taste.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Ginataang Manok</strong></td>
+                        <td>Chicken simmered in creamy coconut milk with ginger, vegetables, and sometimes jackfruit,
+                            creating a mildly sweet and aromatic stew.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Halo-Halo</strong></td>
+                        <td>A layered dessert with shaved ice, evaporated milk, fruits like coconut, jackfruit,
+                            sweetened bananas, tapioca pearls, and nata de coco, topped with ube ice cream.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div id="health" class="tab-content">
+            <div class="grid-2">
+                <div class="card">
+                    <div class="card-header">
+                        <i class="fas fa-heart"></i>
+                        <h3>Healthy Aspects</h3>
+                    </div>
+                    <div class="card-content">
+                        <p>Philippine cuisine incorporates many nutritious elements from fresh, local ingredients that
+                            support a balanced diet.</p>
+                        <ul>
+                            <li><strong>Moringa (Malunggay):</strong> A superfood packed with vitamins A and C, plus
+                                minerals like iron and calcium; often added to soups and stews for nutrition.</li>
+                            <li><strong>Fresh vegetables & fruits:</strong> Many dishes include an abundance of fresh
+                                produce, such as Pinakbet (mixed vegetable stew with fish sauce) and Laing (taro leaves
+                                in coconut milk), providing fiber, antioxidants, and vitamins.</li>
+                            <li><strong>Lean proteins:</strong> Seafood, fish, chicken, eggs, and plant-based options
+                                like mung beans and tofu offer high-quality protein without excess fats.</li>
+                            <li><strong>Rice-based meals:</strong> While white rice is a staple (high in carbs for
+                                energy), opting for brown rice adds fiber and nutrients; paired with veggies for
+                                balanced meals.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        <h3>Considerations</h3>
+                    </div>
+                    <div class="card-content">
+                        <p>Some traditional dishes can be indulgent; moderation helps maintain health benefits.</p>
+                        <ul>
+                            <li><strong>Fried & oily dishes:</strong> Items like Lechon (roast pig), Chicharon (crispy
+                                pork rinds), and Tapsilog (cured beef tapa with fried egg and rice) are high in fats and
+                                calories.</li>
+                            <li><strong>Coconut milk (Gata):</strong> Adds a sweet, creamy flavor to dishes like
+                                Ginataan but is rich in saturated fats—enjoy in moderation for its medium-chain
+                                triglycerides.</li>
+                            <li><strong>Sweet drinks & desserts:</strong> Halo-Halo and other treats with condensed milk
+                                and fruits can be sugary; limit to occasional indulgences.</li>
+                            <li><strong>Large portions:</strong> Rice is served generously with every meal, which can
+                                lead to overeating carbs—control portions for better balance.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <i class="fas fa-check-circle"></i>
+                        <h3>Clean & Safe Options</h3>
+                    </div>
+                    <div class="card-content">
+                        <p>Focus on hygienic and nutrient-dense choices to enjoy Filipino food safely.</p>
+                        <ul>
+                            <li>Prioritize reputable restaurants, hotels, and certified markets for fresh, prepared
+                                foods.</li>
+                            <li>Look for establishments with high hygiene standards, like those displaying cleanliness
+                                certifications.</li>
+                            <li>Choose lean proteins such as grilled fish (Inihaw na Isda) or chicken adobo over fatty
+                                cuts.</li>
+                            <li>Incorporate plenty of vegetables and fruits, like in Sinigang or fresh salads, for fiber
+                                and vitamins.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <i class="fas fa-info-circle"></i>
+                        <h3>Be Cautious With</h3>
+                    </div>
+                    <div class="card-content">
+                        <p>Avoid or approach these with care to prevent health risks, especially for travelers.</p>
+                        <ul>
+                            <li><strong>Balut:</strong> A fertilized duck egg—nutritious but risky if not fully cooked;
+                                potential for bacterial contamination.</li>
+                            <li><strong>High-Fat Dishes:</strong> Deep-fried items like Lumpia or Crispy Pata (fried
+                                pig's feet) can be heavy on cholesterol.</li>
+                            <li><strong>Street Food:</strong> Delicious but variable hygiene; opt for busy vendors with
+                                fresh prep, and avoid if unsure about water or handling.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tip-box">
+                <h3><i class="fas fa-lightbulb"></i> Tips for Healthy & Safe Eating:</h3>
+                <ul>
+                    <li>Choose lean proteins like grilled fish or chicken, and pair with veggies to follow Pinggang
+                        Pinoy guidelines.</li>
+                    <li>Focus on fruits and vegetables: Start meals with fresh salads or fruit sides like mango or atis
+                        for antioxidants.</li>
+                    <li>Incorporate healthy staples: Swap white rice for brown, and use moringa or kangkong (water
+                        spinach) in dishes.</li>
+                    <li>Add flavor with healthy ingredients: Use calamansi, ginger, or herbs instead of excess salt,
+                        sugar, or oil.</li>
+                    <li>Bake or grill: Modify fried recipes at home by baking Lumpia or grilling meats to reduce oil
+                        content.</li>
+                </ul>
+            </div>
+        </div>
+       
+        <div id="gallery" class="tab-content">
+            <h2 style="text-align: center; margin: 30px 0; color: var(--dark);">Philippine Food Gallery</h2>
+
+            <div class="food-gallery">
+                <div class="gallery-item">
+                    <img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSwhk-c3_fV2WgBB7PQXKib57LfjbvI2iuEmtMRYjBqm2olz0qR4N_fIJqQIlg1pej-xC1XZsyBL7doZKdYJ3p9rzsIO-WASpsgOZLoI34tyw"
+                        alt="Filipino Adobo - A savory stew of meat in vinegar and soy sauce">
+                    <div class="caption">Adobo - National Dish</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://www.kawalingpinoy.com/wp-content/uploads/2013/01/sinigang-baboy-7-1152x1536.jpg"
+                        alt="Sinigang - Sour tamarind-based soup with meat and vegetables">
+                    <div class="caption">Sinigang Soup</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://www.kawalingpinoy.com/wp-content/uploads/2019/12/inihaw-liempo-3-680x884.jpg"
+                        alt="Inihaw na Liempo - Grilled pork belly">
+                    <div class="caption">Inihaw na Liempo - Grilled Pork Belly</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://panlasangpinoy.com/wp-content/uploads/2025/02/chicken-liver-recipe-1024x638.jpg"
+                        alt="Chicken Liver and Gizzard - Stir-fried in oyster sauce">
+                    <div class="caption">Chicken Liver and Gizzard in Oyster Sauce</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fimages.media-allrecipes.com%2Fuserphotos%2F4506061.jpg&q=60&c=sc&poi=auto&orient=true&h=512"
+                        alt="Ginataang Manok - Chicken cooked in coconut milk">
+                    <div class="caption">Ginataang Manok</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcT_MHCyTN0bAAsqdAObcY7NtKUpJz7p9KLyyKzLbt6uMVJWuc_rwN9UXsN_46qfq3h8CpsIKGBFlF2WoFrcMIDlYldWth43NqrHD3xEnkZh2g"
+                        alt="Halo-Halo - Shaved ice dessert with fruits and toppings">
+                    <div class="caption">Halo-Halo - Ultimate Dessert</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://panlasangpinoy.com/wp-content/uploads/2019/11/lechon-belly-roll.jpg"
+                        alt="Lechon - Whole roasted pig, a festive centerpiece with crispy skin">
+                    <div class="caption">Lechon - Roasted Pork Delight</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://assets.unileversolutions.com/v1/85775930.jpg"
+                        alt="Kare-Kare - Oxtail stew in peanut sauce with vegetables">
+                    <div class="caption">Kare-Kare - Peanut Stew Specialty</div>
+                </div>
+            </div>
+
+            <div class="summary">
+                <h3><i class="fas fa-utensils"></i> Visual Feast of Philippine Delicacies</h3>
+                <p>Discover the vibrant colors, textures, and appetizing presentations of iconic Philippine dishes in
+                    this curated gallery. From hearty stews like Adobo and Sinigang to sweet treats like Halo-Halo, and
+                    festive favorites like Lechon and Kare-Kare, each image captures the essence of Filipino culinary
+                    artistry and tradition.</p>
+            </div>
+        </div>
+        
+    </div>
+      <footer>
+        <div class="wave-container">
+            <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+                <defs>
+                    <path id="gentle-wave"
+                        d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+                </defs>
+                <g class="parallax">
+                    <use xlink:href="#gentle-wave" x="48" y="0" fill="#DF9881" />
+                    <use xlink:href="#gentle-wave" x="48" y="3" fill="#DF9881" />
+                    <use xlink:href="#gentle-wave" x="48" y="5" fill="#DF9881" />
+                    <use xlink:href="#gentle-wave" x="48" y="7" fill="#F6B38A" />
+                </g>
+            </svg>
+        </div>
+        <div class="footer-content">
+            <div class="footer-section">
+                <ul class="social-icon">
+                    <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+                    <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
+                    <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                </ul>
+                <ul class="menu">
+                    <li><a href="index.html"></i>Home</a></li>
+                    <li><a href="countryNew.html"></i>Country Foods</a></li>
+                    <li><a href="reviewmainpage (1).html"></i>Review</a></li>
+                    <li><a href="repro.html"></i>About Us</a></li>
+                </ul>
+                <p>Copyright ©2025 All rights reserved | We are Together <i class="fa fa-heart" style="color: red;"></i>
+                    by Bit-wizards</a></p>
+            </div>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const tabBtns = document.querySelectorAll('.tab-btn');
+            const tabContents = document.querySelectorAll('.tab-content');
+
+            tabBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    // Remove active class from all buttons and contents
+                    tabBtns.forEach(b => b.classList.remove('active'));
+                    tabContents.forEach(c => c.classList.remove('active'));
+
+                    // Add active class to clicked button
+                    btn.classList.add('active');
+
+                    // Show corresponding content
+                    const tabId = btn.getAttribute('data-tab');
+                    document.getElementById(tabId).classList.add('active');
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

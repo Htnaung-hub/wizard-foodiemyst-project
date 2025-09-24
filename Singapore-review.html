@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Witzard Foodiemyst</title>
+    <link rel="icon" href="Images/favicon.ico">
+    <link rel="stylesheet" href="navi.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #373735
+        }
+
+        body {
+            background-color: #f38f43;
+            color: #373735;
+            line-height: 1.6;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+            gap: 30px;
+        }
+        .links a i{
+            color: rgb(255, 166, 0);
+        }
+        .links a i:hover{
+             color: rgb(234, 228, 217);
+        }
+        .social-icon a i{
+            color: #fff;
+        }
+
+        /* Header styling */
+        .header {
+            flex: 1 1 100%;
+            text-align: center;
+            padding: 20px;
+            background: linear-gradient(135deg, #ff7b54 0%, #ff9d52 100%);
+            color: white;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+            margin-top: 64px;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        /* Sidebar navigation */
+        .nav-sidebar {
+            flex: 0 0 250px;
+            background: white;
+            border-radius: 12px;
+            padding: 25px 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .nav-tap {
+            padding: 18px 20px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            color: #555;
+            position: relative;
+        }
+
+        .nav-tap.active {
+            background: linear-gradient(135deg, #f38f43 0%, #f15050 100%);
+            color: white;
+            box-shadow: 0 4px 10px rgba(255, 82, 82, 0.3);
+        }
+
+        .nav-tap:not(.active):hover {
+            background: linear-gradient(135deg, #f15050 0%, #f38f43 100%);
+            color: white;
+        }
+
+        .nav-tap i {
+            margin-right: 12px;
+            font-size: 1.2rem;
+        }
+
+        .nav-tap.active::after {
+            content: '';
+            position: absolute;
+            right: -15px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 0;
+            height: 0;
+            border-top: 15px solid transparent;
+            border-bottom: 15px solid transparent;
+            border-left: 15px solid #ff5252;
+        }
+
+        /* Content styling */
+        .content {
+            flex: 1 1 0;
+            background: #f0f0f0;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            min-width: 300px;
+        }
+
+        .content-section {
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .content-section.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            color: #373735;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #f0f0f0;
+        }
+
+        .content-text p {
+            margin-bottom: 15px;
+            font-size: 1.05rem;
+            color: #444;
+        }
+
+        .icon-highlight {
+            background-color: #594c4c73;
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid #ff5252;
+            margin: 20px 0;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 20px;
+            margin-top: 30px;
+            color: #777;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive design */
+        @media (max-width: 1000px) {
+            .container {
+                flex-direction: column;
+                padding: 15px;
+            }
+
+            .nav-sidebar {
+                flex: 1 1 100%;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+            }
+
+            .nav-tap {
+                flex: 1 1 45%;
+                margin: 5px 0;
+                justify-content: center;
+            }
+
+            .nav-tap.active::after {
+                display: none;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .nav-tap {
+                padding: 12px 15px;
+                font-size: 0.9rem;
+            }
+
+            .section-title {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="body1">
+        <header>
+            <div class="navbar">
+                <div class="logo"><a href="#">Witzard Foodiemyst</a></div>
+                <ul class="links">
+                    <li><a href="index.html"><i class="fa-solid fa-house"></i>Home</a></li>
+                    <li><a href="countryNew.html"><i class="fa-solid fa-bowl-rice"></i></i>Country Foods</a></li>
+                    <li><a href="reviewmainpage (1).html"><i class="fa-solid fa-receipt"></i>Review</a></li>
+                    <li><a href="repro.html"><i class="fa-solid fa-address-card"></i></i>About Us</a></li>
+                </ul>
+                <div class="toggle-btn">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+            </div>
+            <div class="dropdown-menu">
+                <li><a href="index.html"><i class="fa-solid fa-house"></i>Home</a></li>
+                <li><a href="countryNew.html"><i class="fa-solid fa-bowl-rice"></i></i>Country Foods</a></li>
+                <li><a href="reviewmainpage (1).html"><i class="fa-solid fa-receipt"></i>Review</a></li>
+                <li><a href="repro.html"><i class="fa-solid fa-address-card"></i></i>About Us</a></li>
+            </div>
+        </header>
+    </div>
+    <div class="header">
+        <h1>Discover the Cleanliness, Health & Preparation of Singapore's Culinary Treasures</h1>
+    </div>
+
+    <div class="container">
+        <!-- Navigation Sidebar -->
+        <div class="nav-sidebar">
+            <div class="nav-tap active" data-tab="0">
+                <i class="fas fa-soap"></i> <span>Cleanliness</span>
+            </div>
+            <div class="nav-tap" data-tab="1">
+                <i class="fas fa-heart"></i> <span>Healthiness</span>
+            </div>
+            <div class="nav-tap" data-tab="2">
+                <i class="fas fa-utensils"></i> <span>Preparation</span>
+            </div>
+            <div class="nav-tap" data-tab="3">
+                <i class="fas fa-star"></i> <span>Special</span>
+            </div>
+        </div>
+
+        <!-- Content Area -->
+        <div class="content">
+            <div class="content-section active">
+                <h2 class="section-title">Cleanliness</h2>
+                <div class="content-text">
+                    <p>In Singapore, food cleanliness is generally very high due to strict hygiene regulations.</p>
+                    <div class="icon-highlight">
+                        <i class="fas fa-lightbulb"></i>Visitors can safely enjoy both cooked and raw foods, drink tap
+                        water, and eat fruits and vegetables without special precautions.
+                    </div>
+                    <p>Singapore's cleanliness is a real phenomenon from its streets to parks to the disciplined
+                        cleanliness that has earned it the title of the world's most hygienic city. </p>
+                </div>
+            </div>
+
+            <div class="content-section">
+                <h2 class="section-title">Healthiness</h2>
+                <div class="content-text">
+                    <p>Potential Health Consequences in Singapore Gastroenteritis In Singapore, there are still cases of
+                        gastroenteritis caused by poor hygiene in restaurants, with about 20-25 cases a year, especially
+                        in restaurants and catering services.
+
+                        Foodborne Illnesses Some restaurants are pore to hygiene lapses, and they are dangerous because
+                        of craked tiles, poorly maintained equipment, and so on , which can breed bacteria.
+
+                        Poor Nutrition in Singapore, energy-dense nutrient- poor foods are readily available and
+                        inexpensive, and they are commonly consumed by many people,which can contribute to obesity and
+                        chronic diseases.
+
+                        Labor-Related Risks Food safety gaps are often caused by the lack of trained food handlers in
+                        some restaurants and the mass hiring in some restaurents andthe mass hiring of part-time staff
+                        through social media.
+                    </p>
+                </div>
+            </div>
+
+            <div class="content-section">
+                <h2 class="section-title">Preparation</h2>
+                <div class="content-text">
+                    <p>Singapores cuisine is a blend of various flavours such as Chinese, Malay, Indian,and is evident
+                        in its combination of flavours such as sweet, sour,spicy and savoury, cas well as the Hawker
+                        Centre Style (simplicity) and Restaurant Plating style,which retains the original flavours and
+                        can also be adapted into new modern plating, fusion style, natural colour enhancement and
+                        serving ware upgrades.</p>
+
+
+
+                    <div class="icon-highlight">
+                        <i class="fas fa-info-circle"></i> Rempah (spice paste made from blended chilies, garlic,
+                        shallots, and other aromatics) is a crucial base in many dishes and requires careful frying to
+                        release its full flavor.
+                    </div>
+                    <p>The key preparation in Singaporean dishes is making **rempah**, a spice paste that builds rich,
+                        layered flavor.
+                    </p>
+                </div>
+            </div>
+
+            <div class="content-section">
+                <h2 class="section-title">Special</h2>
+                <div class="content-text">
+                    <p>Singapore's hotels and restaurants have a sleek and sleek design, ranging from highend laxury
+                        class hotels to boutique style hotels and service apartments, and restaurants with a wide range
+                        of options such as Fine Dining Restaurant, Rooftop Bar & Cafe, Hawker Centre,etc.,and the
+                        amenities are neatly arranged.</p>
+                    <div class="icon-highlight">
+                        <i class="fas fa-award"></i> Traditional dishes in Singapore include **Hainanese Chicken Rice**,
+                        **Chilli Crab**, **Laksa**, and **Satay**. Celebratory foods often feature **roast suckling
+                        pig** and the infamous **durian**. Local coffee, called **kopi**, is brewed strong and served
+                        with condensed milk. **Kaya Toast**, a sweet coconut jam on toasted bread, is a popular
+                        breakfast snack.
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="wave-container">
+            <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+                <defs>
+                    <path id="gentle-wave"
+                        d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+                </defs>
+                <g class="parallax">
+                    <use xlink:href="#gentle-wave" x="48" y="0" fill="#DF9881" />
+                    <use xlink:href="#gentle-wave" x="48" y="3" fill="#DF9881" />
+                    <use xlink:href="#gentle-wave" x="48" y="5" fill="#DF9881" />
+                    <use xlink:href="#gentle-wave" x="48" y="7" fill="#F6B38A" />
+                </g>
+            </svg>
+        </div>
+        <div class="footer-content">
+            <div class="footer-section">
+                <ul class="social-icon">
+                    <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+                    <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
+                    <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                </ul>
+                <ul class="menu">
+                    <li><a href="index.html"></i>Home</a></li>
+                    <li><a href="countryNew.html"></i>Country Foods</a></li>
+                    <li><a href="reviewmainpage (1).html"></i>Review</a></li>
+                    <li><a href="repro.html"></i>About Us</a></li>
+                </ul>
+                <p>Copyright ©2025 All rights reserved | We are Together <i class="fa fa-heart" style="color: red;"></i>
+                    by Bit-wizards</a></p>
+            </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const tabs = document.querySelectorAll('.nav-tap');
+            const sections = document.querySelectorAll('.content-section');
+
+            tabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    tabs.forEach(t => t.classList.remove('active'));
+                    tab.classList.add('active');
+
+                    sections.forEach(sec => sec.classList.remove('active'));
+                    sections[tab.dataset.tab].classList.add('active');
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

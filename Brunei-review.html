@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Witzard Foodiemyst</title>
+    <link rel="icon" href="Images/favicon.ico">
+    <link rel="stylesheet" href="navi.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #f38f43, #f38f43 100%);
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .head {
+            margin-top: 10%;
+            background: linear-gradient(to right, #f38f43, #f38f43);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            border-bottom: 5px solid #373735;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .head h1 {
+            font-size: 2.8rem;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .head p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .nav-tabs {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            background: white;
+            padding: 1rem 0;
+            margin: 1rem 0 2rem;
+            border-radius: 50px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 10%;
+            z-index: 100;
+        }
+
+        .nav-tabs li {
+            margin: 0 1rem;
+        }
+
+        .nav-tabs a {
+            color: #373735;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-tabs a:hover {
+            background-color: #f38f43;
+            color: white;
+        }
+
+        .section {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            margin-bottom: 2.5rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease;
+        }
+
+        .section:hover {
+            transform: translateY(-5px);
+        }
+
+        .section-title {
+            color: #373735;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 3px solid #e9b44c;
+            display: flex;
+            align-items: center;
+        }
+
+        .section-title i {
+            margin-right: 15px;
+            font-size: 1.8rem;
+        }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+        .content-card {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 10px;
+            border-left: 4px solid #373735;
+        }
+
+        .content-card h3 {
+            color: #373735;
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
+        }
+
+        .special-items {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 1.5rem;
+        }
+
+        .special-item {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+            border-top: 4px solid #e9b44c;
+        }
+
+        .special-item h3 {
+            color: #373735;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .flag {
+            font-size: 1.8rem;
+            margin: 0 0.3rem;
+            vertical-align: middle;
+        }
+
+        .icon-list {
+            list-style: none;
+            margin: 1rem 0;
+        }
+
+        .icon-list li {
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .icon-list i {
+            color: #373735;
+            margin-right: 10px;
+            font-size: 1.2rem;
+        }
+
+        .summary-box {
+            background: linear-gradient(135deg, #f38f43 0%, #f38f43 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 15px;
+            margin-top: 2rem;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        }
+
+        .summary-box h3 {
+            font-size: 1.6rem;
+            margin-bottom: 1rem;
+            color: #373735;
+        }
+
+        .foot {
+            text-align: center;
+            margin-top: 3rem;
+            color: #6c757d;
+        }
+
+        @media (max-width: 768px) {
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-tabs {
+                flex-wrap: wrap;
+                padding: 0.5rem;
+            }
+
+            .nav-tabs li {
+                margin: 0.3rem;
+            }
+
+            header h1 {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="body1">
+        <header>
+            <div class="navbar">
+                <div class="logo"><a href="#">Witzard Foodiemyst</a></div>
+                <ul class="links">
+                    <li><a href="index.html"><i class="fa-solid fa-house"></i>Home</a></li>
+                    <li><a href="countryNew.html"><i class="fa-solid fa-bowl-rice"></i></i>Country Foods</a></li>
+                    <li><a href="reviewmainpage (1).html"><i class="fa-solid fa-receipt"></i>Review</a></li>
+                    <li><a href="repro.html"><i class="fa-solid fa-address-card"></i></i>About Us</a></li>
+                </ul>
+                <div class="toggle-btn">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+            </div>
+            <div class="dropdown-menu">
+                <li><a href="index.html"><i class="fa-solid fa-house"></i>Home</a></li>
+                <li><a href="countryNew.html"><i class="fa-solid fa-bowl-rice"></i></i>Country Foods</a></li>
+                <li><a href="reviewmainpage (1).html"><i class="fa-solid fa-receipt"></i>Review</a></li>
+                <li><a href="repro.html"><i class="fa-solid fa-address-card"></i></i>About Us</a></li>
+            </div>
+        </header>
+    </div>
+    <div class="head">
+        <div class="container">
+            <h1>Brunei Cuisine Explorer</h1>
+            <p>Discover the unique flavors, traditions, and culinary practices of Brunei</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <ul class="nav-tabs">
+            <li><a href="#cleanliness"><i class="fas fa-soap"></i> Cleanliness</a></li>
+            <li><a href="#healthiness"><i class="fas fa-heart"></i> Healthiness</a></li>
+            <li><a href="#preparation"><i class="fas fa-utensils"></i> Preparation</a></li>
+            <li><a href="#special"><i class="fas fa-star"></i> Specialties</a></li>
+        </ul>
+
+        <section id="cleanliness" class="section">
+            <h2 class="section-title"><i class="fas fa-soap"></i> Cleanliness 🍀</h2>
+            <div class="content-grid">
+                <div class="content-card">
+                    <h3>Halal Food Practices</h3>
+                    <p>Most food in Brunei is prepared cleanly, especially in restaurants and street stalls that follow
+                        Islamic dietary laws (halal). Since Brunei is an Islamic country, pork and alcohol are not
+                        served, making food preparation generally more controlled.</p>
+                </div>
+                <div class="content-card">
+                    <h3>Street Food Standards</h3>
+                    <p>Street food is popular at night markets and is usually fresh and cooked on the spot. Vendors
+                        maintain high cleanliness standards to meet halal requirements and customer expectations.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="healthiness" class="section">
+            <h2 class="section-title"><i class="fas fa-heart"></i> Healthiness 💪</h2>
+            <div class="content-grid">
+                <div class="content-card">
+                    <h3>Nutritious Components</h3>
+                    <ul class="icon-list">
+                        <li><i class="fas fa-check-circle"></i> Lots of rice, noodles, and fresh seafood (fish, prawns,
+                            squid)</li>
+                        <li><i class="fas fa-check-circle"></i> Coconut milk and herbs like lemongrass, turmeric, and
+                            ginger</li>
+                        <li><i class="fas fa-check-circle"></i> Vegetables like kangkong (water spinach), cucumber, and
+                            long beans</li>
+                    </ul>
+                </div>
+                <div class="content-card">
+                    <h3>Considerations</h3>
+                    <ul class="icon-list">
+                        <li><i class="fas fa-exclamation-circle"></i> Some foods are fried (like pisang goreng — fried
+                            bananas)</li>
+                        <li><i class="fas fa-exclamation-circle"></i> Coconut milk and oil can make curries rich and
+                            heavy if eaten often</li>
+                        <li><i class="fas fa-exclamation-circle"></i> Traditional festive foods can be high in fat and
+                            sugar</li>
+                    </ul>
+                </div>
+            </div>
+            <p style="margin-top: 1.5rem; font-style: italic; text-align: center;">Brunei cuisine is generally balanced
+                if eaten moderately, with many healthy options available.</p>
+        </section>
+
+        <section id="preparation" class="section">
+            <h2 class="section-title"><i class="fas fa-utensils"></i> Food Preparation 🍽️</h2>
+            <div class="content-grid">
+                <div class="content-card">
+                    <h3>Cooking Methods</h3>
+                    <ul class="icon-list">
+                        <li><i class="fas fa-fire"></i> Grilling (satay skewers, fish)</li>
+                        <li><i class="fas fa-stroopwafel"></i> Stir-frying noodles and vegetables</li>
+                        <li><i class="fas fa-clock"></i> Slow cooking curries and stews in coconut milk</li>
+                        <li><i class="fas fa-cloud"></i> Steaming (e.g., rice cakes like ketupat)</li>
+                    </ul>
+                </div>
+                <div class="content-card">
+                    <h3>Flavor Base</h3>
+                    <ul class="icon-list">
+                        <li><i class="fas fa-mortar-pestle"></i> Spices and fresh herbs</li>
+                        <li><i class="fas fa-leaf"></i> Coconut in various forms</li>
+                        <li><i class="fas fa-blender"></i> Soy sauce and fermented products</li>
+                        <li><i class="fas fa-fire-alt"></i> Sambal (chili paste) and belacan (fermented shrimp paste)
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="special" class="section">
+            <h2 class="section-title"><i class="fas fa-star"></i> Special About Brunei Food <span
+                    class="flag">🇧🇳</span></h2>
+
+            <div class="special-items">
+                <div class="special-item">
+                    <h3>Cultural Heritage</h3>
+                    <p>Brunei food is similar to Malaysian and Indonesian cuisine but with unique local twists that
+                        reflect its Malay heritage and international influences.</p>
+                </div>
+
+                <div class="special-item">
+                    <h3>Halal-Only Cuisine</h3>
+                    <p>All food follows Islamic dietary laws, which sets it apart from neighboring cuisines that may use
+                        pork.</p>
+                </div>
+
+                <div class="special-item">
+                    <h3>Signature Dishes</h3>
+                    <p><strong>Ambuyat</strong> → A sticky sago starch eaten with dipping sauces (unique to Brunei).</p>
+                    <p><strong>Nasi Katok</strong> → Simple but iconic dish: rice, fried chicken, and sambal.</p>
+                </div>
+            </div>
+
+            <div class="special-items">
+                <div class="special-item">
+                    <h3>Festive Foods</h3>
+                    <p>During Ramadan and Hari Raya, special sweets (kuih, cakes, coconut-based desserts) are prepared
+                        and shared, creating a sense of community and celebration.</p>
+                </div>
+
+                <div class="special-item">
+                    <h3>Ambuyat Experience</h3>
+                    <p>Ambuyat with cacah (sour-spicy sauces) is more than a meal—it's a cultural eating experience that
+                        represents Brunei's unique culinary identity.</p>
+                </div>
+            </div>
+
+            <div class="summary-box">
+                <h3>Brunei Cuisine Summary</h3>
+                <p>Brunei food is generally clean, halal, flavorful, and rooted in Malay traditions. It balances
+                    healthiness (lots of seafood and vegetables) with indulgence (rich coconut curries, fried snacks).
+                    Its special identity lies in Ambuyat and the strict halal food culture, making it a unique culinary
+                    destination in Southeast Asia.</p>
+            </div>
+        </section>
+    </div>
+
+    <div class="foot">
+        <div class="container">
+            <p>Explore the unique and delicious cuisine of Brunei! | © 2025 Brunei Cuisine Explorer</p>
+        </div>
+    </div>
+    <footer>
+        <div class="wave-container">
+            <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+                <defs>
+                    <path id="gentle-wave"
+                        d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+                </defs>
+                <g class="parallax">
+                    <use xlink:href="#gentle-wave" x="48" y="0" fill="#DF9881" />
+                    <use xlink:href="#gentle-wave" x="48" y="3" fill="#DF9881" />
+                    <use xlink:href="#gentle-wave" x="48" y="5" fill="#DF9881" />
+                    <use xlink:href="#gentle-wave" x="48" y="7" fill="#F6B38A" />
+                </g>
+            </svg>
+        </div>
+        <div class="footer-content">
+            <div class="footer-section">
+                <ul class="social-icon">
+                    <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+                    <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
+                    <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                </ul>
+                <ul class="menu">
+                    <li><a href="index.html"></i>Home</a></li>
+                    <li><a href="countryNew.html"></i>Country Foods</a></li>
+                    <li><a href="reviewmainpage (1).html"></i>Review</a></li>
+                    <li><a href="repro.html"></i>About Us</a></li>
+                </ul>
+                <p>Copyright ©2025 All rights reserved | We are Together <i class="fa fa-heart" style="color: red;"></i>
+                    by Bit-wizards</a></p>
+            </div>
+    </footer>
+</body>
+
+</html>

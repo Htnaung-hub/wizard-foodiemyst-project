@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Witzard Foodiemyst</title>
+    <link rel="icon" href="Images/favicon.ico">
+    <link rel="stylesheet" href="Sing.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+        integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="navi.css">
+
+</head>
+
+<body>
+    <div class="body1">
+        <header>
+            <div class="navbar">
+                <div class="logo"><a href="#">Witzard Foodiemyst</a></div>
+                <ul class="links">
+                    <li><a href="index.html"><i class="fa-solid fa-house"></i>Home</a></li>
+                    <li><a href="countryNew.html"><i class="fa-solid fa-bowl-rice"></i></i>Country
+                            Foods</a></li>
+                    <li><a href="reviewmainpage (1).html"><i class="fa-solid fa-receipt"></i>Review</a></li>
+                    <li><a href="repro.html"><i class="fa-solid fa-address-card"></i></i>About Us</a></li>
+                </ul>
+                <div class="toggle-btn">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+            </div>
+            <div class="dropdown-menu">
+                <li><a href="index.html"><i class="fa-solid fa-house"></i>Home</a></li>
+                <li><a href="countryNew.html"><i class="fa-solid fa-bowl-rice"></i></i>Country Foods</a>
+                </li>
+                <li><a href="reviewmainpage (1).html"><i class="fa-solid fa-receipt"></i>Review</a></li>
+                <li><a href="repro.html"><i class="fa-solid fa-address-card"></i></i>About Us</a></li>
+            </div>
+        </header>
+    </div>
+    <!-- nav section end -->
+
+
+    <div class="body">
+        <section class="heading">
+            <div class="head">
+                <h1 class="h1">SINGAPOREAN FOOD</h1>
+            </div>
+        </section>
+    </div>
+    <section class="picture">
+        <div class="gallery">
+            <span style="--i:1;">
+                <img src="https://redhousespice.com/wp-content/uploads/2017/09/easy-hainanese-chicken-rice-scaled.jpg"
+                    alt="Nasi Lemak" />
+            </span>
+            <span style="--i:2;">
+                <img src="https://www.chngkees.com.sg/image/catalog/project/recipes/Chilli%20Crab.jpg"
+                    alt="Nasi Lemak" />
+            </span>
+            <span style="--i:3;">
+                <img src="https://marleyspoon.com/media/recipes/243444/main_photos/large/easy_fragrant_chicken_laksa-2fc10102b33f75780ffc215ae6e74434.jpeg"
+                    alt="Nasi Lemak" />
+            </span>
+            <span style="--i:4;">
+                <img src="https://allthenoodles.com/wp-content/uploads/2024/11/char-kway-teow-plated-sq1.jpg"
+                    alt="Nasi Lemak" />
+            </span>
+            <span style="--i:5;">
+                <img src="https://themeatmen.sg/wp-content/uploads/2023/10/DSC09963-scaled.jpg.webp" alt="Nasi Lemak" />
+            </span>
+            <span style="--i:6;">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS55XinjI0KVLwXBCGKsXC_av2ANFj0jFcr_Q&s"
+                    alt="Nasi Lemak" />
+            </span>
+            <span style="--i:7;">
+                <img src="https://live.staticflickr.com/7340/8990384647_43f74581cd_b.jpg" alt="Nasi Lemak" />
+            </span>
+            <span style="--i:8;">
+                <img src="https://www.burn-blog.com/wp-content/uploads/2021/11/fish_head_curry.jpg" alt="Nasi Lemak" />
+            </span>
+        </div>
+    </section>
+    <div class="s-tytle">
+        <h1>Explore more by clicking on the cycle photo.</h1>
+    </div>
+
+    <div class="tabs">
+        <div class="tab-button active" onclick="openTab(event, '1')">
+            <div class="cycle">
+                <img src="https://redhousespice.com/wp-content/uploads/2017/09/easy-hainanese-chicken-rice-scaled.jpg"
+                    alt="Hainanese Chicken Rice">
+            </div>
+        </div>
+        <div class="tab-button" onclick="openTab(event, '2')">
+            <div class="cycle">
+                <img src="https://www.chngkees.com.sg/image/catalog/project/recipes/Chilli%20Crab.jpg" alt="Chili crab">
+            </div>
+        </div>
+        <div class="tab-button" onclick="openTab(event, '3')">
+            <div class="cycle">
+                <img src="https://marleyspoon.com/media/recipes/243444/main_photos/large/easy_fragrant_chicken_laksa-2fc10102b33f75780ffc215ae6e74434.jpeg"
+                    alt="laksa">
+            </div>
+        </div>
+        <div class="tab-button" onclick="openTab(event, '4')">
+            <div class="cycle">
+                <img src="https://allthenoodles.com/wp-content/uploads/2024/11/char-kway-teow-plated-sq1.jpg"
+                    alt="Char Kway Teow">
+            </div>
+        </div>
+        <div class="tab-button" onclick="openTab(event, '6')">
+            <div class="cycle">
+                <img src="https://themeatmen.sg/wp-content/uploads/2023/10/DSC09963-scaled.jpg.webp" alt="Bak Kut Teh">
+            </div>
+        </div>
+        <div class="tab-button" onclick="openTab(event, '7')">
+            <div class="cycle">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS55XinjI0KVLwXBCGKsXC_av2ANFj0jFcr_Q&s"
+                    alt="Kaya Toast">
+            </div>
+        </div>
+        <div class="tab-button" onclick="openTab(event, '8')">
+            <div class="cycle">
+                <img src="https://live.staticflickr.com/7340/8990384647_43f74581cd_b.jpg" alt="Roti Prata">
+            </div>
+        </div>
+        <div class="tab-button" onclick="openTab(event, '9')">
+            <div class="cycle">
+                <img src="https://www.burn-blog.com/wp-content/uploads/2021/11/fish_head_curry.jpg"
+                    alt="Fish Head Curry">
+            </div>
+        </div>
+        <div class="tab-button" onclick="openTab(event, '10')">
+            <div class="cycle">
+                <img src="https://www.ajinomotofoodbizpartner.com.my/wp-content/uploads/2023/11/Nasi-Lemak-mobile-02-jpg.webp"
+                    alt="Nasi Lemak">
+            </div>
+        </div>
+        <div class="tab-button" onclick="openTab(event, '11')">
+            <div class="cycle">
+                <img src="https://dimsumclub-sf.com/Dim%20Sum%20Club%20%E9%BB%9E%E5%BF%83%E8%96%88.webp" alt="Dim Sums">
+            </div>
+        </div>
+    </div>
+
+    <div id="1" class="tab-content active">
+        <h1 class="h"> Hainanese Chicken Rice </h1>
+        <p>Hainanese Chicken Rice is a classic dish that consists of incredibly tender poached chicken,
+            fragrant rice cooked in chicken broth, and an array of flavorful sauces.
+            The key to a great Hainanese Chicken Rice is using a whole chicken to create a rich, flavorful broth,
+            which is then used to cook the rice and make the sauces.</p>
+
+        <h2>Ingredients</h2>
+        <div class="ingre">
+            <ul>
+                <li> Chicken</li>
+                <li> Poaching Liquid</li>
+                <li> Ice Bath</li>
+                <li> Broth</li>
+                <li> Aromatics</li>
+                <li> Rice</li>
+                <li> Chili Sauce</li>
+                <li> Ginger-Scallion Oil</li>
+            </ul>
+        </div>
+        <h2>Recipes</h2>
+        <div class="ingre">
+            <ul>
+                <p>For Chicken</p>
+                <li>1 whole chicken (about 3–4 lbs / 1.5–2 kg) </li>
+                <li>1 tbsp salt (for exfoliating the skin)</li>
+                <li>5–6 slices of ginger</li>
+                <li>5 stalks of spring onion (green onion)</li>
+                <li>Water (enough to submerge the chicken)</li>
+                <li>Ice bath (a large bowl of ice water)</li>
+            </ul>
+        </div>
+        <div class="ingre">
+            <ul>
+                <p>For Rice</p>
+                <li>2 cups jasmine rice (rinsed and drained) </li>
+                <li>2–3 tbsp chicken fat or neutral oil</li>
+                <li>3 cloves garlic, minced</li>
+                <li>2–3 slices ginger</li>
+                <li>1/2 tsp salt</li>
+                <li>2.5 cups chicken poaching broth</li>
+            </ul>
+        </div>
+        <div class="ingre">
+            <ul>
+                <p> For Chili Sauce</p>
+                <li>5 fresh red chilies (adjust to taste)</li>
+                <li>2 cloves garlic </li>
+                <li>1-inch piece ginger</li>
+                <li>1 tbsp lime juice (or calamansi juice)</li>
+                <li>2 tbsp chicken broth</li>
+                <li>1 tsp sugar</li>
+                <li>Salt to taste</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="2" class="tab-content ">
+        <h1 class="h"> Chili Crab </h1>
+        <p>Chili Crab is one of Singapore's most iconic dishes — sweet, spicy, tangy, messy, and totally satisfying.
+            It features crab cooked in a rich tomato-chili sauce with egg swirled in at the end.</p>
+
+        <h2>Ingredients</h2>
+        <div class="ingre">
+            <ul>
+                <li>Crab</li>
+                <li>Chili Sauce</li>
+                <li>Liquid</li>
+                <li>Cornstarch Slurry</li>
+                <li>Eggs</li>
+            </ul>
+        </div>
+        <h2>Recipes</h2>
+        <div class="ingre">
+            <ul>
+                <p> For Crab</p>
+                <li>1.2–1.5 kg (2.5–3.3 lbs) mud crab (or Dungeness/blue swimmer crab), cleaned and chopped</li>
+                <li>2 tbsp oil (vegetable or peanut)</li>
+            </ul>
+        </div>
+        <div class="ingre">
+            <ul>
+                <p>For Chili Crab Sauce</p>
+                <li>2 tbsp oil </li>
+                <li>5 cloves garlic</li>
+                <li>5–6 red chilies (fresh or dried, adjust to heat preference)</li>
+                <li> 3 slices ginger</li>
+                <li>2 shallots (optional, for extra aroma)</li>
+                <li>3 tbsp tomato ketchup</li>
+                <li>2 tbsp chili sauce (e.g., Sriracha or sambal oelek)</li>
+                <li>1 tbsp fermented bean paste (taucheo or substitute with soy sauce)</li>
+                <li> 1 tbsp sugar</li>
+                <li>1 tsp rice vinegar or lime juice</li>
+                <li>1 cup chicken stock or water</li>
+                <li>1 tbsp cornstarch mixed with 2 tbsp water (for slurry)</li>
+                <li> 1 beaten egg</li>
+                <li>Salt to taste</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="3" class="tab-content ">
+        <h1 class="h"> Laksa </h1>
+        <p>Laksa is a rich, spicy noodle soup that's a staple in Malaysia and Singapore.
+            There are several types (e.g. Curry Laksa, Assam Laksa, Sarawak Laksa),
+            but the most iconic and widely loved version is Curry Laksa — a coconut milk-based noodle soup with noodles,
+            seafood, and aromatic spices.</p>
+        <h2>Ingredients</h2>
+        <div class="ingre">
+            <ul>
+                <li>Laksa Paste(Rempah)</li>
+                <li>Soup Base</li>
+                <li>Noodles</li>
+                <li>Protein and Toppings</li>
+
+            </ul>
+        </div>
+        <h2>Recipes</h2>
+        <div class="ingre">
+            <ul>
+                <p>Curry Laksa (Nyonya Laksa / Laksa Lemak)</p>
+                <li>5 dried red chilies (soaked to soften) </li>
+                <li>5 fresh red chilies (adjust to taste)</li>
+                <li>3 cloves garlic</li>
+                <li>3 shallots</li>
+                <li>2 stalks lemongrass (white part only, sliced)</li>
+                <li>1-inch galangal (or ginger if unavailable)</li>
+                <li> 1-inch turmeric root (or 1 tsp turmeric powder)</li>
+                <li>5 candlenuts (or substitute with macadamia nuts)</li>
+                <li>1 tsp shrimp paste (belacan), toasted (optional but authentic)</li>
+            </ul>
+        </div>
+        <div class="ingre">
+            <ul>
+                <p>Soup Base</p>
+                <li> 2 tbsp oil</li>
+                <li> 3–4 tbsp laksa paste (homemade or store-bought)</li>
+                <li>400 ml (1 can) coconut milk</li>
+                <li>1 L (4 cups) chicken or seafood stock</li>
+                <li>1–2 tsp sugar</li>
+                <li>Salt to taste</li>
+                <li> 1 tbsp fish sauce (optional)</li>
+            </ul>
+        </div>
+        <div class="ingre">
+            <ul>
+                <p>Toppings / Protein</p>
+                <li> 200 g (7 oz) shrimp or prawns (peeled and deveined)</li>
+                <li> 200 g fish cakes (sliced)</li>
+                <li> 2 boiled eggs (halved)</li>
+                <li> Tofu puffs (tau pok), halved</li>
+                <li> Bean sprouts</li>
+                <li> Optional: shredded chicken, cockles, squid</li>
+            </ul>
+
+        </div>
+        <div class="ingre">
+            <ul>
+                <p>Noodles</p>
+                <li> 300 g rice vermicelli (bee hoon) or laksa noodles</li>
+                <li> Blanched until soft and drained</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="4" class="tab-content ">
+        <h1 class="h"> Char Kway Teow </h1>
+        <p>Char Kway Teow is a popular stir-fried noodle dish from Southeast Asia, especially in Malaysia and Singapore.
+            It’s made with flat rice noodles (kway teow), stir-fried in a wok with prawns, Chinese sausage, eggs, bean
+            sprouts,
+            and often a rich, smoky flavor thanks to high-heat stir-frying.</p>
+
+        <h2>Ingredients</h2>
+        <div class="ingre">
+            <ul>
+                <li>Fresh Flat Rice Noodles (Kway Teow)</li>
+                <li>Shrimp</li>
+                <li>Chinese Sausage(Lap Cheong)</li>
+                <li>Cockles(Hum)</li>
+                <li>Fish Cakes</li>
+                <li>Garlic</li>
+                <li>Chili Paste</li>
+                <li>Eggs</li>
+                <li>Bean Sprouts</li>
+                <li>Garlic Chives(Koo Chye)</li>
+            </ul>
+        </div>
+        <h2>Recipes</h2>
+        <div class="ingre">
+            <ul>
+                <p>For Stir-Fry</p>
+                <li>300 g (10 oz) fresh flat rice noodles (kway teow) – you can use dried ones, but fresh is best</li>
+                <li>200 g (7 oz) prawns, peeled and deveined</li>
+                <li>2 Chinese sausages (lap Cheong), sliced thinly</li>
+                <li>2 eggs</li>
+                <li>1 cup bean sprouts, rinsed</li>
+                <li>1/4 cup chives or spring onions (cut into 2-inch pieces)</li>
+                <li>1 tbsp fried shallots (optional for garnish)</li>
+                <li>2 tbsp begetable oil (or peanut oil)</li>
+            </ul>
+        </div>
+        <div class="ingre">
+            <ul>
+                <p>For Sauce</p>
+                <li>2 tbsp light soy sauce</li>
+                <li>1 tbso dark soy sauce</li>
+                <li>1 tso oyster sauce</li>
+                <li>1/2 tsp sugar</li>
+                <li>1 tbsp fish sauce</li>
+                <li>1 tsp chili paste (optional, for heat)</li>
+            </ul>
+        </div>
+        <div class="ingre">
+            <ul>
+                <p>Garnishes</p>
+                <li>Lime wedges (to squeeze on top)</li>
+                <li>Fresh coriander (optional)</li>
+            </ul>
+        </div>
+    </div>
+
+
+    <div id="6" class="tab-content ">
+        <h1 class="h"> Bak Kut Teh</h1>
+        <p>Bak Kut Teh (肉骨茶) is a flavorful Chinese herbal pork rib soup, popular in Malaysia and Singapore.
+            The name means “meat bone tea”, though there's no actual tea in the soup—it's traditionally served with
+            Chinese tea
+            to cut through the richness of the pork.</p>
+
+        <h2>Ingredients</h2>
+        <div class="ingre">
+            <ul>
+                <li>Pork</li>
+                <li>Herbs & Spicess</li>
+                <li>Aromatics</li>
+                <li>Sauce</li>
+                <li>Tofu puffs(tau pok)</li>
+                <li>Mushrooms</li>
+                <li>Blanched leafy greens</li>
+                <li>fried dough sticks</li>
+            </ul>
+        </div>
+        <h2>Recipes</h2>
+        <div class="ingre">
+            <ul>
+                <li>1 kg (about 2.2 lbs) pork ribs and/or pork belly, cut into smaller pieces</li>
+                <li>2 whole garlic bulbs, unpeeled</li>
+                <li>2-3 tbsp dark soy sauce</li>
+                <li>1 tbsp light soy sauce</li>
+                <li>1 tsp salt (or to taste)</li>
+                <li>A pinch of sugar (optional, to balance the flavor)</li>
+                <li>Dried shiitake mushrooms (soaked and stems removed)</li>
+                <li>Tofu puffs</li>
+                <li>Enki mushrooms</li>
+                <li>Chinese lettuce or choy sum</li>
+                <li>Fried dough sticks (youtiao)</li>
+                <li>Chopped chili padi and more dark soy sauce for a dipping sauce</li>
+            </ul>
+        </div>
+    </div>
+    <div id="7" class="tab-content ">
+        <h1 class="h">Kaya Toast </h1>
+        <p>Kaya Toast is a classic breakfast or afternoon snack in Singapore and Malaysia.
+            It's a simple yet incredibly satisfying dish consisting of toast spread with a sweet coconut and egg jam
+            (kaya),
+            and thick slices of cold butter. It's often served with soft-boiled eggs and a cup of strong coffee or tea.
+        </p>
+
+        <h2>Ingredients</h2>
+        <div class="ingre">
+            <ul>
+                <li>Sugar</li>
+                <li>Full-fat coconut cream</li>
+                <li>Pandan Leaves</li>
+                <li>Salt</li>
+                <li>Sandwich bread</li>
+                <li>Butter</li>
+                <li>Kaya jam</li>
+            </ul>
+        </div>
+        <h2>Recipes</h2>
+        <div class="ingre">
+            <ul>
+                <li>Eggs – 3 large </li>
+                <li>Sugar – 150g (¾ cup)</li>
+                <li>Coconut milk – 200ml (¾ cup) (preferably fresh or from a good-quality can)</li>
+                <li>Pandan leaves – 2–3 leaves, tied into a knot (optional, for fragrance)</li>
+                <li>White bread or Hainanese toast bread – 4 slices</li>
+                <li>Cold butter – sliced thinly</li>
+                <li>1 tsp palm sugar (or brown sugar)</li>
+            </ul>
+        </div>
+    </div>
+    <div id="8" class="tab-content ">
+        <h1 class="h"> Roti Prata </h1>
+        <p>Roti Prata (also called Roti Canai in Malaysia) is a flaky, crispy, and chewy Indian-inspired flatbread
+            popular in Singapore.
+            It’s usually served with curry (fish, chicken, or dhal), or even enjoyed with sugar or condensed milk for a
+            sweet twist.</p>
+        <h2>Ingredients</h2>
+        <div class="ingre">
+            <ul>
+                <li>Flour</li>
+                <li>Warm water</li>
+                <li>Salt </li>
+                <li>Sugar</li>
+                <li>Butter or Oil</li>
+                <li>Egg</li>
+            </ul>
+        </div>
+        <h2>Recipes</h2>
+        <div class="ingre">
+            <ul>
+                <li>All-purpose flour – 2 cups (250g)</li>
+                <li>Salt – ½ tsp</li>
+                <li>Sugar – 1 tsp</li>
+                <li>Water – ¾ cup (180ml) (adjust as needed)</li>
+                <li>Ghee or melted butter – 2 tbsp (plus more for cooking)</li>
+                <li>Cooking oil – for soaking and frying</li>
+            </ul>
+        </div>
+    </div>
+    <div id="9" class="tab-content ">
+        <h1 class="h"> Fish Head Curry </h1>
+        <p>Fish head curry is immensely popular in Malaysia and Singapore.
+            With South Indian origins, it uses a combination of various spices and ingredients
+            to create its well accepted delectable taste.</p>
+        <h2>Ingredients</h2>
+        <div class="ingre">
+            <ul>
+                <li>Fish Head</li>
+                <li>Tamarind paste</li>
+                <li>Oil</li>
+                <li>Water or fish stock</li>
+                <li>Coconut Milk</li>
+                <li>Eggplants</li>
+                <li>Okra</li>
+                <li>Tamatoes</li>
+                <li>Chili</li>
+                <li>Garlic</li>
+                <li>Shallot</li>
+                <li>Ginger</li>
+                <li>Salt and Sugar</li>
+                <li>Lemongrass</li>
+                <li>Turmeric Powder</li>
+                <li>Coriander Powder</li>
+                <li>Chili Powder</li>
+                <li>Fenugreek seeds</li>
+            </ul>
+        </div>
+        <h2>Recipes</h2>
+        <div class="ingre">
+            <ul>
+                <p>Main</p>
+                <li> 1 medium fish head (snapper is common), cleaned and halved</li>
+                <li> 2 tablespoons tamarind paste (mixed with 1 cup water, strained)</li>
+                <li> 2 tablespoons oil</li>
+                <li> 1 cup coconut milk (optional, for creaminess)</li>
+                <li> 2–3 cups water or fish stock</li>
+                <li> Salt and sugar to taste</li>
+                <li> 1–2 eggplants, cut into chunks</li>
+                <li> 1 cup okra, whole or halved</li>
+                <li> 2 tomatoes, quartered</li>
+                <li> Optional: long beans or cabbage</li>
+            </ul>
+        </div>
+        <div class="ingre">
+            <ul>
+                <p>Spices</p>
+                <li> 6–8 dried red chilies (soaked in hot water)</li>
+                <li> 4 cloves garlic</li>
+                <li> 4 shallots</li>
+                <li> 1-inch piece ginger</li>
+                <li> 1 stalk lemongrass (white part only)</li>
+                <li> 1 teaspoon turmeric powder</li>
+                <li> 1 tablespoon coriander powder</li>
+                <li> 1 tablespoon chili powder (adjust to taste)</li>
+                <li> Optional: 1 teaspoon fenugreek seeds or ½ tsp mustard seeds</li>
+            </ul>
+        </div>
+    </div>
+    <div id="10" class="tab-content ">
+        <h1 class="h"> Nasi Lemak </h1>
+        <p>Nasi Lemak is one of Malaysia’s most beloved national dishes, also popular in Singapore and parts of
+            Indonesia.
+            It’s a fragrant rice dish cooked in coconut milk and served with various sides.</p>
+        <h2>Ingredients</h2>
+        <div class="ingre">
+            <ul>
+                <li>Jasmine rice</li>
+                <li>Coconut milk</li>
+                <li>Water</li>
+                <li>Pandan Leaves</li>
+                <li>Salt</li>
+                <li>Chili</li>
+                <li>Shallot</li>
+                <li>Garlic</li>
+                <li>Tamarind Paste</li>
+                <li>Sugar</li>
+                <li>Oil</li>
+                <li>Eggs</li>
+                <li>Fried Peanuts</li>
+                <li>Fried Anchovies</li>
+                <li>Cucumber</li>
+            </ul>
+        </div>
+        <h2>Recipes</h2>
+        <div class="ingre">
+            <ul>
+                <li>2 cups jasmine rice (or long grain rice)</li>
+                <li>1½ cups coconut milk</li>
+                <li>1½ cups water</li>
+                <li>1–2 pandan leaves, knotted (optional but traditional)</li>
+                <li>1 tsp salt</li>
+                <li>10 dried red chilies (soaked in hot water and deseeded)</li>
+                <li>4 shallots</li>
+                <li>2 cloves garlic</li>
+                <li>1 tsp belacan (fermented shrimp paste, optional)</li>
+                <li>1 tbsp tamarind paste (mixed with ¼ cup water)</li>
+                <li>1 tbsp sugar (palm sugar preferred)</li>
+                <li>Salt to taste</li>
+                <li>2 tbsp oil</li>
+                <li>2 hard-boiled eggs, halved</li>
+                <li>½ cup fried peanuts</li>
+                <li>½ cup fried anchovies (ikan bilis)</li>
+                <li>1 cucumber, sliced</li>
+                <li>Optional: fried chicken, rendang, sambal squid, or sambal prawns</li>
+            </ul>
+        </div>
+    </div>
+    <div id="11" class="tab-content ">
+        <h1 class="h"> Dim Sums </h1>
+        <p>Dim sum is most popular in Singapore and it is a traditional Chinese meal comprised of small plates
+            of dumplings and other snack dishes, traditionally enjoyed with tea.</p>
+        <h2>Ingredients</h2>
+        <div class="ingre">
+            <ul>
+                <li>Pork</li>
+                <li>Shrimp</li>
+                <li>Mushrooms</li>
+                <li>Soy sauce</li>
+                <li>Oyster sauce</li>
+                <li>Sesame oil</li>
+                <li>Sugar</li>
+                <li>Salt</li>
+                <li>Cornstarch</li>
+                <li>Ginger</li>
+                <li>Onion</li>
+            </ul>
+        </div>
+        <h2>Recipes</h2>
+        <div class="ingre">
+            <ul>
+                <li>250g (½ lb) ground pork (with some fat)</li>
+                <li>100g (3.5 oz) raw shrimp, peeled, chopped</li>
+                <li>2 shiitake mushrooms, soaked and minced (optional)</li>
+                <li>1 tbsp soy sauce</li>
+                <li>1 tsp oyster sauce</li>
+                <li>1 tsp sesame oil</li>
+                <li>½ tsp sugar</li>
+                <li>½ tsp salt</li>
+                <li>1 tbsp cornstarch</li>
+                <li>1 tsp grated ginger</li>
+                <li>1 stalk spring onion, finely chopped</li>
+            </ul>
+        </div>
+    </div>
+    <footer>
+        <div class="wave-container">
+            <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+                <defs>
+                    <path id="gentle-wave"
+                        d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+                </defs>
+                <g class="parallax">
+                    <use xlink:href="#gentle-wave" x="48" y="0" fill="#DF9881" />
+                    <use xlink:href="#gentle-wave" x="48" y="3" fill="#DF9881" />
+                    <use xlink:href="#gentle-wave" x="48" y="5" fill="#DF9881" />
+                    <use xlink:href="#gentle-wave" x="48" y="7" fill="#F6B38A" />
+                </g>
+            </svg>
+        </div>
+        <div class="footer-content">
+            <div class="footer-section">
+                <ul class="social-icon">
+                    <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+                    <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
+                    <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                </ul>
+                <ul class="menu">
+                    <li><a href="index.html"></i>Home</a></li>
+                    <li><a href="countryNew.html"></i>Country Foods</a></li>
+                    <li><a href="reviewmainpage (1).html"></i>Review</a></li>
+                    <li><a href="repro.html"></i>About Us</a></li>
+                </ul>
+                <p>Copyright ©2025 All rights reserved | We are Together <i class="fa fa-heart" style="color: red;"></i>
+                    by Bit-wizards</a></p>
+            </div>
+    </footer>
+    </div>
+    <script>
+        function openTab(evt, tabName) {
+            var i, tabcontent, tabbuttons;
+
+            tabcontent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].className = tabcontent[i].className.replace(" active", "");
+            }
+
+            tabbuttons = document.getElementsByClassName("tab-button");
+            for (i = 0; i < tabbuttons.length; i++) {
+                tabbuttons[i].className = tabbuttons[i].className.replace(" active", "");
+            }
+
+            document.getElementById(tabName).className += " active";
+            evt.currentTarget.className += " active";
+        }
+    </script>
+    <script>
+        const toggleBtn = document.querySelector('.toggle-btn')
+        const toggleBtnIcon = document.querySelector('.toggle-btn i')
+        const dropDownMenu = document.querySelector('.dropdown-menu')
+
+        toggleBtn.onclick = function () {
+            dropDownMenu.classList.toggle('open')
+            const isOpen = dropDownMenu.classList.contains('open')
+
+            toggleBtnIcon.classList = isOpen
+                ? 'fa-solid fa-xmark'
+                : 'fa-solid fa-bars'
+        }
+    </script>
+
+</body>
+
+</html>

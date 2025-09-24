@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Witzard Foodiemyst</title>
+    <link rel="icon" href="Images/favicon.ico">
+    <link rel="stylesheet" href="navi.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        :root {
+            --primary: #e74c3c;
+            --secondary: #f39c12;
+            --accent: #27ae60;
+            --dark: #2c3e50;
+            --light: #f8f9fa;
+            --card-bg: rgba(255, 255, 255, 0.92);
+        }
+
+        body {
+            background: linear-gradient(135deg, #F38F43 0%, #F38F43 100%);
+            color: #333;
+            line-height: 1.6;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 400px;
+            background: linear-gradient(to right, #e74c3c, #f39c12);
+            z-index: -1;
+            border-radius: 0 0 50% 50%/0 0 100% 100%;
+            transform: scaleX(1.5);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .head {
+            text-align: center;
+            padding: 60px 20px 40px;
+            margin-bottom: 30px;
+            color: white;
+            position: relative;
+        }
+
+        .logo {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: white;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+            font-weight: 800;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .subtitle {
+            font-size: 1.5rem;
+            max-width: 700px;
+            margin: 0 auto 25px;
+            opacity: 0.95;
+            font-weight: 300;
+            margin-bottom: 7%;
+        }
+
+        .nav-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin: 30px 0;
+            flex-wrap: wrap;
+        }
+
+        .tab-btn {
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            padding: 12px 25px;
+            border-radius: 30px;
+            color: white;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(5px);
+            font-weight: 500;
+        }
+
+        .tab-btn:hover,
+        .tab-btn.active {
+            background: white;
+            color: var(--primary);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card-header {
+            padding: 25px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            color: white;
+        }
+
+        .card-header i {
+            font-size: 2rem;
+        }
+
+        .card-content {
+            padding: 25px;
+        }
+
+        .card-content ul {
+            padding-left: 20px;
+            margin: 15px 0;
+        }
+
+        .card-content li {
+            margin-bottom: 12px;
+            position: relative;
+            padding-left: 25px;
+        }
+
+        .card-content li::before {
+            content: "•";
+            color: var(--primary);
+            font-size: 1.5rem;
+            position: absolute;
+            left: 0;
+            top: -5px;
+        }
+
+        .examples {
+            background: rgba(231, 76, 60, 0.05);
+            border-left: 4px solid var(--primary);
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 0 10px 10px 0;
+        }
+
+        .examples-title {
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--dark);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 30px;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .flavor-card {
+            background: var(--card-bg);
+            border-radius: 15px;
+            padding: 25px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .flavor-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .flavor-card i {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+            background: rgba(231, 76, 60, 0.1);
+            width: 80px;
+            height: 80px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+        }
+
+        .dish-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 30px 0;
+            background: var(--card-bg);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .dish-table th {
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            color: white;
+            padding: 15px 20px;
+            text-align: left;
+        }
+
+        .dish-table td {
+            padding: 12px 20px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .dish-table tr:nth-child(even) {
+            background: rgba(231, 76, 60, 0.03);
+        }
+
+        .dish-table tr:hover {
+            background: rgba(243, 156, 18, 0.05);
+        }
+
+        .summary {
+            background: linear-gradient(to right, #2c3e50, #34495e);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin: 40px 0;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .tip-box {
+            background: rgba(39, 174, 96, 0.1);
+            border-left: 4px solid var(--accent);
+            padding: 20px;
+            border-radius: 0 10px 10px 0;
+            margin: 25px 0;
+        }
+
+        .food-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 40px 0;
+        }
+
+        .gallery-item {
+            border-radius: 15px;
+            overflow: hidden;
+            height: 200px;
+            box-shadow: 0 8px 20px rgba(164, 29, 85, 0.1);
+            position: relative;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-item .caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 10px;
+            font-size: 0.9rem;
+            text-align: center;
+        }
+
+      
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .social-icons a {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .social-icons a:hover {
+            background: var(--secondary);
+            transform: translateY(-5px);
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            .grid-2,
+            .grid-3 {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-tabs {
+                flex-direction: column;
+            }
+        }
+
+        h3 {
+            margin-bottom: 2%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="body1">
+            <header>
+                <div class="navbar">
+                    <div class="logo"><a href="#">Witzard Foodiemyst</a></div>
+                    <ul class="links">
+                        <li><a href="index.html"><i class="fa-solid fa-house"></i>Home</a></li>
+                        <li><a href="countryNew.html"><i class="fa-solid fa-bowl-rice"></i></i>Country Foods</a></li>
+                        <li><a href="reviewmainpage (1).html"><i class="fa-solid fa-receipt"></i>Review</a></li>
+                        <li><a href="repro.html"><i class="fa-solid fa-address-card"></i></i>About Us</a></li>
+                    </ul>
+                    <div class="toggle-btn">
+                        <i class="fa-solid fa-bars"></i>
+                    </div>
+                </div>
+                <div class="dropdown-menu">
+                    <li><a href="index.html"><i class="fa-solid fa-house"></i>Home</a></li>
+                    <li><a href="countryNew.html"><i class="fa-solid fa-bowl-rice"></i></i>Country Foods</a></li>
+                    <li><a href="reviewmainpage (1).html"><i class="fa-solid fa-receipt"></i>Review</a></li>
+                    <li><a href="repro.html"><i class="fa-solid fa-address-card"></i></i>About Us</a></li>
+                </div>
+            </header>
+        </div>
+
+        <div class="head">
+            <div class="logo">
+                <i class="fas fa-utensils"></i>
+            </div>
+            <h1>Laos Cuisine Guide</h1>
+            <p class="subtitle">Discover the best traditional dishes in Laos</p>
+        </div>
+
+
+        <div class="nav-tabs">
+            <button class="tab-btn active" data-tab="dietary">Dietary Guide</button>
+            <button class="tab-btn" data-tab="flavors">Flavors</button>
+            <button class="tab-btn" data-tab="health">Health & Safety</button>
+            <button class="tab-btn" data-tab="gallery">Food Gallery</button>
+        </div>
+
+        <div id="dietary" class="tab-content active">
+            <div class="grid-2">
+                <div class="card">
+                    <div class="card-header">
+                        <i class="fas fa-seedling"></i>
+                        <h3>Core Ingredients in Lao Food</h3>
+                    </div>
+                    <div class="card-content">
+                        <p>Lao cuisine emphasizes fresh, local ingredients that reflect the country's rivers, forests,
+                            and rice fields.</p>
+                        <ul>
+                            <li>Steamed sticky rice (khao niao) – the staple of every meal</li>
+                            <li>Fresh vegetables and fruits like lemongrass, mint, and mango</li>
+                            <li>Bamboo shoots – often fermented for tangy flavor</li>
+                            <li>Yanang leaf – used for thickening soups and adding bitterness</li>
+                        </ul>
+                        <p><strong>Tip:</strong> Pair these with fermented fish sauce (padaek) for authentic umami.</p>
+                        <div class="examples">
+                            <div class="examples-title"><i class="fas fa-utensils"></i> Popular Lao Dishes:</div>
+                            <p>Sticky rice, Laab (minced meat salad), Tam Mak Hung (green papaya salad, similar to
+                                green-mango variations), Fermented rice dishes, Crispy coconut rice, Khao lam
+                                (bamboo-stuffed rice).</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <i class="fas fa-home"></i>
+                        <h3>Indigenous Staples</h3>
+                    </div>
+                    <div class="card-content">
+                        <p>Lao food is deeply tied to indigenous traditions, with communal eating and hand-held rice as
+                            cultural cornerstones.</p>
+                        <div class="examples">
+                            <div class="examples-title"><i class="fas fa-utensils"></i> Key Example:</div>
+                            <p>The core of every Lao meal is sticky rice (khao niao), eaten by hand from a cone-shaped
+                                basket. It's shared family-style and symbolizes unity in Lao culture.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <i class="fas fa-mosque"></i>
+                        <h3>For Muslims (Halal Adaptations)</h3>
+                    </div>
+                    <div class="card-content">
+                        <p>Laos has a small Muslim community; many dishes can be adapted by avoiding pork and alcohol.
+                        </p>
+                        <div class="examples">
+                            <div class="examples-title"><i class="fas fa-utensils"></i> Examples:</div>
+                            <p>Mok pa (steamed fish in banana leaves) or tam mak hung (papaya salad) made with beef or
+                                fish instead of pork. Look for halal-certified street vendors in Vientiane.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <i class="fas fa-yin-yang"></i>
+                        <h3>For Buddhists (Vegetarian Options)</h3>
+                    </div>
+                    <div class="card-content">
+                        <p>Buddhism influences Lao cuisine with merit-making through offerings; vegetarian dishes are
+                            common during festivals.</p>
+                        <div class="examples">
+                            <div class="examples-title"><i class="fas fa-utensils"></i> Tip:</div>
+                            <p>A staple offering to monks and ancestors is sticky rice (khao niao), often paired with
+                                vegetarian laab (tofu or mushroom salad) to earn merit and show respect.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="summary">
+                <h3><i class="fas fa-clipboard-check"></i> Dietary Summary</h3>
+                <p>Lao cuisine is gluten-free by nature (rice-based) and adaptable for various diets. Focus on fresh,
+                    seasonal ingredients for an authentic experience. Always confirm preparations for religious needs.
+                </p>
+            </div>
+        </div>
+        <div id="flavors" class="tab-content">
+            <h2 style="text-align: center; margin: 30px 0; color: var(--dark);">
+                The Bold Flavors of Lao Cuisine
+            </h2>
+
+            <div class="grid-3">
+                <div class="flavor-card">
+                    <i class="fas fa-pepper-hot"></i>
+                    <h3>Spicy</h3>
+                    <p>Fresh chilies, galangal, and lime juice create intense heat, balanced by cooling herbs
+                        like mint and basil.</p>
+                </div>
+
+                <div class="flavor-card">
+                    <i class="fas fa-drumstick-bite"></i>
+                    <h3>Savory & Umami</h3>
+                    <p>Fermented fish sauce (padaek) and roasted rice powder add deep, salty richness to meats,
+                        fish, and vegetables.</p>
+                </div>
+
+                <div class="flavor-card">
+                    <i class="fas fa-candy-cane"></i>
+                    <h3>Sweet and Creamy</h3>
+                    <p>Rice flour, coconut milk, and palm sugar form indulgent desserts and sticky rice treats
+                        with tropical sweetness.</p>
+                </div>
+
+                <div class="flavor-card">
+                    <i class="fas fa-lemon"></i>
+                    <h3>Tangy & Sour</h3>
+                    <p>Lime, tamarind, and unripe fruits like green mango provide bright acidity that cuts
+                        through richer elements.</p>
+                </div>
+
+                <div class="flavor-card">
+                    <i class="fas fa-wind"></i>
+                    <h3>Aromatic</h3>
+                    <p>Lemongrass, kaffir lime leaves, and cilantro infuse dishes with fresh, herbaceous scents
+                        reminiscent of Southeast Asian gardens.</p>
+                </div>
+
+                <div class="flavor-card">
+                    <i class="fas fa-fire"></i>
+                    <h3>Bitter & Earthy</h3>
+                    <p>Yanang leaves, fermented bamboo shoots, and wild greens add subtle bitterness for
+                        complex, balanced profiles.</p>
+                </div>
+            </div>
+
+            <h3 style="text-align: center; margin: 40px 0 20px; color: var(--dark);">Popular Lao Dishes and
+                Their Flavors</h3>
+            <table class="dish-table">
+                <thead>
+                    <tr>
+                        <th>Dish</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Sticky Rice (Khao Niao)</strong></td>
+                        <td>Laos is known as the "land of sticky rice," eaten with hands from shared cone-shaped
+                            baskets. It's mildly sweet and pairs with everything.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Laab (Larb)</strong></td>
+                        <td>A spicy minced meat or fish salad with fish sauce, lime, roasted rice, and fresh
+                            herbs – the national dish, blending savory, sour, and spicy.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Green Mango Salad (Tam Mak Hung Variation)</strong></td>
+                        <td>Shredded unripe mango tossed with onions, red bell peppers, cilantro, chilies, and
+                            fish sauce for a tangy, crunchy bite.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Fermented Rice (e.g., Naem or Som Moo)</strong></td>
+                        <td>Fermented pork or rice sausage with herbs, coconut, peanuts, and garlic – sour and
+                            umami-packed as a snack or side.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Crispy Coconut Rice (Naem Khao)</strong></td>
+                        <td>Crispy fried rice balls with coconut milk, ginger, fenugreek seeds, lemongrass, and
+                            pandan leaves – savory and aromatic crunch.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Khao Lam</strong></td>
+                        <td>Sweet sticky rice mixed with coconut milk, sugar, and black beans, stuffed in bamboo
+                            tubes and grilled – creamy and subtly smoky.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div id="health" class="tab-content">
+            <div class="grid-2">
+                <div class="card">
+                    <div class="card-header">
+                        <i class="fas fa-heart"></i>
+                        <h3>Healthy Aspects</h3>
+                    </div>
+                    <div class="card-content">
+                        <ul>
+                            <li><strong>Mok Pa:</strong> Steamed fish with vegetables and herbs in banana leaves
+                                – low-fat, nutrient-rich, and full of omega-3s.</li>
+                            <li><strong>Soups and Stews (Kaeng or Or Lam):</strong> Aromatic broths packed with
+                                fresh greens, mushrooms, and eggplant for fiber and vitamins.</li>
+                            <li><strong>Salads (Laap and Koi):</strong> Minced meat or fish salads with fresh
+                                herbs, lime, and veggies – high in protein and antioxidants, low in calories.
+                            </li>
+                            <li><strong>Joup Pak (Vegetable Soup):</strong> Simple steamed greens like
+                                watercress or morning glory – a traditional, detoxifying dish loaded with iron
+                                and vitamins.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        <h3>Health Considerations</h3>
+                    </div>
+                    <div class="card-content">
+                        <ul>
+                            <li><strong>Deep-Fried Foods:</strong> Items like fried spring rolls are delicious
+                                but calorie-dense; opt for steamed versions and ensure they're served piping hot
+                                to avoid bacteria.</li>
+                            <li><strong>Raw Produce:</strong> Fresh fruits and vegetables are abundant but may
+                                carry contaminants; always wash thoroughly or peel where possible.</li>
+                            <li><strong>Spiciness Levels:</strong> Chilies aid digestion but can upset sensitive
+                                stomachs; request milder preparations if needed, and confirm hygienic cooking.
+                            </li>
+                            <li><strong>Food Contamination Risks:</strong> Street food and rural eateries may
+                                pose issues like parasites; choose busy stalls with high turnover for freshness.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <i class="fas fa-check-circle"></i>
+                        <h3>Clean & Safe Options</h3>
+                    </div>
+                    <div class="card-content">
+                        <ul>
+                            <li>Well-cooked meats, fish, and rice to kill potential pathogens.</li>
+                            <li>Drink only boiled, filtered, or bottled water (avoid ice in rural areas).</li>
+                            <li>Be wary of raw or undercooked items like laab; request cooked variations.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <i class="fas fa-info-circle"></i>
+                        <h3>Be Cautious With</h3>
+                    </div>
+                    <div class="card-content">
+                        <ul>
+                            <li>Avoid raw or undercooked meats/fish to prevent foodborne illnesses like
+                                hepatitis A.</li>
+                            <li>Drink bottled or boiled water; steer clear of tap water and untreated sources.
+                            </li>
+                            <li>Wash fruits and vegetables with clean water or eat cooked versions.</li>
+                            <li>Choose tourist-friendly or reputable establishments with good hygiene ratings.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tip-box">
+                <h3><i class="fas fa-lightbulb"></i> Tips for Healthy & Safe Eating in Laos:</h3>
+                <ul>
+                    <li><strong>Embrace Sticky Rice:</strong> It's gluten-free, filling, and a balanced carb
+                        source – eat it as the base of meals.</li>
+                    <li><strong>Ask for Less Spicy:</strong> Customize heat levels to suit your tolerance while
+                        enjoying bold flavors.</li>
+                    <li><strong>Try Street Food Wisely:</strong> Go for vendors with fresh ingredients and quick
+                        turnover, especially grilled meats or salads.</li>
+                    <li><strong>Stay Safe with Water:</strong> Carry a reusable bottle for refills and use
+                        purification tablets if needed.</li>
+                    <li><strong>Explore Fresh Ingredients:</strong> Prioritize vegetable-heavy dishes like soups
+                        and salads for vitamins and hydration.</li>
+                </ul>
+            </div>
+        </div>
+        <div id="gallery" class="tab-content">
+            <h2 style="text-align: center; margin: 30px 0; color: var(--dark);">Laos Food Gallery</h2>
+
+            <div class="food-gallery">
+                <div class="gallery-item">
+                    <img src="https://www.seriouseats.com/thmb/_uJUWZESUzs9uuvLU1dx0DRFKy4=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/__opt__aboutcom__coeus__resources__content_migration__serious_eats__seriouseats.com__2018__05__20180503-Guide-to-Lao-Food-Khao-Niew-Jai-Williams-1500x1125-e0b96589b37e4689b27597436a853a38.jpg"
+                        alt="Sticky rice served in a traditional Lao basket">
+                    <div class="caption">Sticky Rice (Khao Niao) – The Heart of Every Meal</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.squarespace-cdn.com/content/v1/61061bcca9b496204219ae67/a42915d1-0dbf-40e0-8756-c7568dfdde80/laab+moo+foodways.jpg?format=1000w"
+                        alt="Laab moo, a minced pork salad">
+                    <div class="caption">Laab Moo – Spicy Minced Pork Salad</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://www.seriouseats.com/thmb/iX2SKngLwGvszMHd0s5uwgumldY=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/__opt__aboutcom__coeus__resources__content_migration__serious_eats__seriouseats.com__2018__05__20180503-Guide-to-Lao-Food-Tam-Muk-Muang-Jai-Williams-1500x1125-7b1e169e5ec34564b304033e323d6a9d.jpg"
+                        alt="Tam mak muang, a green mango salad">
+                    <div class="caption">Tam Mak Muang – Tangy Green Mango Salad</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://www.seriouseats.com/thmb/WPGCbtlhEzmOdk1ewbLT3wXb2hQ=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/__opt__aboutcom__coeus__resources__content_migration__serious_eats__seriouseats.com__2018__05__20180503-Guide-to-Lao-Food-Muu-Som-Jai-Williams-1500x1125-06e6fef5f70f4a7cb5fd6db7f7506648.jpg"
+                        alt="Muu som, fermented sour pork">
+                    <div class="caption">Muu Som – Fermented Sour Pork</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://www.seriouseats.com/thmb/3VIZMDwqjD9knjkUW4lYWqwrJyg=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/__opt__aboutcom__coeus__resources__content_migration__serious_eats__seriouseats.com__2018__05__20180503-Guide-to-Lao-Food-Naem-Khao-Jai-Williams-1500x1125-7c34a089f1734bc3a936390eda9171c4.jpg"
+                        alt="Naem khao, crispy coconut rice balls">
+                    <div class="caption">Naem Khao – Crispy Coconut Rice Balls</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://ling-app.com/wp-content/uploads/2023/03/Lao-Desserts-Ling-App-1.jpg"
+                        alt="Khao lam, bamboo-stuffed sticky rice dessert">
+                    <div class="caption">Khao Lam – Bamboo-Stuffed Sticky Rice Dessert</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://lh6.googleusercontent.com/proxy/Q5OrVcg-VdkyyEBd7yRJWIZnoVsBTqhsMvMnaZA486zHlWW7F9vwKpFZeE1YXmisnXYj47nqHA_AHs3BtrujWOXTx3eSMg7kutIEQN_fyOD_d5SZvPBHzpIRoa2M4-zouw"
+                        alt="Tam mak hoong, Lao papaya salad with chilies and lime">
+                    <div class="caption">Tam Mak Hoong – Fiery Papaya Salad, a Lao Staple</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://www.atravel.blog/content/images/recipes/or-lam.webp"
+                        alt="Or Lam, a hearty Lao vegetable and meat stew">
+                    <div class="caption">Or Lam – Smoky Vegetable Stew from Northern Laos</div>
+                </div>
+            </div>
+
+            <div class="summary">
+                <h3><i class="fas fa-utensils"></i> Visual Highlights of Lao Cuisine</h3>
+                <p>These images showcase the vibrant colors, textures, and aromas of traditional Lao dishes. From the
+                    communal sticky rice to bold salads like Tam Mak Hoong and hearty stews such as Or Lam, Lao food is
+                    a feast for the senses. The papaya salad bursts with sour-spicy freshness from pounded chilies,
+                    lime, and fermented fish sauce, while Or Lam offers comforting earthiness with eggplant, lemongrass,
+                    and wood-fired smokiness. Explore local markets in Vientiane or Luang Prabang to taste these
+                    yourself – each bite tells a story of Laos' rich culinary heritage, blending indigenous ingredients
+                    with influences from Thailand and Vietnam.</p>
+            </div>
+        </div>
+
+    </div>
+    <footer>
+        <div class="wave-container">
+            <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+                <defs>
+                    <path id="gentle-wave"
+                        d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+                </defs>
+                <g class="parallax">
+                    <use xlink:href="#gentle-wave" x="48" y="0" fill="#DF9881" />
+                    <use xlink:href="#gentle-wave" x="48" y="3" fill="#DF9881" />
+                    <use xlink:href="#gentle-wave" x="48" y="5" fill="#DF9881" />
+                    <use xlink:href="#gentle-wave" x="48" y="7" fill="#F6B38A" />
+                </g>
+            </svg>
+        </div>
+        <div class="footer-content">
+            <div class="footer-section">
+                <ul class="social-icon">
+                    <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+                    <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
+                    <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                </ul>
+                <ul class="menu">
+                    <li><a href="index.html"></i>Home</a></li>
+                    <li><a href="countryNew.html"></i>Country Foods</a></li>
+                    <li><a href="reviewmainpage (1).html"></i>Review</a></li>
+                    <li><a href="repro.html"></i>About Us</a></li>
+                </ul>
+                <p>Copyright ©2025 All rights reserved | We are Together <i class="fa fa-heart" style="color: red;"></i>
+                    by Bit-wizards</a></p>
+            </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const tabBtns = document.querySelectorAll('.tab-btn');
+            const tabContents = document.querySelectorAll('.tab-content');
+
+            tabBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    // Remove active class from all buttons and contents
+                    tabBtns.forEach(b => b.classList.remove('active'));
+                    tabContents.forEach(c => c.classList.remove('active'));
+
+                    // Add active class to clicked button
+                    btn.classList.add('active');
+
+                    // Show corresponding content
+                    const tabId = btn.getAttribute('data-tab');
+                    document.getElementById(tabId).classList.add('active');
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

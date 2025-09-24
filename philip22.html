@@ -1,0 +1,1130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Witzard Foodiemyst</title>
+  <link rel="icon" href="Images/favicon.ico">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+    integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="navi.css">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background-color: #F38F43;
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+
+
+    }
+
+    p {
+      padding: 0 30px;
+      margin: 20px 0;
+      font-size: 1.1em;
+      color: #fadbc3;
+      text-align: justify;
+      margin-left: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      margin-top: 20px;
+      color: #fadbc3;
+    }
+
+    #back {
+      padding-top: 5%;
+      background: linear-gradient(rgba(46, 17, 1, 0.512), rgba(10, 6, 5, 0.679)), url('https://i0.wp.com/www.howshewanders.com/wp-content/uploads/2020/01/mesa-restaurant-2.jpg?resize=780%2C520&ssl=1');
+      background-size: cover;
+      background-position: center;
+      width: 100%;
+      position: relative;
+    }
+
+    marquee {
+      color: palegoldenrod;
+      font-size: 2em;
+      font-weight: bold;
+      margin-top: 0;
+      padding: 20px;
+      background-color: #373735;
+      border-bottom: 2px solid #373735;
+      behavior: alternate;
+      text-align: center;
+      position: absolute;
+      bottom: 0;
+    }
+
+    .gallery {
+
+      position: relative;
+      margin-left: 40%;
+      margin-top: 15%;
+      width: 300px;
+      height: 500px;
+      transform-style: preserve-3d;
+      animation: rotate 35s linear infinite;
+      z-index: 5;
+    }
+
+    @keyframes rotate {
+      from {
+        transform: perspective(1200px) rotateY(0deg);
+      }
+
+      to {
+        transform: perspective(1200px) rotateY(360deg);
+      }
+    }
+
+    .gallery span {
+      position: absolute;
+      width: 100%;
+      height: 150px;
+      transform-origin: center;
+      transform-style: preserve-3d;
+      transform: rotateY(calc(var(--i) * 45deg)) translateZ(350px);
+    }
+
+    .gallery span img {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      padding-left: 10%;
+      padding-right: 10%;
+      border-radius: 15%;
+    }
+
+    @media (max-width: 600px) {
+      .gallery {
+        width: 200px;
+        height: 200px;
+      }
+    }
+
+    .conatiner {
+      width: 100%;
+      display: flex;
+      height: 300px;
+      justify-content: center;
+      gap: 30px;
+      transition: 0.3s;
+      margin-top: 5%;
+    }
+
+    .conatiner li {
+      position: relative;
+      overflow: hidden;
+      flex: 0 0 80px;
+      border-radius: 50px;
+      cursor: pointer;
+      border-radius: 10px;
+      border: 1px solid #ddd;
+      gap: 30px;
+    }
+
+    .conatiner li img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      translate: -50% -50%;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .conatiner li,
+    .conatiner li img {
+      transition: 0.3s;
+    }
+
+    .conatiner li .content {
+      transition: 1.5s ease;
+    }
+
+    .conatiner span {
+      text-align: center;
+      width: 75%;
+    }
+
+    .conatiner h2 {
+      font-size: 20px;
+      font-weight: 100;
+      line-height: 4px;
+      margin-bottom: 3px;
+      padding-top: 5px;
+      white-space: nowrap;
+      color:yellow;
+    }
+
+    .conatiner p {
+      font-size: 15px;
+      color: yellow;
+      width: 100%;
+    }
+
+    .conatiner li .content {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 1;
+      color: #3b0f0f;
+      padding: 15px;
+      background: linear-gradient(0deg, rgba(0, 0, 0, 1) 10%, rgba(255, 255, 255, 0) 100%);
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    .conatiner:hover {
+      gap: 0;
+    }
+
+    .conatiner li .content span {
+      position: absolute;
+      z-index: 3;
+      left: 50%;
+      bottom: 0px;
+      translate: -50%;
+      scale: 0.85;
+      visibility: hidden;
+      opacity: 0;
+    }
+
+    .conatiner li:hover {
+      flex: 0 1 260px;
+      scale: 1.1;
+      z-index: 10;
+      opacity: 1;
+    }
+
+    .conatiner li:hover .content {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .conatiner li:hover .content span {
+      visibility: visible;
+      opacity: 1;
+      scale: 1;
+    }
+
+    .container,
+    #first {
+      display: flex;
+      width: 100%;
+      max-width: 1200px;
+      background-color: #000;
+      border: 2px solid #333;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+      margin: 20px auto;
+      overflow: visible;
+    }
+
+    .left-panel {
+      flex: 1;
+      background-color: peru;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 50%;
+      padding: 20px;
+    }
+
+    .read-more-box {
+      background-color: #d76c2e;
+      padding: 15px 30px;
+      border-radius: 10px;
+      text-align: center;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+
+
+    }
+
+    .read-more-box input[type="checkbox"] {
+      display: none;
+    }
+
+    .read-more-box .more-text {
+      display: none;
+    }
+
+    .read-more-box input[type="checkbox"]:checked~.more-text {
+      display: block;
+    }
+
+    .read-more-box .read-more-label {
+      color: black;
+      cursor: pointer;
+      display: inline-block;
+      margin-top: 10px;
+    }
+
+
+    .right-panel {
+      flex: 1;
+      background-color: wheat;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+      width: 50%;
+
+      overflow: visible;
+    }
+
+    .right-panel::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background-color: #000;
+    }
+
+    .image-container {
+      perspective: 1000px;
+      width: 350px;
+      height: 210px;
+      gap: 50px;
+      display: flex;
+    }
+
+    .image-3d {
+      width: 300px;
+      transition: transform 0.5s;
+      transform-style: preserve-3d;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+      border-radius: 10px;
+    }
+
+    .image-3d:hover {
+      transform: rotateY(20deg) rotateX(10deg) scale(1.05);
+    }
+
+    .buttom {
+      width: 100%;
+      height: auto;
+    }
+
+    /* Responsive design for smaller screens */
+
+    @media (max-width: 600px) {
+      .image-container {
+        width: 100%;
+        height: auto;
+      }
+
+      .image-3d {
+        width: 100%;
+        height: auto;
+      }
+
+      .conatiner li {
+        flex: 1 1 100px;
+      }
+
+      .conatiner li img {
+        width: 100%;
+        height: auto;
+      }
+    }
+
+    /* Responsive styles for screens 768px and below */
+    @media (max-width: 768px) {
+      .gallery {
+        width: 50%;
+        height: 200px;
+        margin: auto;
+      }
+
+      .gallery span {
+        width: 50%;
+        height: 80px;
+        margin: 20% 20%;
+        transform-origin: center;
+        transform-style: preserve-3d;
+        transform: rotateY(calc(var(--i) * 45deg)) translateZ(180px);
+      }
+
+      /* Container layout stack */
+      .container {
+        flex-direction: column !important;
+        max-width: 100%;
+        margin: 20px 0;
+      }
+
+      .left-panel,
+      .right-panel {
+        width: 100% !important;
+        padding: 30px;
+      }
+
+      .right-panel::before {
+        position: relative;
+        width: 100% !important;
+        height: 2px;
+        top: 0;
+        left: 0;
+        margin-bottom: 15px;
+        padding: 30px;
+      }
+
+      /* Image container full width */
+      .image-container {
+        width: 100% !important;
+        height: auto !important;
+        gap: 20px;
+        justify-content: center;
+      }
+
+      .image-3d {
+        width: 100% !important;
+        height: auto !important;
+        margin-bottom: 15px;
+        transform: none !important;
+      }
+
+      /* Container list adjustments */
+      .conatiner {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+        height: auto;
+      }
+
+      .conatiner li {
+        flex: 1 1 140px;
+        max-width: 100px;
+        border-radius: 10px;
+      }
+
+      .conatiner li img {
+        position: relative;
+        width: 100%;
+        height: 140px;
+        object-fit: cover;
+        top: 0;
+        left: 0;
+        translate: none;
+      }
+
+      /* Text inside container */
+      .conatiner span {
+        width: 100%;
+        text-align: center;
+      }
+
+      .conatiner h2 {
+        font-size: 1rem;
+        line-height: 1.2;
+      }
+
+      .conatiner p {
+        font-size: 0.85rem;
+      }
+
+      /* Read more box */
+      .read-more-box {
+        padding: 10px 15px;
+      }
+
+      .read-more-box h2 {
+        font-size: 1.3rem;
+      }
+
+      .read-more-box p,
+      .read-more-box .more-text p {
+        font-size: 0.9rem;
+      }
+
+      /* Footer */
+      footer {
+        font-size: 0.9rem;
+        padding: 15px 10px;
+      }
+    }
+
+    /* Further adjustments for very small screens (max-width 400px) */
+    @media (max-width: 480px) {
+      #back {
+        padding-top: 15%;
+      }
+
+      h1,
+      h2 {
+        font-size: 1.5rem;
+      }
+
+      p {
+        font-size: 0.9rem;
+      }
+
+      .conatiner li {
+        flex: 1 1 100px;
+        max-width: 100px;
+      }
+
+      .conatiner li img {
+        height: 100px;
+      }
+
+      .read-more-box h2 {
+        font-size: 1.1rem;
+      }
+
+      .read-more-box p,
+      .read-more-box .more-text p {
+        font-size: 0.8rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="body1">
+    <header>
+      <div class="navbar">
+        <div class="logo"><a href="#">Witzard Foodiemyst</a></div>
+        <ul class="links">
+          <li><a href="index.html"><i class="fa-solid fa-house"></i>Home</a></li>
+          <li><a href="countryNew.html"><i class="fa-solid fa-bowl-rice"></i></i>Country Foods</a></li>
+          <li><a href="reviewmainpage (1).html"><i class="fa-solid fa-receipt"></i>Review</a></li>
+          <li><a href="repro.html"><i class="fa-solid fa-address-card"></i></i>About Us</a></li>
+        </ul>
+        <div class="toggle-btn">
+          <i class="fa-solid fa-bars"></i>
+        </div>
+      </div>
+      <div class="dropdown-menu">
+        <li><a href="index.html"><i class="fa-solid fa-house"></i>Home</a></li>
+        <li><a href="countryNew.html"><i class="fa-solid fa-bowl-rice"></i></i>Country Foods</a></li>
+        <li><a href="reviewmainpage (1).html"><i class="fa-solid fa-receipt"></i>Review</a></li>
+        <li><a href="repro.html"><i class="fa-solid fa-address-card"></i></i>About Us</a></li>
+      </div>
+    </header>
+  </div>
+  <!-- nav section end -->
+
+
+  <div class="section" id="back">
+    <h1> Popular Philippine Dishes</h1>
+    <p>Filipino cuisine offers a diverse range of dishes, blending indigenous flavors with influences from Spanish,
+      Chinese, and American culinary traditions.
+      Some popular and iconic Filipino foods include adobo, lechon, sinigang, and pancit. These dishes, and many others,
+      showcase the rich tapestry of flavors
+      and techniques that define Filipino food. </p>
+
+    <div class="gallery">
+      <span style="--i: 0"><img
+          src="https://cdn.apartmenttherapy.info/image/upload/f_jpg,q_auto:eco,c_fill,g_auto,w_1500,ar_4:3/k%2FPhoto%2FRecipes%2F2024-04-filipino-adobo%2Ffilipino-adobo-426"
+          alt="Adobo"></span>
+      <span style="--i: 1"><img src="https://img1.wsimg.com/isteam/ip/41507d14-36a0-4313-8814-e2b23f5db19c/IMG_0955.JPG"
+          alt="Lechon"></span>
+      <span style="--i: 2"><img
+          src="https://www.nestlegoodnes.com/ph/sites/default/files/styles/1_1_768px_width/public/srh_recipes/442ce059c4c490e1ab61cdaef9c98511.jpg.webp?itok=sKq8qila"
+          alt="Sinigang"></span>
+      <span style="--i: 3"><img
+          src="https://upload.wikimedia.org/wikipedia/commons/e/ef/Pancit_Ilonggo_Style_-_12110747826.jpg"
+          alt="Pancit"></span>
+      <span style="--i: 4"><img src="https://agirlworthsaving.net/wp-content/uploads/2022/11/lumpia-recipe-scaled.jpg"
+          alt="Lumpia"></span>
+      <span style="--i: 5"><img
+          src="https://www.foodandwine.com/thmb/qShfzjc7aCKmzU_2CpDv_jrBxhc=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/Filipino-Grilled-Chicken-FT-MAG-RECIPE-0524-7be1888e18764b7f9e7d2351bb1f8702.jpg"
+          alt="Inasal"></span>
+      <span style="--i: 6"><img src="https://panlasangpinoy.com/wp-content/uploads/2021/04/Bicol-Express-1.jpg"
+          alt="Bicol Express"></span>
+      <span style="--i: 7"><img
+          src="https://travellingfoodie.net/wp-content/uploads/2022/02/Bs-Sizzling-Kitchen-Mississauga-Travelling-Foodie.jpg"
+          alt="Philippine food"></span>
+    </div>
+
+    <marquee direction="left" scrollamount="10">There are Top (10) Philippine’s Signature and Most Popular Dishes.
+    </marquee>
+  </div>
+
+  <ul class="conatiner">
+    <li>
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYbomCFxiF-JWXEcdeA5jpxC7ETjA4feUNQQ&s"
+        alt="adobo">
+      <div class="content">
+        <span>
+          <h2>Adobo</h2>
+          <p>A popular Filipino dish and cooking process in Philippine cuisine <a href="#first1">Read more</a></p>
+        </span>
+      </div>
+    </li>
+    <li>
+      <img src="https://charisseyu.com/wp-content/uploads/2023/12/IMG_0135-scaled.jpg" alt="sinigang">
+      <div class="content">
+        <span>
+          <h2>Sinigang</h2>
+          <p>A popular Filipino soup or stew <a href="#first2">Read more</a></p>
+        </span>
+      </div>
+    </li>
+    <li>
+      <img src="https://panlasangpinoy.com/wp-content/uploads/2017/03/Batangas-Bulalo-Recipe.jpg" alt="Bulalo">
+      <div class="content">
+        <span>
+          <h2>Bulalo</h2>
+          <p>A Filipino beef dish <a href="#first3">Read more</a></p>
+        </span>
+      </div>
+    </li>
+    <li>
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyb4aLWa8gQWXoLWu8JxaNhHGspTBl8YT_OQ&s"
+        alt="lechon">
+      <div class="content">
+        <span>
+          <h2>Lechon</h2>
+          <p>A Filipino dish consisting of a whole roasted pig <a href="#first4">Read more</a></p>
+        </span>
+      </div>
+    </li>
+    <li>
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSU3sQKqiHC0q1b4En_tsI_CQNKOul1WCgIfg&s"
+        alt="pancit">
+      <div class="content">
+        <span>
+          <h2>Pancit</h2>
+          <p>A general term in Filipino cuisine for noodles </p>
+          <p><a href="#first5">Read more</a></p>
+        </span>
+      </div>
+    </li>
+    <li>
+      <img src="https://www.razzledazzlelife.com/wp-content/uploads/2023/02/lumpia-razzle-dazzle-life.jpg" alt="lumoia">
+      <div class="content">
+        <span>
+          <h2>Lumpia</h2>
+          <p>A type of savory or sweet spring roll commonly found in Indonesian and Filipino cuisines <a
+              href="#first6">Read more</a></p>
+        </span>
+      </div>
+    </li>
+    <li>
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT64qAEh5T5JYI9rv3aqLJ7cUr1iRFckS6Dsw&s"
+        alt="Tapsilog">
+      <div class="content">
+        <span>
+          <h2>Tapsilog</h2>
+          <p>A popular Filipino breakfast dish <a href="#first7">Read more</a></p>
+        </span>
+      </div>
+    </li>
+    <li>
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtEyNSyEhIOXu7rsFCwrHhqK6yk-kdvJ7jAA&s"
+        alt="balut">
+      <div class="content">
+        <span>
+          <h2>Balut</h2>
+          <p>A developing duck embryo inside a duck egg, which is boiled and eaten from the shell <a href="#first8">Read
+              more</a></p>
+        </span>
+      </div>
+    </li>
+    <li>
+      <img
+        src="https://www.unileverfoodsolutions.com.ph/dam/global-ufs/mcos/SEA/calcmenu/recipes/PH-recipes/appetisers/sizzling-pork-sisig-manila/sizzling-pork-sisig-manila-main.jpg"
+        alt="sisig">
+      <div class="content">
+        <span>
+          <h2>Sisig</h2>
+          <p> A Filipino dish made primarily from parts of a pig's head and often including chicken liver and other
+            seasonings <a href="#first9">Read more</a></p>
+        </span>
+      </div>
+    </li>
+    <li>
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3L2PInre5vBTfYn-w_GkF75wIHE1EYi_sog&s"
+        alt="kare kare">
+      <div class="content">
+        <span>
+          <h2>Kare Kare</h2>
+          <p>A classic Filipino stew characterized by its rich, savory peanut sauce and meaty flavors <a
+              href="#first10">Read more</a> </p>
+        </span>
+      </div>
+    </li>
+  </ul>
+
+
+  <div class="container" id="first1">
+    <div class="left-panel">
+      <div class="read-more-box">
+        <h2>Adobo</h2>
+        <p>
+          Similar to the Spanish Adobado, but with a Philippine twist, it is a dish that uses vinegar and soy
+          sauce as the main ingredients. It is a dish that is cooked with beef, pork, or chicken in soy sauce,
+          vinegar, garlic, and sea salt, and is a specialty of the Philippines.
+        </p>
+        <input type="checkbox" id="toggle1">
+        <div class="more-text">
+          <h3>Ingredients</h3>
+          <ul>
+            <li>Beef, pork, chicken</li>
+            <li>Vinegar</li>
+            <li>Garlic</li>
+            <li>Sea salt</li>
+            <li>Corn flour</li>
+          </ul>
+
+          <h3>Preparation</h3>
+          <p>
+            Marinate the meat with soy sauce, vinegar, and spices for about 30 minutes and cook until tender.
+          </p>
+        </div>
+        <label for="toggle1" class="read-more-label">Read more...</label>
+      </div>
+    </div>
+
+    <div class="right-panel">
+      <div class="image-container">
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Adobo_DSCF4391.jpg/1200px-Adobo_DSCF4391.jpg"
+          alt="Image3" class="image-3d">
+      </div>
+      <div class="image-container">
+        <img src="https://whisperofyum.com/wp-content/uploads/2020/12/filipino-pork-adobo-500x500.jpg" alt="Image3"
+          class="image-3d">
+      </div>
+
+    </div>
+  </div>
+
+  <div class="container" id="first2">
+    <div class="left-panel">
+      <div class="read-more-box">
+        <h2>Sinigang</h2>
+        <p>
+          A type of soup made with pork, shrimp, and fish cooked in a spicy broth with vegetables.
+          Similar in taste to Thai tom yum, the main source of the broth in sinnigang is tamarind.
+        </p>
+        <input type="checkbox" id="toggle2">
+        <div class="more-text">
+          <h3>Ingredients</h3>
+          <ul>
+            <li>Pork, shrimp, fish</li>
+            <li>Tanamarind (or) Tangerine</li>
+            <li>Carrot</li>
+            <li>Eggplant</li>
+            <li>Sweet potatoes</li>
+          </ul>
+
+          <h3>Preparation</h3>
+          <p>
+            Boil the meat and tamarind broth with water, then add the prepared vegetables and cook as a soup.
+          </p>
+        </div>
+        <label for="toggle2" class="read-more-label">Read more...</label>
+      </div>
+    </div>
+
+    <div class="right-panel">
+      <div class="image-container">
+        <img src="data:image/jpeg;base64,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" alt="Image3"
+          class="image-3d">
+      </div>
+      <div class="image-container">
+        <img
+          src="https://popmenucloud.com/cdn-cgi/image/width=640,height=640,format=auto,fit=scale-down/arufwdik/8e48f9d7-4ab7-4ad2-b6b6-8aee7b3cb08e.png"
+          alt="Image3" class="image-3d">
+      </div>
+
+    </div>
+  </div>
+
+  <div class="container" id="first3">
+    <div class="left-panel">
+      <div class="read-more-box">
+        <h2>Bulalo</h2>
+        <p>
+          Bulalo is a Filipino beef soup, famous for its rich, flavorful broth and tender beef shanks. It's made by
+          slow-cooking beef shanks and bone marrow until the meat is incredibly tender and the broth develops a deep,
+          savory flavor. Commonly, it includes vegetables like corn on the cob, cabbage, and leafy greens, and is often
+          served with rice.
+        </p>
+        <input type="checkbox" id="toggle3">
+        <div class="more-text">
+          <h3>Ingredients</h3>
+          <ul>
+
+            <li>Beef shanks (with bone marrow) </li>
+            <li>Corn cabbage,pechay/bok choy </li>
+            <li>Onion, garlic,peppercorns</li>
+            <li> Fish sauce (patis) or salt</li>
+          </ul>
+
+          <h3>Preparation</h3>
+          <pre>
+            Preparation 
+1. Boil beef (2-3 hrs), skim scum.  
+2. Add corn/potatoes, simmer 15-20 mins.  
+3. Season with fish sauce, add greens (cook briefly).  
+4. Serve hot with bone marrow, rice, and calamansi.
+          </pre>
+        </div>
+        <label for="toggle3" class="read-more-label">Read more...</label>
+      </div>
+    </div>
+
+    <div class="right-panel">
+      <div class="image-container">
+        <img src="https://filipinochow.com/wp-content/uploads/2020/05/Bulalo-Beef-Bone-Marrow-Soup.jpg" alt="Image3"
+          class="image-3d">
+      </div>
+      <div class="image-container">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRxnN_u6p7EGcOY9MbpwwW_99keb_x5io_a6w&s"
+          alt="Image3" class="image-3d">
+      </div>
+
+    </div>
+  </div>
+
+  <div class="container" id="first4">
+    <div class="left-panel">
+      <div class="read-more-box">
+        <h2>Lechan</h2>
+        <p>A festive dish. Similar to the Spanish Cochinillo Asado, but in the Philippines it is usually served with a
+          coconut milk sauce. It is a whole pig roasted over a fire and prepared with crispy skin.
+
+        </p>
+        <input type="checkbox" id="toggle4">
+        <div class="more-text">
+          <h3>Ingredients</h3>
+          <ul>
+            <li>A whole pig</li>
+            <li>Garlic</li>
+            <li>Sesame seeds</li>
+            <li>Salt</li>
+            <li>Mint</li>
+          </ul>
+
+          <h3>Preparation</h3>
+          <p>
+            Put the pork belly in a roasting tin and roast for 4-6 hours until the skin is crispy.
+          </p>
+        </div>
+        <label for="toggle4" class="read-more-label">Read more...</label>
+      </div>
+    </div>
+
+    <div class="right-panel">
+      <div class="image-container">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8g-7cK2bMgVWbQWI6SOuLVq7XrPPAQHs4AQ&s"
+          alt="Image3" class="image-3d">
+      </div>
+      <div class="image-container">
+        <img src="https://panlasangpinoy.com/wp-content/uploads/2019/11/lechon-belly-roll.jpg" alt="Image3"
+          class="image-3d">
+      </div>
+
+    </div>
+  </div>
+
+  <div class="container" id="first5">
+    <div class="left-panel">
+      <div class="read-more-box">
+        <h2>Pancit</h2>
+        <p>A staple food at birthday parties. Similar to Chinese (Chow Mein), but sweeter in the Philippines and often
+          mixed with coconut milk.
+
+
+        </p>
+        <input type="checkbox" id="toggle5">
+        <div class="more-text">
+          <h3>Ingredients</h3>
+          <ul>
+            <li>Noodles (Bihon/Canton)</li>
+            <li>Chicken/Pork/Shrimp</li>
+            <li>Carrots</li>
+            <li>Onions</li>
+
+          </ul>
+
+          <h3>Preparation</h3>
+          <p>
+            Fill the noodles with meat and vegetables.
+          </p>
+        </div>
+        <label for="toggle5" class="read-more-label">Read more...</label>
+      </div>
+    </div>
+
+    <div class="right-panel">
+      <div class="image-container">
+        <img src="https://i0.wp.com/www.angsarap.net/wp-content/uploads/2018/11/Pancit-Bato-Wide.jpg?fit=1080%2C720&ssl=1"
+          alt="Image3" class="image-3d">
+      </div>
+      <div class="image-container">
+        <img src="https://www.foxyfolksy.com/wp-content/uploads/2019/02/pancit-canton-640-500x375.jpg" alt="Image3"
+          class="image-3d">
+      </div>
+
+    </div>
+  </div>
+
+  <div class="container" id="first6">
+    <div class="left-panel">
+      <div class="read-more-box">
+        <h2>Lumpia</h2>
+        <p>Similar to Chinese Spring Rolls, but in the Philippines it is more fatty. It is a food made by wrapping meat
+          or vegetables in a batter and frying them.
+
+        </p>
+        <input type="checkbox" id="toggle6">
+        <div class="more-text">
+          <h3>Ingredients</h3>
+          <ul>
+            <li>Pork</li>
+            <li>Vegetables</li>
+            <li>Bread</li>
+            <li>Garlic</li>
+          </ul>
+
+          <h3>Preparation</h3>
+          <p>
+            Put the meat and vegetables in a batter and fry them.
+          </p>
+        </div>
+        <label for="toggle6" class="read-more-label">Read more...</label>
+      </div>
+    </div>
+
+    <div class="right-panel">
+      <div class="image-container">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4OJCGMLSazyOiFcGGGgAvnEHDyn0-0AIM7w&s"
+          alt="Image3" class="image-3d">
+      </div>
+      <div class="image-container">
+        <img src="https://www.ohlaliving.com/wp-content/uploads/2021/03/lumpia-recipe.jpeg" alt="Image3"
+          class="image-3d">
+      </div>
+
+    </div>
+  </div>
+
+  <div class="container" id="first7">
+    <div class="left-panel">
+      <div class="read-more-box">
+        <h2>Tapsilog</h2>
+        <p>A dish made with fried beef, egg, and fried rice. It is usually served as a breakfast dish and is similar to
+          Korean bibimbap, but Tapsilog focuses on beef.
+
+
+        </p>
+        <input type="checkbox" id="toggle7">
+        <div class="more-text">
+          <h3>Ingredients</h3>
+          <ul>
+            <li>Beef</li>
+            <li>Egg</li>
+            <li>Fried rice (Sinangag)</li>
+          </ul>
+
+          <h3>Preparation</h3>
+          <p>
+            The beef is marinated in soy sauce and served with egg and fried rice.
+          </p>
+        </div>
+        <label for="toggle7" class="read-more-label">Read more...</label>
+      </div>
+    </div>
+
+    <div class="right-panel">
+      <div class="image-container">
+        <img src="https://images.yummy.ph/yummy/uploads/2018/01/best-tapa-ever-1.jpg" alt="Image3" class="image-3d">
+      </div>
+      <div class="image-container">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRT31FzH-XCxHFIWHLRPxNQkfnvMjJfMs1x0A&s"
+          alt="Image3" class="image-3d">
+      </div>
+    </div>
+  </div>
+
+  <div class="container" id="first8">
+    <div class="left-panel">
+      <div class="read-more-box">
+        <h2>Balut</h2>
+        <p>A dish made from boiled duck or quail eggs, it is a specialty of the Philippines. Similar to Vietnamese Trng
+          vt ln, it is also a popular dish in Southeast Asia.
+        </p>
+        <input type="checkbox" id="toggle8">
+        <div class="more-text">
+          <h3>Ingredients</h3>
+          <ul>
+            <li>Balut eggs</li>
+          </ul>
+
+          <h3>Preparation</h3>
+          <p>
+            Duck or quail eggs are fermented for 15-20 days and boiled in hot water.
+          </p>
+        </div>
+        <label for="toggle8" class="read-more-label">Read more...</label>
+      </div>
+    </div>
+
+    <div class="right-panel">
+      <div class="image-container">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtEyNSyEhIOXu7rsFCwrHhqK6yk-kdvJ7jAA&s"
+          alt="Image3" class="image-3d">
+      </div>
+      <div class="image-container">
+        <img src="https://jackfruitadventure.com/wp-content/uploads/2025/01/AdobeStock_342850372-1200x800.jpeg"
+          alt="Image3" class="image-3d">
+      </div>
+
+    </div>
+  </div>
+
+  <div class="container" id="first9">
+    <div class="left-panel">
+      <div class="read-more-box">
+        <h2>Sisig</h2>
+        <p>
+          A dish made from fried pork ears and liver, marinated in garlic, chili, and vinegar, and often served with
+          beer or liquor. Similar to Japanese Yakitori, Sisig combines pork and beef.
+
+
+        </p>
+        <input type="checkbox" id="toggle9">
+        <div class="more-text">
+          <h3>Ingredients</h3>
+          <ul>
+            <li>Pork ears/face</li>
+            <li>Garlic</li>
+            <li>Chili</li>
+            <li>Lemon juice</li>
+
+          </ul>
+
+          <h3>Preparation</h3>
+          <p>
+            Pork is boiled and fried, mixed with garlic, chili and vinegar, and topped with egg yolk.
+          </p>
+        </div>
+        <label for="toggle9" class="read-more-label">Read more...</label>
+      </div>
+    </div>
+
+    <div class="right-panel">
+      <div class="image-container">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQS1bR1pP9AoZaVoP4wyyV5uUMmzEVacOUE8A&s"
+          alt="Image3" class="image-3d">
+      </div>
+      <div class="image-container">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzoKlmfpKtn04Sf6CDQYEHWj-cT2tiiYjiUg&s"
+          alt="Image3" class="image-3d">
+      </div>
+
+    </div>
+  </div>
+
+  <div class="container" id="first10">
+    <div class="left-panel">
+      <div class="read-more-box">
+        <h2>Kare-Kare</h2>
+        <p>A dish of pork or beef and vegetables cooked in peanut sauce and usually served with Bagoong. Similar to
+          Indonesian Gado-Gado, Kare-Kare focuses on meat.
+        </p>
+        <input type="checkbox" id="toggle10">
+        <div class="more-text">
+          <h3>Ingredients</h3>
+          <ul>
+            <li>Beef/Pork</li>
+            <li>Peanuts</li>
+            <li>Eggplant</li>
+            <li>Peanuts</li>
+            <li>Bagoong</li>
+          </ul>
+
+          <h3>Preparation</h3>
+          <p>
+            Meat and vegetables are cooked in peanut sauce and served with Bagoong.
+          </p>
+        </div>
+        <label for="toggle10" class="read-more-label">Read more...</label>
+      </div>
+    </div>
+
+    <div class="right-panel">
+      <div class="image-container">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT22kShlpUS1sZDgDOP0oRWdUu2EK5GfxR_Jg&s"
+          alt="Image3" class="image-3d">
+      </div>
+      <div class="image-container">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRv2DtJlMgCX0yPwgHkIMlHbniNRwTjXAP_PA&s"
+          alt="Image3" class="image-3d">
+      </div>
+
+    </div>
+  </div>
+  <div class="buttom">
+    <footer>
+      <div class="wave-container">
+        <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+          viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+          <defs>
+            <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+          </defs>
+          <g class="parallax">
+            <use xlink:href="#gentle-wave" x="48" y="0" fill="#DF9881" />
+            <use xlink:href="#gentle-wave" x="48" y="3" fill="#DF9881" />
+            <use xlink:href="#gentle-wave" x="48" y="5" fill="#DF9881" />
+            <use xlink:href="#gentle-wave" x="48" y="7" fill="#F6B38A" />
+          </g>
+        </svg>
+      </div>
+      <div class="footer-content">
+        <div class="footer-section">
+          <ul class="social-icon">
+            <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+            <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
+            <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+          </ul>
+          <ul class="menu">
+            <li><a href="index.html"></i>Home</a></li>
+            <li><a href="countryNew.html"></i>Country Foods</a></li>
+            <li><a href="reviewmainpage (1).html"></i>Review</a></li>
+            <li><a href="repro.html"></i>About Us</a></li>
+          </ul>
+          <p>Copyright ©2025 All rights reserved | We are Together <i class="fa fa-heart" style="color: red;"></i> by
+            Bit-wizards</a></p>
+        </div>
+    </footer>
+  </div>
+  <script>
+    const toggleBtn = document.querySelector('.toggle-btn')
+    const toggleBtnIcon = document.querySelector('.toggle-btn i')
+    const dropDownMenu = document.querySelector('.dropdown-menu')
+
+    toggleBtn.onclick = function () {
+      dropDownMenu.classList.toggle('open')
+      const isOpen = dropDownMenu.classList.contains('open')
+
+      toggleBtnIcon.classList = isOpen
+        ? 'fa-solid fa-xmark'
+        : 'fa-solid fa-bars'
+    }
+  </script>
+</body>
+
+</html>

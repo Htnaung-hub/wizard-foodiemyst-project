@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+    integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <title>Witzard Foodiemyst</title>
+  <link rel="icon" href="Images/favicon.ico">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="navi.css">
+  <style>
+    body {
+      font-family: "Poppins", sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #F38F43;
+    }
+
+    .head {
+      margin-top: 70px;
+      background: #F38F43;
+      color: #fff;
+      padding: 15px;
+      font-size: 26px;
+      font-weight: bold;
+      text-align: center;
+      letter-spacing: 1px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    }
+
+    #back {
+      background: linear-gradient(rgba(29, 53, 87, 0.75), rgba(29, 53, 87, 0.75)),
+        url('https://restaurantindia.s3.ap-south-1.amazonaws.com/s3fs-public/2023-06/Vietnom.jpg');
+      background-size: cover;
+      background-position: center;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 400px;
+      border-radius: 0 0 20px 20px;
+    }
+
+    #back h1 {
+      font-size: 48px;
+      font-weight: 700;
+      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.9);
+      color: #fff;
+    }
+
+    .button {
+      background: linear-gradient(90deg, #594a3d, #867741);
+      color: white;
+      padding: 15px 50px;
+      margin: 10px;
+      border: none;
+      border-radius: 30px;
+      font-size: 18px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .button:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 20px rgba(0, 114, 255, 0.4);
+    }
+
+    .content {
+      display: none;
+      padding: 30px;
+      margin: 30px auto;
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+      animation: fadeIn 0.5s ease;
+      max-width: 1200px;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(15px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .card {
+      border: none;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+    }
+
+    .card img {
+      height: 220px;
+      object-fit: cover;
+    }
+
+    .bottom {
+      margin-top: 30px;
+      padding: 25px;
+      border-radius: 16px;
+      background: #f1f3f6;
+      text-align: center;
+    }
+
+    h1,
+    h2,
+    h3,
+    h5 {
+      color: #1d3557;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="body1">
+    <header>
+      <div class="navbar">
+        <div class="logo"><a href="#">Witzard Foodiemyst</a></div>
+        <ul class="links">
+          <li><a href="index.html"><i class="fa-solid fa-house"></i>Home</a></li>
+          <li><a href="countryNew.html"><i class="fa-solid fa-bowl-rice"></i></i>Country Foods</a></li>
+          <li><a href="reviewmainpage (1).html"><i class="fa-solid fa-receipt"></i>Review</a></li>
+          <li><a href="repro.html"><i class="fa-solid fa-address-card"></i></i>About Us</a></li>
+        </ul>
+        <div class="toggle-btn">
+          <i class="fa-solid fa-bars"></i>
+        </div>
+      </div>
+      <div class="dropdown-menu">
+        <li><a href="index.html"><i class="fa-solid fa-house"></i>Home</a></li>
+        <li><a href="countryNew.html"><i class="fa-solid fa-bowl-rice"></i></i>Country Foods</a></li>
+        <li><a href="reviewmainpage (1).html"><i class="fa-solid fa-receipt"></i>Review</a></li>
+        <li><a href="repro.html"><i class="fa-solid fa-address-card"></i></i>About Us</a></li>
+      </div>
+    </header>
+  </div>
+  <div class="head">Vietnamese Food</div> 
+  <div id="back">
+    <h1>Popular Vietnamese Dishes</h1>
+  </div>
+
+  <div class="text-center my-4">
+    <button class="button" onclick="toggleContent('content1')">Safety</button>
+    <button class="button" onclick="toggleContent('content2')">Healthy</button>
+    <button class="button" onclick="toggleContent('content3')">Food Design</button>
+    <button class="button" onclick="toggleContent('content4')">Unique Features</button>
+  </div>
+
+  <div class="content" id="content1">
+    <h2 class="text-center mb-4">Food Safety in Vietnam</h2>
+    <div class="row g-4">
+      <div class="col-md-6">
+        <div class="card">
+          <img
+            src="https://res.cloudinary.com/hz3gmuqw6/image/upload/c_fill,q_30,w_750/f_auto/vietnamese-street-food-phpgn0u5d"
+            class="card-img-top" alt="Street Food">
+          <div class="card-body">
+            <h5 class="card-title">Street Food</h5>
+            <p>Delicious and popular, but hygiene may be a concern. Pick stalls with high turnover and fresh food.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe" class="card-img-top" alt="Restaurant">
+          <div class="card-body">
+            <h5 class="card-title">Restaurants</h5>
+            <p>Hotels and cafes generally have higher hygiene standards, trained staff, and proper facilities.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="bottom">
+      <h4>In Short</h4>
+      <p>Street food is fun but pick wisely. Restaurants are usually safer for hygiene-conscious visitors.</p>
+    </div>
+  </div>
+
+  <div class="content" id="content2">
+    <h2 class="text-center mb-4">Healthiness of Vietnamese Food</h2>
+    <div class="row g-4">
+      <div class="col-md-6">
+        <div class="card">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcAfKY42DkeB5Ym9OgnlPaV9HeQXTzpqK0aQ&s"
+            class="card-img-top" alt="Healthy Vietnamese Food">
+          <div class="card-body">
+            <h5 class="card-title">Why it’s healthy</h5>
+            <p>Rich in fresh vegetables, herbs, lean proteins, and light cooking methods like steaming or boiling.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="card">
+          <img
+            src="https://img.freepik.com/free-photo/delicious-vietnamese-food-including-pho-ga-noodles-spring-rolls-white-wall_181624-34158.jpg"
+            class="card-img-top" alt="Vietnamese Street Food">
+          <div class="card-body">
+            <h5 class="card-title">Things to watch out for</h5>
+            <p>Watch sodium in broths, reused oil in fried snacks, and sugar in drinks. Street hygiene can vary.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="bottom">
+      <h4>In Short</h4>
+      <p>Stick to fresh, lightly cooked dishes. Avoid excess fried or overly sweet items.</p>
+    </div>
+  </div>
+
+  <div class="content" id="content3">
+    <h2 class="text-center mb-4">Food Design in Vietnam</h2>
+    <div class="row g-4">
+      <div class="col-md-6">
+        <div class="card">
+          <img src="https://vietnamtravel.com/images/2020/10/Intro-Vietnam-cuisine1.jpg" class="card-img-top"
+            alt="Food Preparation">
+          <div class="card-body">
+            <h5 class="card-title">Preparation Style</h5>
+            <p>Ingredients are bought fresh daily. Balance of sweet, salty, sour, and spicy flavors is key.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="card">
+          <img src="https://dimaak.com/blog/wp-content/uploads/2025/05/Bun-Thit-Nuong-Chagio.jpg" class="card-img-top"
+            alt="Clean Restaurant Kitchen">
+          <div class="card-body">
+            <h5 class="card-title">Hygiene</h5>
+            <p>Street food uses fresh, fast prep but water may not always be clean. Restaurants follow stricter safety
+              standards.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="bottom">
+      <h4>Unique Aspect</h4>
+      <p>Fresh raw herbs and vegetables are served with meals — flavorful and nutritious, but require careful washing.
+      </p>
+    </div>
+  </div>
+
+  <div class="content" id="content4">
+    <h2 class="text-center mb-4">Unique Features of Vietnamese Food</h2>
+    <div class="row g-4">
+      <div class="col-md-6">
+        <div class="card">
+          <img
+            src="https://res.cloudinary.com/rainforest-cruises/images/c_fill,g_auto/f_auto,q_auto/w_1120,h_650/v1622728120/The-Best-Food-In-Vietnam-Bun-Thit/The-Best-Food-In-Vietnam-Bun-Thit.jpg"
+            class="card-img-top" alt="Vietnamese Pho">
+          <div class="card-body">
+            <h5 class="card-title">Flavor Balance</h5>
+            <p>Sweet, salty, sour, and spicy combined harmoniously in most dishes.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="card">
+          <img
+            src="https://wanderon-images.gumlet.io/blogs/new/2023/11/gondola-ride-in-autumn-in-kashmir-2023-11-24t173441.892-min.png"
+            class="card-img-top" alt="Street Food">
+          <div class="card-body">
+            <h5 class="card-title">Street Food Appeal</h5>
+            <p>Cooked on the spot, aromatic, and colorful — a hallmark of Vietnam.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="bottom">
+      <h4>In Short</h4>
+      <p>Vietnamese cuisine is unique because of its balance of flavors, use of fresh herbs, and street food culture.
+      </p>
+    </div>
+  </div>
+  <footer>
+    <div class="wave-container">
+      <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+        viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+        <defs>
+          <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+        </defs>
+        <g class="parallax">
+          <use xlink:href="#gentle-wave" x="48" y="0" fill="#DF9881" />
+          <use xlink:href="#gentle-wave" x="48" y="3" fill="#DF9881" />
+          <use xlink:href="#gentle-wave" x="48" y="5" fill="#DF9881" />
+          <use xlink:href="#gentle-wave" x="48" y="7" fill="#F6B38A" />
+        </g>
+      </svg>
+    </div>
+    <div class="footer-content">
+      <div class="footer-section">
+        <ul class="social-icon">
+          <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+          <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
+          <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+        </ul>
+        <ul class="menu">
+          <li><a href="index.html"></i>Home</a></li>
+          <li><a href="countryNew.html"></i>Country Foods</a></li>
+          <li><a href="reviewmainpage (1).html"></i>Review</a></li>
+          <li><a href="repro.html"></i>About Us</a></li>
+        </ul>
+        <p>Copyright ©2025 All rights reserved | We are Together <i class="fa fa-heart" style="color: red;"></i>
+          by Bit-wizards</a></p>
+      </div>
+  </footer>
+
+  <script>
+    function toggleContent(id) {
+      const allContents = document.querySelectorAll('.content');
+      allContents.forEach(content => {
+        content.style.display = (content.id === id && content.style.display !== 'block')
+          ? 'block' : 'none';
+      });
+    }
+  </script>
+</body>
+
+</html>

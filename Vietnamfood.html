@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Witzard Foodiemyst</title>
+  <link rel="icon" href="Images/favicon.ico">
+  <link rel="stylesheet" href="styleVB.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+    integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="navi.css">
+
+</head>
+
+<body>
+  <div class="container">
+    <div class="body1">
+      <header>
+        <div class="navbar">
+          <div class="logo"><a href="#">Witzard Foodiemyst</a></div>
+          <ul class="links">
+            <li><a href="index.html"><i class="fa-solid fa-house"></i>Home</a></li>
+            <li><a href="countryNew.html"><i class="fa-solid fa-bowl-rice"></i></i>Country Foods</a></li>
+            <li><a href="reviewmainpage (1).html"><i class="fa-solid fa-receipt"></i>Review</a></li>
+            <li><a href="repro.html"><i class="fa-solid fa-address-card"></i></i>About Us</a></li>
+          </ul>
+          <div class="toggle-btn">
+            <i class="fa-solid fa-bars"></i>
+          </div>
+        </div>
+        <div class="dropdown-menu">
+          <li><a href="index.html"><i class="fa-solid fa-house"></i>Home</a></li>
+          <li><a href="countryNew.html"><i class="fa-solid fa-bowl-rice"></i></i>Country Foods</a></li>
+          <li><a href="reviewmainpage (1).html"><i class="fa-solid fa-receipt"></i>Review</a></li>
+          <li><a href="repro.html"><i class="fa-solid fa-address-card"></i></i>About Us</a></li>
+        </div>
+      </header>
+    </div>
+    <!-- nav section end -->
+
+
+    <section class="hero">
+      <h1>Let's explore the Vietnamese food!</h1>
+      <p>
+        <strong>Vietnamese</strong> cuisine is celebrated for its fresh ingredients, vibrant flavors, and healthy
+        cooking techniques. It emphasizes a balance of <strong>sweet, sour, salty, bitter, and spicy tastes</strong>,
+        often incorporating fresh herbs, vegetables, and lean proteins. Rice and noodles are staples, alongside a
+        variety of seafood, meats, and regional specialties.
+      </p>
+      <div class="gallery">
+        <span style="--i:1;" id="e1">
+          <img src="https://static.wixstatic.com/media/746053_3017fb0a104f47d99a03bc1e6fdf1d6a~mv2.png" alt="Phở" />
+        </span>
+        <span style="--i:2;" id="e2">
+          <img src="https://cdn.xanhsm.com/2025/01/62eda6b7-banh-chung-1.jpg" alt="Bánh Chưng" />
+        </span>
+        <span style="--i:3;" id="e3">
+          <img
+            src="https://i.ytimg.com/vi/w34Qnc-9KBU/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLAzXE6ASDMpVme1qsjbkQx4v-KaYA"
+            alt="Gỏi Cuốn" />
+        </span>
+        <span style="--i:4;" id="e4">
+          <img
+            src="https://cdn.pastaxi-manager.onepas.vn/content/uploads/articles/huyendt/cakhoto/C%C3%A1%20kho%20t%E1%BB%99%201.png"
+            alt="Cá Kho Tộ" />
+        </span>
+        <span style="--i:5;" id="e5">
+          <img src="https://khpt.1cdn.vn/2024/12/03/banh-mi-lao-phu-3-12.jpg" alt="Bánh Mì" />
+        </span>
+        <span style="--i:6;" id="e6">
+          <img src="https://i2.ex-cdn.com/crystalbay.com/files/content/2024/08/15/bun-bo-hue-6-0935.jpeg"
+            alt="Bún Bò Huế" />
+        </span>
+        <span style="--i:7;" id="e7">
+          <img src="https://statics.vinpearl.com/xoi-xeo-hanoi_1729782527.jpg" alt="Xôi" />
+        </span>
+        <span style="--i:8;" id="e8">
+          <img src="https://dayphache.edu.vn/wp-content/uploads/2019/05/hinh-che-cu-nang-trai-cay.jpg" alt="Chè" />
+        </span>
+      </div>
+    </section>
+
+    <section class="button">
+      <button class="traditionB active" id="buttonT" onclick="opentradition()">Tradition</button>
+      <button class="popularB" id="buttonP" onclick="openpopular()">Popular</button>
+    </section>
+
+    <section class="main" id="tradition">
+      <!-- Phở -->
+      <div class="content" data-recipe="pho">
+        <div class="box1">
+          <img class="dish" src="https://www.savorysweetspoon.com/wp-content/uploads/2024/01/Pho-Tai-Recipe-1x1-1.jpg"
+            alt="Phở" />
+        </div>
+        <div class="boxm">
+          <h1>Phở</h1>
+          <h2>- A fragrant noodle soup with beef or chicken, herbs, and spices.</h2>
+          <button class="recipe-button" onclick="showRecipe('pho')">Recipe</button>
+        </div>
+      </div>
+
+      <!-- Bánh Chưng -->
+      <div class="content" data-recipe="banhchung">
+        <div class="box1">
+          <img class="dish" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQtCJcHmt_yFVzW9lKL8g-DSy3Tkev7Y0_2evDxCgcLwiWJEFOag46WrkwTENjwvb1xlY&usqp=CAU
+          " alt="Bánh Chưng" />
+        </div>
+        <div class="boxm">
+          <h1>Bánh Chưng</h1>
+          <h2>- Square sticky rice cake filled with mung beans and pork.</h2>
+          <button class="recipe-button" onclick="showRecipe('banhchung')">Recipe</button>
+        </div>
+      </div>
+
+      <!-- Gỏi Cuốn -->
+      <div class="content" data-recipe="goicuon">
+        <div class="box1">
+          <img class="dish" src="https://beptruong.edu.vn/wp-content/uploads/2024/10/cach-lam-goi-cuon.jpg"
+            alt="Gỏi Cuốn" />
+        </div>
+        <div class="boxm">
+          <h1>Gỏi Cuốn</h1>
+          <h2>- Fresh spring rolls made with rice paper, filled with shrimp, herbs, and vermicelli.</h2>
+          <button class="recipe-button" onclick="showRecipe('goicuon')">Recipe</button>
+        </div>
+      </div>
+
+      <!-- Cá Kho Tộ -->
+      <div class="content" data-recipe="cakhoto">
+        <div class="box1">
+          <img class="dish"
+            src="https://cdnv2.tgdd.vn/mwg-static/common/Common/05052025%20-%202025-05-09T154044.858.jpg"
+            alt="Cá Kho Tộ" />
+        </div>
+        <div class="boxm">
+          <h1>Cá Kho Tộ</h1>
+          <h2>- Caramelized fish cooked in a clay pot, often served with rice.</h2>
+          <button class="recipe-button" onclick="showRecipe('cakhoto')">Recipe</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="hidden" id="popular">
+      <!-- Bánh Mì -->
+      <div class="content" data-recipe="banhmi">
+        <div class="box1">
+          <img class="dish"
+            src="https://hips.hearstapps.com/hmg-prod/images/banh-mi-with-grilled-pork1-1663331872.jpg?crop=0.683xw:1.00xh;0.317xw,0&resize=1200:*"
+            alt="Bánh Mì" />
+        </div>
+        <div class="boxm">
+          <h1>Bánh Mì</h1>
+          <h2>- A Vietnamese sandwich with various fillings, typically including pork, vegetables, and herbs.</h2>
+          <button class="recipe-button" onclick="showRecipe('banhmi')">Recipe</button>
+        </div>
+      </div>
+
+      <!-- Bún Bò Huế -->
+      <div class="content" data-recipe="bunbohue">
+        <div class="box1">
+          <img src="https://i2.ex-cdn.com/crystalbay.com/files/content/2024/08/15/bun-bo-hue-6-0935.jpeg"
+            alt="Bún Bò Huế" width="100%" />
+        </div>
+        <div class="boxm">
+          <h1>Bún Bò Huế</h1>
+          <h2>- A spicy beef noodle soup from Huế, known for its rich broth and lemongrass flavor.</h2>
+          <button class="recipe-button" onclick="showRecipe('bunbohue')">Recipe</button>
+        </div>
+      </div>
+
+      <!-- Xôi -->
+      <div class="content" data-recipe="xoi">
+        <div class="box1">
+          <img class="dish" src="https://beptruong.edu.vn/wp-content/uploads/2015/11/xoi-xeo-ha-noi.jpg" alt="Xôi" />
+        </div>
+        <div class="boxm">
+          <h1>Xôi</h1>
+          <h2>- Sticky rice that can be served sweet or savory, often topped with meats or mung beans.</h2>
+          <button class="recipe-button" onclick="showRecipe('xoi')">Recipe</button>
+        </div>
+      </div>
+
+      <!-- Chè -->
+      <div class="content" data-recipe="che">
+        <div class="box1">
+          <img class="dish" src="https://i.pinimg.com/736x/93/bf/65/93bf650e846458fe17d0bd6add672ee4.jpg" alt="Chè" />
+        </div>
+        <div class="boxm">
+          <h1>Chè</h1>
+          <h2>- A sweet dessert soup made with beans, fruits, and coconut milk.</h2>
+          <button class="recipe-button" onclick="showRecipe('che')">Recipe</button>
+        </div>
+      </div>
+
+    </section>
+
+    <div class="buttom">
+      <footer>
+        <div class="wave-container">
+          <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+            viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+            <defs>
+              <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+            </defs>
+            <g class="parallax">
+              <use xlink:href="#gentle-wave" x="48" y="0" fill="#DF9881" />
+              <use xlink:href="#gentle-wave" x="48" y="3" fill="#DF9881" />
+              <use xlink:href="#gentle-wave" x="48" y="5" fill="#DF9881" />
+              <use xlink:href="#gentle-wave" x="48" y="7" fill="#F6B38A" />
+            </g>
+          </svg>
+        </div>
+        <div class="footer-content">
+          <div class="footer-section">
+            <ul class="social-icon">
+              <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+              <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
+              <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+            </ul>
+            <ul class="menu">
+              <li><a href="index.html"></i>Home</a></li>
+              <li><a href="countryNew.html"></i>Country Foods</a></li>
+              <li><a href="reviewmainpage (1).html"></i>Review</a></li>
+              <li><a href="repro.html"></i>About Us</a></li>
+            </ul>
+            <p>Copyright ©2025 All rights reserved | We are Together <i class="fa fa-heart" style="color: red;"></i> by
+              Bit-wizards</a></p>
+          </div>
+      </footer>
+    </div>
+  </div>
+
+  <!-- Floating Recipe Card -->
+  <div class="recipe-card" id="recipeCard" role="dialog" aria-modal="true" aria-labelledby="recipeTitle"
+    aria-describedby="recipeContent">
+    <button class="close-btn" aria-label="Close recipe card" onclick="closeRecipe()">×</button>
+    <h1 id="recipeTitle"></h1>
+    <h2 id="recipeSubtitle"></h2>
+    <div id="recipeContent"></div>
+  </div>
+
+  <script>
+    const recipes = {
+      pho: {
+        title: "Phở",
+        subtitle: "A fragrant noodle soup with beef or chicken, herbs, and spices.",
+        content: `
+          <h3>📜Ingredients:</h3>
+          <ul>
+            <li>Rice noodles</li>
+            <li>Beef or chicken</li>
+            <li>Beef bones</li>
+            <li>Star anise, cloves, cinnamon</li>
+            <li>Fish sauce, onion, ginger</li>
+            <li>Fresh herbs (cilantro, basil)</li>
+          </ul>
+          <h3>👨‍🍳Recipe:</h3>
+          <ul>
+            <li>Simmer beef bones with spices for hours to create broth.</li>
+            <li>Cook noodles separately.</li>
+            <li>Add meat slices, herbs, and serve with lime.</li>
+          </ul>
+        `
+      },
+      banhchung: {
+        title: "Bánh Chưng",
+        subtitle: "Square sticky rice cake filled with mung beans and pork, traditionally made for Tết (Lunar New Year).",
+        content: `
+          <h3>📜Ingredients:</h3>
+          <ul>
+            <li>Glutinous rice</li>
+            <li>Mung beans</li>
+            <li>Pork belly</li>
+            <li>Shallots, fish sauce, pepper</li>
+            <li>Banana leaves (for wrapping)</li>
+          </ul>
+          <h3>👨‍🍳Recipe:</h3>
+          <ul>
+            <li>Soak rice and beans overnight.</li>
+            <li>Marinate pork with shallots and pepper.</li>
+            <li>Layer rice, beans, and pork, wrap in banana leaves.</li>
+            <li>Boil for 8–10 hours until fully cooked.</li>
+          </ul>
+        `
+      },
+      goicuon: {
+        title: "Gỏi Cuốn",
+        subtitle: "Fresh spring rolls made with rice paper, filled with shrimp, herbs, and vermicelli.",
+        content: `
+          <h3>📜Ingredients:</h3>
+          <ul>
+            <li>Rice paper</li>
+            <li>Shrimp</li>
+            <li>Pork</li>
+            <li>Vermicelli noodles</li>
+            <li>Lettuce, mint, basil</li>
+          </ul>
+          <h3>👨‍🍳Recipe:</h3>
+          <ul>
+            <li>Soak rice paper briefly in water.</li>
+            <li>Layer shrimp, pork, vermicelli, and herbs.</li>
+            <li>Roll tightly and serve with peanut sauce.</li>
+          </ul>
+        `
+      },
+      cakhoto: {
+        title: "Cá Kho Tộ",
+        subtitle: "Caramelized fish cooked in a clay pot, often served with rice.",
+        content: `
+          <h3>📜Ingredients:</h3>
+          <ul>
+            <li>Catfish or similar fish</li>
+            <li>Fish sauce</li>
+            <li>Caramel sauce (sugar + water)</li>
+            <li>Garlic, shallots</li>
+            <li>Chili, black pepper</li>
+          </ul>
+          <h3>👨‍🍳Recipe:</h3>
+          <ul>
+            <li>Caramelize sugar in a clay pot.</li>
+            <li>Add fish, fish sauce, garlic, and chili.</li>
+            <li>Simmer until the sauce thickens.</li>
+          </ul>
+        `
+      },
+      banhmi: {
+        title: "Bánh Mì",
+        subtitle: "A Vietnamese sandwich with various fillings, typically including pork, vegetables, and herbs.",
+        content: `
+          <h3>📜Ingredients:</h3>
+          <ul>
+            <li>Baguette</li>
+            <li>Grilled pork or cold cuts</li>
+            <li>Pâté, mayonnaise</li>
+            <li>Pickled carrots and daikon</li>
+            <li>Cucumber, cilantro, chili</li>
+          </ul>
+          <h3>👨‍🍳Recipe:</h3>
+          <ul>
+            <li>Toast baguette lightly.</li>
+            <li>Spread pâté and mayonnaise.</li>
+            <li>Add meat, pickles, and vegetables.</li>
+          </ul>
+        `
+      },
+      bunbohue: {
+        title: "Bún Bò Huế",
+        subtitle: "A spicy beef noodle soup from Huế, known for its rich broth and lemongrass flavor.",
+        content: `
+          <h3>📜Ingredients:</h3>
+          <ul>
+            <li>Beef shank</li>
+            <li>Pork knuckles</li>
+            <li>Lemongrass</li>
+            <li>Shrimp paste, fish sauce</li>
+            <li>Rice noodles</li>
+            <li>Chili oil, fresh herbs</li>
+          </ul>
+          <h3>👨‍🍳Recipe:</h3>
+          <ul>
+            <li>Simmer beef and pork bones with lemongrass.</li>
+            <li>Season broth with shrimp paste and fish sauce.</li>
+            <li>Serve with noodles and herbs.</li>
+          </ul>
+        `
+      },
+      xoi: {
+        title: "Xôi",
+        subtitle: "Sticky rice that can be served sweet or savory, often topped with meats or mung beans.",
+        content: `
+          <h3>📜Ingredients:</h3>
+          <ul>
+            <li>Glutinous rice</li>
+            <li>Coconut milk (optional)</li>
+            <li>Mung beans</li>
+            <li>Peanuts</li>
+            <li>Fried shallots</li>
+            <li>Meats (for savory version)</li>
+          </ul>
+          <h3>👨‍🍳Recipe:</h3>
+          <ul>
+            <li>Steam sticky rice until fully cooked.</li>
+            <li>Top with sweet or savory toppings.</li>
+          </ul>
+        `
+      },
+      che: {
+        title: "Chè",
+        subtitle: "A sweet dessert soup made with beans, fruits, and coconut milk.",
+        content: `
+          <h3>📜Ingredients:</h3>
+          <ul>
+            <li>Mung beans, red beans</li>
+            <li>Fruits, jelly</li>
+            <li>Coconut milk</li>
+            <li>Pandan leaves (optional)</li>
+            <li>Sugar</li>
+          </ul>
+          <h3>👨‍🍳Recipe:</h3>
+          <ul>
+            <li>Boil beans with sugar until soft.</li>
+            <li>Add coconut milk and toppings like jelly or fruit.</li>
+          </ul>
+        `
+      }
+    };
+
+    function showRecipe(key) {
+      const recipe = recipes[key];
+      if (!recipe) return;
+
+      const card = document.getElementById("recipeCard");
+      document.getElementById("recipeTitle").textContent = recipe.title;
+      document.getElementById("recipeSubtitle").textContent = recipe.subtitle;
+      document.getElementById("recipeContent").innerHTML = recipe.content;
+
+      card.style.display = "flex";
+      // Optional: prevent background scroll when recipe card is open
+      document.body.style.overflow = "hidden";
+    }
+
+    function closeRecipe() {
+      const card = document.getElementById("recipeCard");
+      card.style.display = "none";
+      document.body.style.overflow = "auto";
+    }
+
+    function opentradition() {
+      document.getElementById("tradition").style.display = "flex";
+      document.getElementById("popular").style.display = "none";
+      document.getElementById("buttonT").classList.add("active");
+      document.getElementById("buttonP").classList.remove("active");
+    }
+
+    function openpopular() {
+      document.getElementById("popular").style.display = "flex";
+      document.getElementById("tradition").style.display = "none";
+      document.getElementById("buttonP").classList.add("active");
+      document.getElementById("buttonT").classList.remove("active");
+    }
+
+    window.onload = () => {
+      opentradition();
+    };
+  </script>
+  <script>
+    const toggleBtn = document.querySelector('.toggle-btn')
+    const toggleBtnIcon = document.querySelector('.toggle-btn i')
+    const dropDownMenu = document.querySelector('.dropdown-menu')
+
+    toggleBtn.onclick = function () {
+      dropDownMenu.classList.toggle('open')
+      const isOpen = dropDownMenu.classList.contains('open')
+
+      toggleBtnIcon.classList = isOpen
+        ? 'fa-solid fa-xmark'
+        : 'fa-solid fa-bars'
+    }
+  </script>
+</body>
+
+</html>

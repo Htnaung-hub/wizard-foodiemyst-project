@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+    integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Witzard Foodiemyst</title>
+    <link rel="icon" href="Images/favicon.ico">
+    <link rel="stylesheet" href="navi.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-image: url('https://images.unsplash.com/photo-1599819173819-70e79192938a?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80');
+            background-size: cover;
+            background-attachment: fixed;
+            color: #373735;
+            line-height: 1.6;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #F38F43;
+            z-index: -1;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .head {
+            text-align: center;
+            padding: 30px 0;
+            margin-bottom: 20px;
+            margin-top: 50px;
+        }
+
+        h1 {
+            font-size: 3rem;
+            color: #373735;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+            margin-bottom: 10px;
+            font-weight: 800;
+        }
+
+        .subtitle {
+            font-size: 1.5rem;
+            color: #373735;
+            margin-bottom: 20px;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 30px 0;
+        }
+
+        .nav-btn {
+            background: #e25822;
+            color: #373735;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 30px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-btn:hover {
+            background: #c44a1c;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        section {
+            background: #D28254;
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        section:hover {
+            transform: translateY(-5px);
+        }
+
+        h2 {
+            color: #373735;
+            font-size: 2rem;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #e25822;
+        }
+
+        h3 {
+            color: #373735;
+            margin: 20px 0 10px;
+            font-size: 1.5rem;
+        }
+
+        p,
+        .ul ul,
+        .ul ol {
+            margin-bottom: 15px;
+        }
+
+        .ul ul,
+        .ul ol {
+            padding-left: 20px;
+        }
+
+        .ul li {
+            margin-bottom: 8px;
+        }
+
+        .highlight {
+            background: #F38F43;
+            ;
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 5px solid #e6551c;
+            margin: 20px 0;
+        }
+
+        .grade-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .grade {
+            flex: 1;
+            min-width: 200px;
+            padding: 15px;
+            border-radius: 10px;
+            color: #373735;
+            text-align: center;
+        }
+
+        .grade-a {
+            background: #059c44;
+        }
+
+        .grade-b {
+            background: #f39c12;
+        }
+
+        .grade-c {
+            background: #e74c3c;
+        }
+
+        .tip-box {
+            background: #F38F43;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+            border-left: 5px solid #e25822;
+        }
+
+        .tip-title {
+            font-weight: bold;
+            color: #0f659e;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        th,
+        td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #F38F43;
+        }
+
+        th {
+            background-color: #F38F43;
+            font-weight: bold;
+        }
+
+        tr:hover {
+            background-color: #e25822;
+        }
+
+        .flavor-profile {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin: 20px 0;
+        }
+
+        .flavor {
+            text-align: center;
+            padding: 15px;
+            flex: 1;
+            min-width: 150px;
+            margin: 10px;
+            border-radius: 10px;
+            background: #e74c3c;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .flavor-emoji {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+            color: #373735;
+            border-top: 1px solid #e25822;
+        }
+
+        @media (max-width: 768px) {
+            .nav-btn {
+                padding: 10px 15px;
+                font-size: 0.9rem;
+            }
+
+            h1 {
+                font-size: 2.2rem;
+            }
+
+            .subtitle {
+                font-size: 1.2rem;
+            }
+
+            section {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="body1">
+        <header>
+            <div class="navbar">
+                <div class="logo"><a href="#">Witzard Foodiemyst</a></div>
+                <ul class="links">
+                    <li><a href="index.html"><i class="fa-solid fa-house"></i>Home</a></li>
+                    <li><a href="countryNew.html"><i class="fa-solid fa-bowl-rice"></i></i>Country Foods</a></li>
+                    <li><a href="reviewmainpage (1).html"><i class="fa-solid fa-receipt"></i>Review</a></li>
+                    <li><a href="repro.html"><i class="fa-solid fa-address-card"></i></i>About Us</a></li>
+                </ul>
+                <div class="toggle-btn">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+            </div>
+            <div class="dropdown-menu">
+                <li><a href="index.html"><i class="fa-solid fa-house"></i>Home</a></li>
+                <li><a href="countryNew.html"><i class="fa-solid fa-bowl-rice"></i></i>Country Foods</a></li>
+                <li><a href="reviewmainpage (1).html"><i class="fa-solid fa-receipt"></i>Review</a></li>
+                <li><a href="repro.html"><i class="fa-solid fa-address-card"></i></i>About Us</a></li>
+            </div>
+        </header>
+    </div>
+    <div class="container">
+        <div class="head">
+            <h1>Malaysian Food Journey</h1>
+            <p class="subtitle">Discover the Cleanliness, Health & Preparation of Malaysia's Culinary Treasures</p>
+        </div>
+
+        <div class="nav-container">
+            <a href="#cleanliness"><button class="nav-btn">Cleanliness</button></a>
+            <a href="#healthiness"><button class="nav-btn">Healthiness</button></a>
+            <a href="#preparation"><button class="nav-btn">Preparation</button></a>
+            <a href="#special"><button class="nav-btn">Special Features</button></a>
+        </div>
+
+        <section id="cleanliness">
+            <h2>Cleanliness of Food in Malaysia</h2>
+
+            <h3>1. Hygiene Standards & Regulations</h3>
+            <p>The Ministry of Health Malaysia (MOH) monitors food safety through regular inspections.</p>
+
+            <p>Food outlets get Hygiene Grades:</p>
+            <div class="grade-container">
+                <div class="grade grade-a">
+                    <h4>Grade A (80–100 points)</h4>
+                    <p>Excellent cleanliness</p>
+                </div>
+                <div class="grade grade-b">
+                    <h4>Grade B (65–79 points)</h4>
+                    <p>Satisfactory</p>
+                </div>
+                <div class="grade grade-c">
+                    <h4>Grade C (50–64 points)</h4>
+                    <p>Needs improvement</p>
+                </div>
+            </div>
+
+            <div class="highlight">
+                <p>Larger restaurants and fast-food chains are usually compliant with MOH standards.</p>
+                <p>Street vendors are licensed by local councils, which check water supply, waste disposal, and food
+                    storage.</p>
+            </div>
+
+            <h3>2. Common Cleanliness Challenges</h3>
+            <div class="ul">
+            <ul>
+                <li><strong>Climate factor</strong> – Malaysia's hot, humid weather can cause food to spoil quickly if
+                    not stored properly.</li>
+                <li><strong>Street food exposure</strong> – Open-air stalls are exposed to dust, car fumes, and insects.
+                </li>
+                <li><strong>Water quality</strong> – Tap water is treated but not always safe for drinking; many
+                    eateries use filtered or bottled water.</li>
+                <li><strong>Food handling habits</strong> – Some smaller stalls might not use gloves or may reuse
+                    cooking oil too many times.</li>
+            </ul>
+            </div>
+
+            <h3>3. How Locals Maintain Cleanliness</h3>
+            <div class="ul">
+            <ul>
+                <li>Many stalls cook made-to-order, reducing the chance of food sitting out for too long.</li>
+                <li>Ingredients are often bought fresh daily from morning markets.</li>
+                <li>Food is typically served piping hot, which kills most harmful bacteria.</li>
+                <li>Condiments like sambal are often stored in covered containers to prevent contamination.</li>
+            </ul>
+            </div>
+
+            <h3>4. Tips for Choosing the Cleanest Food</h3>
+            <div class="tip-box">
+                <div class="tip-title">✅ Observe the stall or restaurant</div>
+                <p>Is the floor clean? Are utensils stored properly?</p>
+            </div>
+            <div class="tip-box">
+                <div class="tip-title">✅ Watch the food prep</div>
+                <p>Are hands/gloves clean? Is raw food kept separate from cooked food?</p>
+            </div>
+            <div class="tip-box">
+                <div class="tip-title">✅ Check customer flow</div>
+                <p>Busy stalls usually mean high turnover and fresher ingredients.</p>
+            </div>
+            <div class="tip-box">
+                <div class="tip-title">✅ Look for Hygiene Grade certificates</div>
+                <p>Prefer A or B grades.</p>
+            </div>
+            <div class="tip-box">
+                <div class="tip-title">✅ Trust your senses</div>
+                <p>If something smells off or looks old, avoid it.</p>
+            </div>
+
+            <h3>5. Safe Eating Habits in Malaysia</h3>
+            <div class="ul">
+            <ul>
+                <li>Drink sealed bottled water or use a portable water filter.</li>
+                <li>Avoid raw seafood from roadside stalls unless it's clearly fresh and kept on ice.</li>
+                <li>Wash or peel fresh fruits before eating.</li>
+                <li>Carry hand sanitizer or wet wipes when eating outdoors.</li>
+                <li>Eat from vendors who keep food covered and use tongs or utensils instead of bare hands.</li>
+            </ul>
+            </div>
+        </section>
+
+        <section id="healthiness">
+            <h2>Healthiness of Malaysian Food</h2>
+
+            <h3>1. Nutritional Strengths</h3>
+            <div class="ul">
+            <ul>
+                <li><strong>Diverse ingredients</strong> – Combines grains (rice, noodles), protein (chicken, beef,
+                    fish, tofu, eggs), vegetables, and legumes.</li>
+                <li><strong>Natural flavoring</strong> – Uses herbs, spices, and aromatics rather than artificial
+                    seasonings in many traditional dishes.</li>
+                <li><strong>High fiber options</strong> – Vegetable-rich dishes like sayur lemak, kangkung belacan, or
+                    ulam salads.</li>
+                <li><strong>Fermented foods</strong> – Belacan (shrimp paste), tempeh, and some pickles aid gut health
+                    (when eaten moderately).</li>
+            </ul>
+            </div>
+
+            <h3>2. Common Nutritional Weaknesses</h3>
+            <div class="ul">
+            <ul>
+                <li><strong>High sodium</strong> – Soy sauce, oyster sauce, and seasoning powders add a lot of salt.
+                </li>
+                <li><strong>High sugar</strong> – Sweetened condensed milk in drinks like teh tarik and kopi; desserts
+                    often contain syrup or palm sugar.</li>
+                <li><strong>High fat</strong> – Deep frying is common; coconut milk adds saturated fat to curries and
+                    soups.</li>
+                <li><strong>Refined carbs</strong> – White rice and refined noodles are the main staples.</li>
+            </ul>
+            </div>
+
+            <h3>3. Impact on Health</h3>
+            <div class="ul">
+            <ul>
+                <li><strong>Weight gain risk</strong> – Frequent fried foods and sugary drinks can lead to obesity.</li>
+                <li><strong>Heart health</strong> – High saturated fat and sodium can contribute to high blood pressure
+                    or cholesterol issues.</li>
+                <li><strong>Blood sugar control</strong> – White rice and sweet drinks can spike glucose levels,
+                    increasing diabetes risk (Malaysia already has a high diabetes rate).</li>
+                <li><strong>Good nutrient intake</strong> – Vegetables, fish, and legumes help balance the diet if
+                    chosen wisely.</li>
+            </ul>
+            </div>
+
+            <h3>4. How to Keep a "Healthy Rate"</h3>
+            <div class="highlight">
+                <p><strong>Everyday base</strong> – Grilled fish/chicken, clear soups, fresh vegetables, moderate rice.
+                </p>
+                <p><strong>Once or twice a week treats</strong> – Deep-fried snacks (pisang goreng), rich coconut
+                    curries, sweet desserts.</p>
+            </div>
+
+            <p><strong>Small swaps:</strong></p>
+            <div class="ul">
+            <ul>
+                <li>White rice → brown rice or mixed grain rice.</li>
+                <li>Coconut milk → light coconut milk or evaporated milk in curries.</li>
+                <li>Sweet drinks → plain water or teh o kurang manis (less sweet tea).</li>
+            </ul>
+            </div>
+
+            <div class="tip-box">
+                <div class="tip-title">Portion control</div>
+                <p>Many Malaysian dishes are high-calorie; smaller portions help balance daily intake.</p>
+            </div>
+
+            <h3>5. Example of a Balanced Malaysian Day</h3>
+            <div class="ul">
+            <ul>
+                <li><strong>Breakfast</strong> – Roti canai (1 piece) with dhal, unsweetened coffee.</li>
+                <li><strong>Lunch</strong> – Grilled fish with ulam, small serving of rice, clear vegetable soup.</li>
+                <li><strong>Snack</strong> – Fresh fruit (papaya, watermelon).</li>
+                <li><strong>Dinner</strong> – Chicken soup with vegetables, rice noodles, herbal tea.</li>
+            </ul>
+            </div>
+        </section>
+
+        <section id="preparation">
+            <h2>Preparing Malaysian Food</h2>
+
+            <h3>1. Understanding the Cuisine</h3>
+            <p>Malaysian food blends Malay, Chinese, Indian, Peranakan, and Indigenous influences.</p>
+            <div class="highlight">
+                <p>Preparation focuses on balancing spicy, sweet, sour, and savory flavors, often within a single dish.
+                </p>
+            </div>
+
+            <h3>2. Key Building Blocks</h3>
+            <div class="ul">
+            <ul>
+                <li><strong>Staple carbs</strong> – White rice (nasi putih), coconut rice (nasi lemak), noodles (egg,
+                    rice, wheat), breads (roti canai, pau).</li>
+                <li><strong>Proteins</strong> – Chicken, beef, mutton, fish, prawns, squid, tofu, tempeh, eggs.</li>
+                <li><strong>Vegetables & legumes</strong> – Kangkung, okra, long beans, cabbage, bean sprouts,
+                    chickpeas.</li>
+                <li><strong>Aromatics & spices</strong> – Lemongrass, galangal, ginger, turmeric, pandan leaves,
+                    cinnamon, cloves, star anise.</li>
+                <li><strong>Condiments</strong> – Sambal, soy sauce, oyster sauce, fermented shrimp paste (belacan),
+                    pickles (acar).</li>
+            </ul>
+            </div>
+
+            <h3>3. The Spice Paste (Rempah)</h3>
+            <p>The heart of many dishes is a spice paste, prepared by:</p>
+            <div class="ul">
+            <ol>
+                <li><strong>Selecting ingredients</strong> – Commonly shallots, garlic, ginger, fresh or dried chilies,
+                    lemongrass, galangal, turmeric, belacan.</li>
+                <li><strong>Processing</strong> – Traditionally pounded in a mortar and pestle for texture; modern
+                    kitchens often use blenders.</li>
+                <li><strong>Cooking</strong> – The paste is sautéed in oil until aromatic and the oil separates (pecah
+                    minyak), unlocking deep flavors.</li>
+            </ol>
+            </div>
+
+            <h3>4. Core Cooking Techniques</h3>
+            <table>
+                <tr>
+                    <th>Technique</th>
+                    <th>Description</th>
+                    <th>Example Dishes</th>
+                </tr>
+                <tr>
+                    <td>Tumis (sauté/stir-fry)</td>
+                    <td>Fry spice paste or ingredients over high heat.</td>
+                    <td>Mee Goreng, Kangkung Belacan</td>
+                </tr>
+                <tr>
+                    <td>Bakar (grill/roast)</td>
+                    <td>Cook over open flame or charcoal for smoky flavor.</td>
+                    <td>Satay, Ikan Bakar</td>
+                </tr>
+                <tr>
+                    <td>Kukus (steam)</td>
+                    <td>Gentle cooking with steam, preserving texture.</td>
+                    <td>Pau, Steamed Fish</td>
+                </tr>
+                <tr>
+                    <td>Rebus (boil/simmer)</td>
+                    <td>Long cooking in liquid, for soups and curries.</td>
+                    <td>Laksa, Kari Ayam</td>
+                </tr>
+                <tr>
+                    <td>Goreng (deep-fry)</td>
+                    <td>Full submersion in oil for crispness.</td>
+                    <td>Ayam Goreng, Pisang Goreng</td>
+                </tr>
+                <tr>
+                    <td>Perang (braise)</td>
+                    <td>Slow cooking meat in sauce until tender.</td>
+                    <td>Rendang, Gulai</td>
+                </tr>
+                <tr>
+                    <td>Acar (pickle)</td>
+                    <td>Preserving vegetables in vinegar, sugar, and spices.</td>
+                    <td>Acar Awak</td>
+                </tr>
+            </table>
+
+            <h3>5. Balancing Flavors</h3>
+            <p>Malaysian dishes typically aim for a layered flavor profile:</p>
+            <div class="flavor-profile">
+                <div class="flavor">
+                    <div class="flavor-emoji">🍯</div>
+                    <div class="flavor-name">Sweet</div>
+                    <div class="flavor-desc">palm sugar (gula melaka), caramelized onions</div>
+                </div>
+                <div class="flavor">
+                    <div class="flavor-emoji">🧂</div>
+                    <div class="flavor-name">Salty</div>
+                    <div class="flavor-desc">soy sauce, fish sauce, belacan</div>
+                </div>
+                <div class="flavor">
+                    <div class="flavor-emoji">🍋</div>
+                    <div class="flavor-name">Sour</div>
+                    <div class="flavor-desc">tamarind, lime, vinegar</div>
+                </div>
+                <div class="flavor">
+                    <div class="flavor-emoji">🌶️</div>
+                    <div class="flavor-name">Spicy</div>
+                    <div class="flavor-desc">fresh chilies, dried chilies, chili paste</div>
+                </div>
+            </div>
+
+            <h3>6. Typical Meal Structure</h3>
+            <p>A Malaysian meal often includes:</p>
+            <div class="ul">
+            <ul>
+                <li>Main starch – rice or noodles.</li>
+                <li>Main protein dish – curry, grilled meat, or fried seafood.</li>
+                <li>Vegetable side – stir-fried greens, pickles, or salads.</li>
+                <li>Condiments – sambal, pickled vegetables.</li>
+                <li>Optional snacks/desserts – kuih, cendol, fried fritters.</li>
+            </ul>
+            </div>
+
+            <h3>7. Step-by-Step Flow for Most Malaysian Dishes</h3>
+            <div class="ul">
+            <ol>
+                <li>Prepare spice paste (rempah) – pounding/blending aromatics.</li>
+                <li>Cook the base – sauté paste until fragrant.</li>
+                <li>Add main ingredient – protein, vegetable, or noodle.</li>
+                <li>Add liquid (if needed) – coconut milk, broth, or water.</li>
+                <li>Simmer or cook quickly – depending on the dish.</li>
+                <li>Adjust flavors – sweet, salty, sour, spicy.</li>
+                <li>Finish with garnish – fried shallots, herbs, lime wedges.</li>
+                <li>Serve with staples – rice, noodles, or bread.</li>
+            </ol>
+            </div>
+        </section>
+
+        <section id="special">
+            <h2>Special About Malaysian Food</h2>
+
+            <h3>1. Multi-Cultural Fusion</h3>
+            <p>Malaysian cuisine is a unique blend of:</p>
+            <div class="ul">
+            <ul>
+                <li><strong>Malay</strong> – coconut milk, lemongrass, sambal, rice-based meals.</li>
+                <li><strong>Chinese</strong> – stir-fried noodles, steamed buns, soy sauce seasoning.</li>
+                <li><strong>Indian</strong> – curries, flatbreads, aromatic spice mixes.</li>
+                <li><strong>Peranakan (Nyonya)</strong> – fusion of Malay spices with Chinese cooking.</li>
+                <li><strong>Indigenous & regional</strong> – forest herbs, traditional rice dishes from Borneo.</li>
+            </ul>
+            </div>
+
+            <h3>2. Balance of Flavors</h3>
+            <p>Most dishes are built on a mix of:</p>
+            <div class="flavor-profile">
+                <div class="flavor">
+                    <div class="flavor-emoji">🌶️</div>
+                    <div class="flavor-name">Spicy</div>
+                    <div class="flavor-desc">fresh and dried chilies</div>
+                </div>
+                <div class="flavor">
+                    <div class="flavor-emoji">🍯</div>
+                    <div class="flavor-name">Sweet</div>
+                    <div class="flavor-desc">palm sugar (gula melaka)</div>
+                </div>
+                <div class="flavor">
+                    <div class="flavor-emoji">🍋</div>
+                    <div class="flavor-name">Sour</div>
+                    <div class="flavor-desc">tamarind, lime</div>
+                </div>
+                <div class="flavor">
+                    <div class="flavor-emoji">🧂</div>
+                    <div class="flavor-name">Salty/Umami</div>
+                    <div class="flavor-desc">fermented shrimp paste (belacan), soy sauce, dried seafood</div>
+                </div>
+            </div>
+            <div class="highlight">
+                <p>You rarely get just one taste — flavors are layered.</p>
+            </div>
+
+            <h3>3. Rich Aromatic Base</h3>
+            <p>Lemongrass, galangal, turmeric, pandan, ginger, garlic, shallots.</p>
+            <p>Often made into a spice paste (rempah) as the foundation for curries, soups, and stir-fries.</p>
+
+            <h3>4. Variety of Cooking Styles</h3>
+            <div class="ul">
+            <ul>
+                <li>Tumis (sautéing spice paste)</li>
+                <li>Bakar (grilling over charcoal)</li>
+                <li>Kukus (steaming)</li>
+                <li>Rebus (simmering)</li>
+                <li>Goreng (deep-frying)</li>
+                <li>Slow cooking for rich, tender meats like rendang</li>
+            </ul>
+            </div>
+
+            <h3>5. All-Day Eating Culture</h3>
+            <div class="ul">
+            <ul>
+                <li>Breakfast might be roti canai, nasi lemak, or noodle soup.</li>
+                <li>Lunch is often rice with several side dishes.</li>
+                <li>Evening snacks from street stalls (pasar malam).</li>
+                <li>Late-night meals at mamak stalls (Indian-Muslim eateries) are common.</li>
+            </ul>
+            </div>
+
+            <h3>6. Street Food Scene</h3>
+            <div class="ul">
+            <ul>
+                <li>Famous worldwide for variety and affordability.</li>
+                <li>Many dishes are best from hawker centers and night markets.</li>
+                <li>Shared eating — multiple small dishes to taste together.</li>
+            </ul>
+            </div>
+
+            <h3>7. Tropical Dessert Identity</h3>
+            <div class="ul">
+            <ul>
+                <li>Heavy use of coconut milk, pandan, palm sugar, and tropical fruits.</li>
+                <li>Colorful kuih cakes, shaved ice desserts (cendol, ais kacang).</li>
+            </ul>
+            </div>
+        </section>
+    </div>
+    <footer>
+        <div class="wave-container">
+            <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+                <defs>
+                    <path id="gentle-wave"
+                        d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+                </defs>
+                <g class="parallax">
+                    <use xlink:href="#gentle-wave" x="48" y="0" fill="#DF9881" />
+                    <use xlink:href="#gentle-wave" x="48" y="3" fill="#DF9881" />
+                    <use xlink:href="#gentle-wave" x="48" y="5" fill="#DF9881" />
+                    <use xlink:href="#gentle-wave" x="48" y="7" fill="#F6B38A" />
+                </g>
+            </svg>
+        </div>
+        <div class="footer-content">
+            <div class="footer-section">
+                <ul class="social-icon">
+                    <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+                    <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
+                    <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                </ul>
+                <ul class="menu">
+                    <li><a href="index.html"></i>Home</a></li>
+                    <li><a href="countryNew.html"></i>Country Foods</a></li>
+                    <li><a href="reviewmainpage (1).html"></i>Review</a></li>
+                    <li><a href="repro.html"></i>About Us</a></li>
+                </ul>
+                <p>Copyright ©2025 All rights reserved | We are Together <i class="fa fa-heart" style="color: red;"></i>
+                    by Bit-wizards</a></p>
+            </div>
+    </footer>
+</body>
+
+</html>

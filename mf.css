@@ -1,0 +1,772 @@
+@import url("https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Bebas+Neue&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+:root {
+    --primary-color: #42200b;
+    --secondary-color: #ffc135;
+    --tertiary-color: #df1c1c;
+    --text-dark: #212529;
+    --white: #ffffff;
+    --max-width: 1200px;
+    --header-font-1: "Alfa Slab One", serif;
+    --header-font-2: "Bebas Neue", sans-serif;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+}
+
+#toggleRecipesBtn {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color:  #e68032;
+    color: #373735;
+    border: none;
+    border-radius: 5px;
+}
+
+#recipesContainer {
+    display: none;
+    /* စစချင်းမှာ မပေါ်အောင် ဖွက်ထားသည် */
+    margin-top: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #F38F43;
+}
+
+.recipe-item {
+    margin-bottom: 30px;
+}
+
+.recipe-item h3 {
+    color: #333;
+}
+
+.recipe-item ul,
+.recipe-item ol {
+    margin-top: 5px;
+}
+
+
+.section__container {
+    max-width: var(--max-width);
+    margin: auto;
+    padding: 5rem 1rem;
+}
+
+.section__header {
+    font-size: 3rem;
+    font-weight: 500;
+    padding-bottom: 3rem;
+    font-family: var(--header-font-1);
+    color: var(--primary-color);
+    text-align: center;
+    line-height: 3.75rem;
+    text-shadow: 2px 2px var(--secondary-color);
+}
+
+
+
+.btn {
+    padding: 1rem 1.5rem;
+    outline: none;
+    border: none;
+    font-size: 1rem;
+    color: var(--white);
+    background-color: var(--tertiary-color);
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: var(--primary-color);
+}
+
+img {
+    display: flex;
+    width: 100%;
+}
+
+a {
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+html,
+body {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #F38F43;
+    font-family: 'Poppins', sans-serif;
+}
+
+.header {
+    background-image: url("assets/header-bg.png");
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.header__container {
+    display: grid;
+    gap: 2rem;
+    overflow: hidden;
+}
+
+.header__image img {
+    max-width: 600px;
+    margin-inline: auto;
+}
+
+.header__content h2 {
+    max-width: 400px;
+    margin-inline: auto;
+    margin-bottom: 2rem;
+    padding: 1rem 2rem;
+    font-size: 1.75rem;
+    font-weight: 400;
+    font-family: var(--header-font-2);
+    color: var(--primary-color);
+    border: 2px dashed var(--primary-color);
+    text-align: center;
+}
+
+.header__content h1 {
+    font-size: 4.5rem;
+    font-weight: 500;
+    font-family: var(--header-font-1);
+    color: var(--primary-color);
+    line-height: 3.5rem;
+    text-align: center;
+    text-shadow: 2px 2px var(--white);
+}
+
+.header__content h1 span {
+    font-size: 3rem;
+}
+
+.banner__container {
+    display: grid;
+    gap: 1rem;
+    grid-auto-rows: 200px;
+}
+
+.banner__card {
+    padding: 1rem;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 1rem;
+}
+
+.banner__card:nth-child(1) {
+    background-image: url("assets/banner-1.png");
+}
+
+.banner__card:nth-child(2) {
+    background-image: url("assets/banner-2.png");
+}
+
+.banner__card:nth-child(3) {
+    background-image: url("assets/banner-3.png");
+}
+
+.banner__card p {
+    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: var(--white);
+}
+
+.banner__card h4 {
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--white);
+}
+
+.order__container h3 {
+    max-width: fit-content;
+    margin-inline: auto;
+    margin-bottom: 1rem;
+    padding: 0.5rem 2rem;
+    font-size: 1.5rem;
+    font-weight: 400;
+    font-family: var(--header-font-2);
+    color: var(--primary-color);
+    background-color: var(--secondary-color);
+}
+
+.order__container .section__header {
+    margin-bottom: 1rem;
+}
+
+.order__container .section__description {
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.order__grid {
+    margin-top: 7rem;
+    display: grid;
+    gap: 2rem 1rem;
+}
+
+.order__card {
+    padding: 2rem 1rem;
+    background-color: #D28254;
+    color: #373735;
+    border-radius: 1rem;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.order__card:hover {
+    box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.1);
+    transform: scale(1.2);
+    z-index: 1
+}
+
+.order__card img {
+    max-width: 250px;
+    margin-inline: auto;
+    margin-bottom: 2rem;
+    filter: drop-shadow(10px 10px 30px rgba(0, 0, 0, 0.3));
+}
+
+.order__card h4 {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+.order__card p {
+    margin-bottom: 2rem;
+    font-weight: 500;
+    color: var(--text-dark);
+    line-height: 1.75rem;
+}
+
+.event__content {
+    display: grid;
+    background-color: #D28254;
+    gap: 2rem;
+    padding: 1rem;
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.event__details {
+    text-align: center;
+}
+
+.event__details h3 {
+    font-size: 2rem;
+    font-weight: 500;
+    font-family: var(--header-font-2);
+    color: var(--text-dark);
+}
+
+.event__details .section__header {
+    margin-bottom: 1rem;
+}
+
+.reservation {
+    position: relative;
+    isolation: isolate;
+}
+
+.reservation__container h3 {
+    font-size: 2rem;
+    font-weight: 500;
+    font-family: var(--header-font-2);
+    color: var(--text-dark);
+    text-align: center;
+}
+
+.reservation__container form {
+    max-width: 400px;
+    margin-inline: auto;
+    margin-top: 4rem;
+    display: grid;
+    gap: 1rem;
+}
+
+.reservation__container input {
+    padding: 0.75rem 1rem;
+    outline: none;
+    border: 1px solid var(--text-dark);
+    font-size: 1rem;
+    color: var(--text-dark);
+}
+
+.reservation__container input::placeholder {
+    color: var(--text-dark);
+}
+
+.reservation img {
+    display: none;
+}
+
+.footer {
+    background-image: url("assets/footer-bg.png");
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.footer__logo img {
+    max-width: 250px;
+}
+
+.footer__content {
+    margin-top: 2rem;
+    display: grid;
+    gap: 2rem;
+}
+
+.footer__content p {
+    font-weight: 5500;
+    color: var(--white);
+    line-height: 1.75rem;
+}
+
+.footer__links {
+    list-style: none;
+    display: grid;
+    gap: 1rem;
+}
+
+.footer__links li {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-weight: 500;
+    color: var(--white);
+}
+
+.footer__links li span {
+    font-size: 1.25rem;
+}
+
+.footer__socials {
+    margin-top: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.footer__socials a {
+    font-size: 1.5rem;
+    color: var(--white);
+}
+
+.footer__socials a:hover {
+    color: var(--secondary-color);
+}
+
+.footer__bar {
+    padding: 1rem;
+    font-size: 0.9rem;
+    color: var(--white);
+    text-align: center;
+}
+
+ul {
+    text-align: center;
+    list-style-position: inside;
+    margin: 0;
+    padding: 0;
+}
+
+@media (width > 540px) {
+    .banner__container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .banner__card:nth-child(1) {
+        grid-area: 1/1/2/3;
+    }
+
+    .order__grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.header__container {
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+}
+
+.header__image {
+    grid-area: 1/2/2/3;
+}
+
+.header__content h2 {
+    margin-inline-start: unset;
+}
+
+.header__content h1 {
+    text-align: left;
+}
+
+.banner__card {
+    padding: 1.5rem;
+}
+
+.banner__card:nth-child(1) {
+    grid-area: 1/1/3/2;
+}
+
+.order__grid {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.event__content {
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+}
+
+.event__image {
+    grid-area: 1/2/2/3;
+}
+
+.event__details,
+.event__details .section__header {
+    text-align: left;
+}
+
+.reservation__container form {
+    max-width: 600px;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.reservation img {
+    display: flex;
+    position: absolute;
+    z-index: -1;
+}
+
+.gallery img {
+    position: absolute;
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+
+}
+
+.gallery {
+    position: relative;
+    margin-left: 40%;
+    margin-top: 5%;
+    width: 250px;
+    height: 150px;
+    transform-style: preserve-3d;
+    animation: rotate 35s linear infinite;
+}
+
+@keyframes rotate {
+    from {
+        transform: perspective(1200px) rotateY(0deg);
+    }
+
+    to {
+        transform: perspective(1200px) rotateY(360deg);
+    }
+}
+
+.gallery span {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform-origin: center;
+    transform-style: preserve-3d;
+    transform: rotateY(calc(var(--i) * 45deg)) translateZ(380px);
+}
+
+.g-img {
+    position: absolute;
+    width: 80%;
+    height: 80%;
+    object-fit: contain;
+}
+
+.container {
+    text-align: center;
+}
+
+.recipe-box {
+    display: inline-block;
+    background-color: #ff8c42;
+    color: #373735;
+    padding: 15px 30px;
+    border-radius: 12px;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s;
+    font-size: 18px;
+}
+
+.recipe-box:hover {
+    background-color: #e67628;
+}
+
+.recipe-content {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #f0884c;
+    color: #333;
+    border-radius: 10px;
+    max-width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: none;
+    animation: fadeIn 0.4s ease-in-out;
+}
+
+#toggle-recipe1:checked~.recipe-content {
+    display: block;
+}
+
+#toggle-recipe2:checked~.recipe-content {
+    display: block;
+}
+
+#toggle-recipe3:checked~.recipe-content {
+    display: block;
+}
+
+#toggle-recipe4:checked~.recipe-content {
+    display: block;
+}
+
+#toggle-recipe5:checked~.recipe-content {
+    display: block;
+}
+
+#toggle-recipe6:checked~.recipe-content {
+    display: block;
+}
+
+#toggle-recipe7:checked~.recipe-content {
+    display: block;
+}
+
+#toggle-recipe8:checked~.recipe-content {
+    display: block;
+}
+
+#toggle-recipe9:checked~.recipe-content {
+    display: block;
+}
+
+#toggle-recipe10:checked~.recipe-content {
+    display: block;
+}
+
+#toggle-recipe11:checked~.recipe-content {
+    display: block;
+}
+
+#toggle-recipe12:checked~.recipe-content {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@media (max-width: 600px) {
+    /* General body margin and padding adjustments */
+    body {
+        font-size: 14px;
+    }
+
+    /* Header container: stack content vertically */
+    .header__container {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        text-align: center;
+    }
+
+    .header__image img {
+        max-width: 100%;
+        margin: 0 auto;
+    }
+
+    .header__content h2 {
+        max-width: 100%;
+        font-size: 1.25rem;
+        padding: 0.5rem 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .header__content h1 {
+        font-size: 2.5rem;
+        line-height: 1.2;
+    }
+
+    .header__content h1 span {
+        font-size: 1.75rem;
+    }
+
+    /* Banner container: single column */
+    .banner__container {
+        grid-template-columns: 1fr !important;
+        grid-auto-rows: auto;
+        gap: 1rem;
+    }
+
+    .banner__card {
+        height: auto;
+        padding: 1rem;
+        border-radius: 0.75rem;
+    }
+
+    .banner__card:nth-child(1) {
+        grid-area: auto !important;
+    }
+
+    /* Order grid: single column */
+    .order__grid {
+        grid-template-columns: 1fr !important;
+        gap: 1.5rem;
+        margin-top: 3rem;
+    }
+
+    .order__card {
+        padding: 1.5rem 1rem;
+        max-width: 100%;
+        margin: 0 auto;
+        transform: none !important;
+        box-shadow: none !important;
+        transition: none !important;
+    }
+
+    .order__card:hover {
+        transform: none !important;
+        box-shadow: none !important;
+        z-index: auto !important;
+    }
+
+    .order__card img {
+        max-width: 100%;
+        margin-bottom: 1rem;
+        filter: none;
+    }
+
+    /* Event content: single column */
+    .event__content {
+        grid-template-columns: 1fr !important;
+        padding: 1rem;
+        text-align: center;
+    }
+
+    .event__image {
+        grid-area: auto !important;
+        margin: 0 auto;
+        max-width: 100%;
+    }
+
+    .event__details,
+    .event__details .section__header {
+        text-align: center;
+    }
+
+    /* Reservation form: single column */
+    .reservation__container form {
+        grid-template-columns: 1fr !important;
+        max-width: 100%;
+        margin-top: 2rem;
+        padding: 0 1rem;
+    }
+
+    .reservation__container input {
+        width: 100%;
+    }
+
+    /* Footer content: stack vertically */
+    .footer__content {
+        grid-template-columns: 1fr !important;
+        gap: 1rem;
+        text-align: center;
+    }
+
+    .footer__logo img {
+        max-width: 150px;
+        margin: 0 auto;
+    }
+
+    .footer__links {
+        justify-content: center;
+    }
+
+    .footer__socials {
+        justify-content: center;
+    }
+
+    /* Adjust section headers font size */
+    .section__header {
+        font-size: 2rem;
+        padding-bottom: 1.5rem;
+    }
+
+    /* Adjust button sizes */
+    .btn {
+        padding: 0.75rem 1rem;
+        font-size: 0.9rem;
+    }
+
+    /* Images full width */
+    img {
+        width: 100%;
+        height: auto;
+    }
+
+    /* Recipe box and content */
+    .recipe-box {
+        font-size: 16px;
+        padding: 12px 24px;
+    }
+
+    .recipe-content {
+        max-width: 100%;
+        padding: 15px;
+        margin: 15px auto;
+    }
+
+    .gallery {
+        width: 50%;
+        height: 200px;
+        margin: auto;
+    }
+
+    .gallery span {
+        width: 50%;
+        height: 80px;
+        margin: 20% 20%;
+        transform-origin: center;
+        transform-style: preserve-3d;
+        transform: rotateY(calc(var(--i) * 45deg)) translateZ(180px);
+    }
+}

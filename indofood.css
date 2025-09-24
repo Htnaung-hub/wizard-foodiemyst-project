@@ -1,0 +1,216 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+  font-family: "Montserrat", sans-serif;
+}
+
+body {
+  margin: 0;
+  background-color: #F38F43;
+}
+
+/*Empty Section*/
+.CandF {
+  margin: 0; 
+  padding: 0;
+  height: 530px; 
+  background-image: linear-gradient(rgba(243, 143, 67,0.3),rgba(0, 0, 0,0.7)),
+   url('Images/indobg.jpg'); 
+  background-size: cover; 
+  background-position: center; 
+  background-repeat: no-repeat; 
+  background-attachment: fixed; 
+}
+.country-name {
+  display: inline-flex;
+  align-items: center;
+  gap: 30px;                 
+  background-color: #F38F43;    
+  color: #373735;
+  border: none;
+  padding: 3px 16px;
+  font-size: 20px;
+  font-weight: 600;
+  margin-top: 120px;      
+}
+
+.country-name .profile {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+}
+.gallery {
+  position: relative;
+  margin-left: 40%;
+  margin-top: 5%;
+  width: 250px;
+  height: 180px;
+  transform-style: preserve-3d;
+  animation: rotate 35s linear infinite;
+}
+
+@keyframes rotate {
+  from {
+    transform: perspective(1200px) rotateY(0deg);
+  }
+
+  to {
+    transform: perspective(1200px) rotateY(360deg);
+  }
+}
+
+span {
+  position: absolute;
+  width: 90%;
+  height: 90%;
+  top: 0;
+  left: 0;
+  transform-origin: center;
+  transform-style: preserve-3d;
+  transform: rotateY(calc(var(--i) * 45deg)) translateZ(300px);
+}
+
+.g-img {
+  position: absolute;
+  width: 80%;
+  height: 80%;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Food Image Gallery */
+.gallery-note {
+  background: rgba(255, 255, 255, 0.35);
+  color: #373735;
+  padding: 12px 20px;
+  border-radius: 16px;
+  font-size: 18px;
+  font-weight: 600;
+  text-align: center;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.25);
+  display: inline-block;
+  margin: auto;
+}
+
+.food-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 5px;
+  font-size: 18px;
+  background: #D28254;
+}
+
+.food-card {
+  text-align: center;
+  background-color: rgba(245, 102, 46, 0.5);
+  border-radius: 20px;
+  border: 2px solid #353535;
+}
+
+.food-img {
+  width: 130px;
+  height: 130px;
+  object-fit: cover;
+  border-radius: 20px;
+  transition: transform 0.3s ease;
+}
+
+.food-img:hover {
+  transform: rotate(3deg) scale(1.05);
+}
+
+.food-name {
+  font-size: 17px;
+  font-weight: 600;
+  color: #373735;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+}
+
+.food-link {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #a08479;
+  color: #373735;
+  border-radius: 16px;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.50);
+  margin: auto;
+  text-decoration: none;
+  transition: transform 0.3s ease;
+}
+
+.food-link:hover {
+  background-color: #e08e57;
+  transform: scale(1.05);
+}
+
+.recipe-box {
+  display: none;
+  padding: 10px;
+  background: #bb7b7b;
+  margin-top: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background-image: url('Images/1c070754fd095a5bc08d3a3c60cb9c6b.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white;
+  font-size: 18px;
+}
+
+/* When section is targeted via link */
+.recipe-box:target {
+  display: block;
+}
+
+h2 {
+  margin-top: 0;
+}
+
+@media (max-width: 768px) {
+  .g-img {
+    width: 80%;
+    height: 80%;
+  }
+
+  .recipe-box {
+    font-size: 16px;
+    padding: 8px;
+    border-radius: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+
+  .recipe-box {
+    font-size: 15px;
+    padding: 10px;
+    border-radius: 8px;
+  }
+}
+
+@media (max-width:740px) {
+  .gallery {
+    width: 50%;
+    height: 200px;
+    margin: auto;
+  }
+
+  .gallery span {
+    width: 50%;
+    height: 80px;
+    margin: 20% 20%;
+    transform-origin: center;
+    transform-style: preserve-3d;
+    transform: rotateY(calc(var(--i) * 45deg)) translateZ(180px);
+  }
+}
+@media (max-width:500px){
+  .gallery{
+    margin-top: 15%;
+  }
+}

@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Witzard Foodiemyst</title>
+  <link rel="icon" href="Images/favicon.ico">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+    integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<style>
+  body {
+    background: linear-gradient(90deg,#f38f43 20%, #f38f43  100%); 
+    color: #373735;
+    border: 2px solid gray;
+    border-style: groove;
+    border-top: none;
+    
+  }
+
+  .navbar .logo a {
+    color:  rgb(255, 166, 0);
+  }
+
+  li {
+    list-style: none;
+  }
+
+  a {
+    text-decoration: none;
+    color:  rgb(255, 166, 0);
+    font-size: 1.25rem;
+  }
+
+  a:hover {
+    color: rgb(219, 222, 231);
+  }
+
+  .Nav {
+    position: relative;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    padding: 0 2rem;
+    background-color: #371e22;
+
+  }
+
+  .navbar {
+    width: 100%;
+    height: 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+  }
+
+  .navbar .logo a {
+    font-size: 1.7rem;
+    font-weight: bold;
+    color: white;
+  }
+
+  .navbar .links {
+    display: flex;
+    gap: 4rem;
+  }
+
+  .navbar .toggle-btn {
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: none;
+  }
+
+  .dropdown-menu {
+    display: none;
+    position: absolute;
+    right: 2rem;
+    top: 60px;
+    height: 0;
+    width: 300px;
+    background: rgba(225, 225, 225, 0.1);
+    backdrop-filter: blur(15px);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: height 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+
+  .dropdown-menu.open {
+    height: 230px;
+  }
+
+  .dropdown-menu li {
+    padding: 0.7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  @media(max-width: 900px) {
+    .navbar .links {
+      display: none;
+    }
+
+    .navbar .toggle-btn {
+      display: block;
+    }
+
+    .dropdown-menu {
+      display: none;
+    }
+
+    .dropdown-menu.open {
+      display: block;
+    }
+  }
+
+  @media(max-width: 576px) {
+    .dropdown-menu {
+      left: 2rem;
+      width: unset;
+    }
+  }
+
+  /* nav section end */
+
+
+
+  .team-section {
+    padding: 60px 0;
+  }
+
+  .image-container img {
+    width: 400px;
+    height: 350px;
+    border: 2px solid rgb(0, 0, 0);
+    border-style: groove;
+    border-radius: 10px;
+  }
+
+  .mm {
+    margin-left: -190px;
+  }
+
+
+  .team-member {
+    border: 1px groove rgb(255, 255, 255);
+    filter: drop-shadow(1px 1px 10px #923c07);
+    background: linear-gradient(45deg, #f38f43, #fdff7d);
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(155, 7, 192, 0.08);
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.5s;
+    border-top-left-radius: 90px;
+    border-bottom-right-radius: 90px;
+    box-shadow: 5px 10px 10px grey;
+
+  }
+
+  .team-member:hover {
+    color: white;
+    border-color: rgb(0, 0, 0);
+    transform: translateY(-10px);
+    background: linear-gradient(45deg,#b0d87d,#f38f43);
+    box-shadow: 10px 20px 10px grey;
+  }
+
+  .team-member img {
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    margin-bottom: 15px;
+    filter: drop-shadow(1px 1px 10px rgb(255, 167, 2));
+  }
+
+  .team-member h5 {
+    margin-bottom: 5px;
+    font-weight: 600;
+  }
+
+  .team-member p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #6c757d;
+  }
+
+  .section-title {
+    margin-bottom: 40px;
+  }
+
+
+  @media(max-width:1100px) {
+    .mm {
+      margin-left: 10px;
+      margin-right: 70px;
+    }
+  }
+
+  @media(max-width:750px) {
+    .image-container img {
+      width: 300px;
+      height: 250px;
+    }
+
+    .mm {
+      margin-left: 70px;
+      margin-right: 30px;
+    }
+  }
+
+  @media(max-width:500px) {
+    .image-container img {
+      width: 150px;
+      height: 120px;
+      margin-left: 20px;
+    }
+
+    .mm {
+      margin-left: 20px;
+    }
+
+    .team-member h5 {
+      margin-bottom: 5px;
+      font-weight: 200;
+    }
+  }
+
+  /* About Section */
+  .about-section {
+    padding: 60px 0;
+  }
+
+  .about-section h2 {
+    font-weight: 500;
+  }
+
+  .about-section {
+    text-indent: 25px;
+    text-align: justify;
+    font-weight: 300;
+  }
+
+  /* Reviews Section */
+  .reviews-section {
+    padding: 60px 0;
+  }
+
+  input[type=text] {
+    filter: drop-shadow(1px 1px 7px #ff6200);
+  }
+
+  .form-control {
+    filter: drop-shadow(1px 1px 7px rgb(255, 97, 5));
+  }
+
+  .review-card {
+    background: #eecad9;
+    color: rgb(0, 0, 0);
+    filter: drop-shadow(1px 1px 5px rgb(113, 6, 184));
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 15px;
+  }
+
+  /* footer */
+  footer {
+    position: relative;
+    background-color: #F6B38A;
+    color: white;
+    margin-top: 140px;
+    padding-top: 0px;
+    text-align: center;
+  }
+
+  .footer-content {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: auto;
+  }
+
+  .footer-section {
+    padding: 20px;
+    text-align: left;
+    flex: 1;
+    min-width: 200px;
+  }
+
+  footer .social-icon,
+  footer .menu {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin: 10px 0;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  footer .social-icon li,
+  footer .menu li {
+    list-style: none;
+  }
+
+  footer .social-icon li a {
+    font-size: 2em;
+    color: #fff;
+    margin: 0 10px;
+    display: inline-block;
+    transition: 0.5s;
+  }
+
+  footer .social-icon li a:hover {
+    transform: translateY(-10px);
+  }
+
+  footer .menu li a {
+    font-size: 1.2em;
+    color: #fff;
+    margin: 0 10px;
+    display: inline-block;
+    transition: 0.5s;
+    text-decoration: none;
+
+  }
+
+  footer .menu li a:hover {
+    color: orange;
+  }
+
+  footer p {
+    color: #fff;
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    font-size: 1.1em;
+  }
+
+  .wave-container {
+    position: absolute;
+    top: -100px;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+  }
+
+  .waves {
+    position: relative;
+    width: 100%;
+    height: 100px;
+    min-height: 100px;
+    max-height: 150px;
+  }
+
+  .parallax>use {
+    animation: move-forever 25s cubic-bezier(.55, .5, .45, .5) infinite;
+  }
+
+  .parallax>use:nth-child(1) {
+    animation-delay: -2s;
+    animation-duration: 7s;
+  }
+
+  .parallax>use:nth-child(2) {
+    animation-delay: -3s;
+    animation-duration: 10s;
+  }
+
+  .parallax>use:nth-child(3) {
+    animation-delay: -4s;
+    animation-duration: 13s;
+  }
+
+  .parallax>use:nth-child(4) {
+    animation-delay: -5s;
+    animation-duration: 20s;
+  }
+
+  @keyframes move-forever {
+    0% {
+      transform: translate3d(-90px, 0, 0);
+    }
+
+    100% {
+      transform: translate3d(85px, 0, 0);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .container1 {
+      flex-direction: column;
+      /* Stacks items vertically on smaller screens */
+      align-items: center;
+      /* Centers items */
+      gap: 20px;
+    }
+
+    .image-section,
+    .text-section1 {
+      max-width: 90%;
+      margin-top: 0;
+    }
+  }
+
+  @media(max-width:768px) {
+
+    .body2-container {
+      width: 100%;
+      margin: auto;
+      display: grid;
+      grid-template-columns: auto;
+      grid-template-rows: auto auto;
+      align-items: center;
+    }
+
+    .body2-img {
+      grid-column: 1;
+      grid-row: 1;
+      max-width: 700px;
+      max-height: 700px;
+      margin: auto;
+    }
+
+    .body2-content {
+      grid-column: 1;
+      grid-row: 2;
+      margin: auto;
+      padding: 7%;
+    }
+
+    .body2 .img-main,
+    .body2 .img-sec {
+      height: 200px;
+      width: 200px;
+    }
+  }
+
+
+  @media (max-width: 768px) {
+    .dark-footer .footer-nav ul {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .dark-footer .footer-nav ul li {
+      margin: 10px 0;
+    }
+  }
+
+  @media(max-width:576px) {
+    h2 {
+      font-size: 1.5rem;
+    }
+
+    .body2-content h3 {
+      font-size: 1.2rem;
+    }
+
+    .body2-content p {
+      font-size: 1rem;
+    }
+
+    .body2 .img-main,
+    .body2 .img-sec {
+      height: 170px;
+      width: 170px;
+    }
+  }
+</style>
+
+<body>
+  <div class="Nav">
+    <div class="navbar">
+      <div class="logo"><a href="#">Witzard Foodiemyst</a></div>
+      <ul class="links">
+        <li><a href="index.html"><i class="fa-solid fa-house"></i>Home</a></li>
+        <li><a href="/Final project/countryNew.html"><i class="fa-solid fa-bowl-rice"></i></i>Country Foods</a></li>
+        <li><a href="reviewmainpage (1).html"><i class="fa-solid fa-receipt"></i>Review</a></li>
+        <li><a href="repro.html"><i class="fa-solid fa-address-card"></i></i>About Us</a></li>
+      </ul>
+      <div class="toggle-btn">
+        <i class="fa-solid fa-bars"></i>
+      </div>
+    </div>
+    <div class="dropdown-menu">
+      <li><a href="index.html"><i class="fa-solid fa-house"></i>Home</a></li>
+        <li><a href="/Final project/countryNew.html"><i class="fa-solid fa-bowl-rice"></i></i>Country Foods</a></li>
+        <li><a href="reviewmainpage (1).html"><i class="fa-solid fa-receipt"></i>Review</a></li>
+        <li><a href="repro.html"><i class="fa-solid fa-address-card"></i></i>About Us</a></li>
+    </div>
+  </div>
+
+
+  <!-- Header -->
+  <header class="  text-white text-center  d-flex align-items-center">
+    <div class=" col-lg-7">
+      <div class="image-container mt-5" style="filter: drop-shadow(1px 1px 10px rgb(225, 241, 0));">
+        <img src="https://img.freepik.com/free-vector/group-business-people-avatar-character_24877-57314.jpg?semt=ais_hybrid&w=740&q=80" alt="group photo">
+      </div>
+    </div>
+    <div class="mm col-lg-5 mt-5">
+      <h1 class="display-4 fw-bold">Meet Our Team</h1>
+      <p class="lead">The creative minds behind our project</p>
+    </div>
+  </header>
+
+  <!-- Home & About Page Creators -->
+  <section class="team-section">
+    <div class="container">
+      <div class="section-title text-center pt-3">
+        <h2>Home & About Page Creators</h2>
+        <p>These members designed and developed the homepage and about page.</p>
+      </div>
+      <div class="row g-4">
+        <!-- 4 Members -->
+        <div class="col-lg-3 col-md-6 col-sm-6">
+          <div class="team-member">
+            <img src="/Final project/New folder (2)/xhin.jpg" alt="Member">
+            <h5>Kaelyn Khuu XR</h5>
+            <p>NUCS-2410453</p>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-6">
+          <div class="team-member">
+            <img src="/Final project/New folder (2)/photo_10_2025-09-13_19-06-18.jpg" alt="Member">
+            <h5>S S</h5>
+            <p>NUCS-2410443</p>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-6">
+          <div class="team-member">
+            <img src="/Final project/New folder (2)/photo_2025-09-13_19-05-39.jpg" alt="Member">
+            <h5>Ethan</h5>
+            <p>NUCS-2410344</p>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-6">
+          <div class="team-member">
+            <img src="/Final project/New folder (2)/photo_2025-09-13_19-05-49.jpg" alt="Member">
+            <h5>C-vit</h5>
+            <p>NUCS-2410305</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Food Reviews Page Creators -->
+  <section class="team-section ">
+    <div class="container">
+      <div class="section-title text-center">
+       <h2>Country Food Page Creators</h2>
+        <p>These members developed pages dedicated to country-specific food culture.</p>
+      </div>
+      <div class="row g-4">
+        <!-- 5 Members -->
+        <div class="col-lg-4 col-md-6 col-sm-6">
+          <div class="team-member">
+            <img src="/Final project/New folder (2)/photo_12_2025-09-13_19-06-18.jpg" alt="Member">
+            <h5>Faceless(Nyi)</h5>
+            <p>NUCS-2410309</p>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-6">
+          <div class="team-member">
+            <img src="/Final project/New folder (2)/photo_8_2025-09-13_19-06-18.jpg" alt="Member">
+            <h5>Yeon</h5>
+            <p>NUCS-2410458</p>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-6">
+          <div class="team-member">
+            <img src="/Final project/New folder (2)/photo_5_2025-09-13_19-06-18.jpg" alt="Member">
+            <h5>Shinee</h5>
+            <p>NUCS-2410249</p>
+          </div>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-6">
+          <div class="team-member">
+            <img src="/Final project/New folder (2)/photo_9_2025-09-13_19-06-18.jpg" alt="Member">
+            <h5>Htet</h5>
+            <p>NUCS-2410451</p>
+          </div>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-6">
+          <div class="team-member">
+            <img src="/Final project/New folder (2)/photo_4_2025-09-13_19-06-18.jpg" alt="Member">
+            <h5>Htnaung</h5>
+            <p>NUCS-2410472</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Country Food Page Creators -->
+  <section class="team-section ">
+    <div class="container">
+      <div class="section-title text-center">
+         <h2>Food Reviews Page Creators</h2>
+        <p>These members created the reviews section for sharing food experiences.</p>
+      </div>
+      <div class="row g-4">
+        <!-- 6 Members -->
+
+        <div class="col-lg-4 col-md-6 col-sm-6">
+          <div class="team-member">
+            <img src="/Final project/New folder (2)/yanant.jpg" alt="Member">
+            <h5>Yanant</h5>
+            <p>NUCS-2410291</p>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-6">
+          <div class="team-member">
+            <img src="/Final project/New folder (2)/photo_2_2025-09-13_19-06-18.jpg" alt="Member">
+            <h5>Rezel</h5>
+            <p>NUCS-2410300</p>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-6">
+          <div class="team-member">
+            <img src="/Final project/New folder (2)/photo_7_2025-09-13_19-06-18.jpg" alt="Member">
+            <h5>Yuri</h5>
+            <p>NUCS-2410551</p>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-6">
+          <div class="team-member">
+            <img src="/Final project/New folder (2)/photo_6_2025-09-13_19-06-18.jpg" alt="Member">
+            <h5>Susan</h5>
+            <p>NUCS-2410516</p>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-6">
+          <div class="team-member">
+            <img src="/Final project/New folder (2)/photo_11_2025-09-13_19-06-18.jpg" alt="Member">
+            <h5>Thaw</h5>
+            <p>NUCS-2410566</p>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-6 ">
+          <div class="team-member">
+            <img src="/Final project/New folder (2)/photo_3_2025-09-13_19-06-18.jpg" alt="Member">
+            <h5>Jammie Nar</h5>
+            <p>NUCS-2410271</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- About Section -->
+  <section class="about-section container ">
+    <h2>The Purpose of Our Website</h2>
+    <p class="lead mt-3 px-4">"We created our 'Country Foods in Asia' webpage to celebrate and explore the rich cultural
+      diversity of the Asian continent. Our goal is to highlight the incredible variety found within Asian cuisine, from
+      its wide range of flavors and unique cooking methods to its beautiful presentation.
+      This page is designed to be an essential guide for both passionate Asian food lovers and anyone planning a trip to
+      Asia. We hope it will help them discover each country's signature dishes, traditional foods, and the techniques
+      used by local chefs.
+      Ultimately, we believe this website will inspire people worldwide to not only appreciate the art and culture of
+      Asian food but also feel excited to try cooking these dishes in their own kitchens."</p>
+  </section>
+
+
+
+  <!-- Reviews Section -->
+  <section class="reviews-section">
+    <div class="container">
+      <h3 class="text-center mb-4">Leave Your Review</h3>
+      <form id="reviewForm" class="mb-4">
+        <div class="mb-3">
+          <label class="form-label fs-5">Your Name</label>
+          <input type="text" class="form-control" id="reviewerName" required>
+        </div>
+        <div class="mb-3">
+          <label class="form-label fs-5">Your Review</label>
+          <textarea class="form-control" id="reviewText" rows="3" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit Review</button>
+      </form>
+
+      <!-- Reviews List -->
+      <h4 class="mb-3">What others say:</h4>
+      <div id="reviewsList"></div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="wave-container">
+      <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+        viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+        <defs>
+          <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+        </defs>
+        <g class="parallax">
+          <use xlink:href="#gentle-wave" x="48" y="0" fill="#DF9881" />
+                    <use xlink:href="#gentle-wave" x="48" y="3" fill="#DF9881" />
+                    <use xlink:href="#gentle-wave" x="48" y="5" fill="#DF9881" />
+                    <use xlink:href="#gentle-wave" x="48" y="7" fill="#F6B38A" />
+        </g>
+      </svg>
+    </div>
+    <div class="footer-content">
+      <div class="footer-section">
+        <ul class="social-icon">
+          <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+          <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
+          <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+        </ul>
+        <ul class="menu">
+          <li><a href="index.html"></i>Home</a></li>
+          <li><a href="/Final project/countryNew.html"></i>Country Foods</a></li>
+          <li><a href="reviewmainpage (1).html"></i>Review</a></li>
+          <li><a href="repro.html"></i>About Us</a></li>
+        </ul>
+        <p>Copyright ©2025 All rights reserved | We are Together <i class="fa fa-heart" style="color: red;"></i> by
+          Bit-wizards</a></p>
+      </div>
+  </footer>
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    const reviewForm = document.getElementById("reviewForm");
+    const reviewsList = document.getElementById("reviewsList");
+
+    // Load reviews from localStorage
+    document.addEventListener("DOMContentLoaded", () => {
+      const savedReviews = JSON.parse(localStorage.getItem("reviews")) || [];
+      savedReviews.forEach(r => addReviewToDOM(r.name, r.text));
+    });
+
+    reviewForm.addEventListener("submit", function (e) {
+      e.preventDefault();
+      const name = document.getElementById("reviewerName").value.trim();
+      const text = document.getElementById("reviewText").value.trim();
+       alert("Your Review is saved!");
+
+      if (name && text) {
+        addReviewToDOM(name, text);
+        // Save to localStorage
+        const existing = JSON.parse(localStorage.getItem("reviews")) || [];
+        existing.push({ name, text });
+        localStorage.setItem("reviews", JSON.stringify(existing));
+
+        reviewForm.reset();
+      }
+    });
+
+    function addReviewToDOM(name, text) {
+      const div = document.createElement("div");
+      div.classList.add("review-card");
+      div.innerHTML = `<strong>${name}</strong><p class="mb-0">${text}</p>`;
+      reviewsList.prepend(div);
+    }
+
+
+
+    const toggleBtn = document.querySelector('.toggle-btn')
+    const toggleBtnIcon = document.querySelector('.toggle-btn i')
+    const dropDownMenu = document.querySelector('.dropdown-menu')
+
+    toggleBtn.onclick = function () {
+      dropDownMenu.classList.toggle('open')
+      const isOpen = dropDownMenu.classList.contains('open')
+
+      toggleBtnIcon.classList = isOpen
+        ? 'fa-solid fa-xmark'
+        : 'fa-solid fa-bars'
+    }
+    
+
+    
+
+  </script>
+
+
+
+
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Witzard Foodiemyst</title>
+    <link rel="icon" href="Images/favicon.ico">
+    <link rel="stylesheet" href="navi.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #373735
+        }
+
+        body {
+            background-color: #f38f43;
+            color: #373735;
+            line-height: 1.6;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+            gap: 30px;
+        }
+        /*header icons*/
+        .links a i{
+            color: rgb(255, 166, 0);
+        }
+        .links a i:hover{
+             color: rgb(234, 228, 217);
+        }
+        .social-icon a i{
+            color: #fff;
+        }
+
+        /* Header styling */
+        .header {
+            flex: 1 1 100%;
+            text-align: center;
+            padding: 20px;
+            background: linear-gradient(135deg, #ff7b54 0%, #ff5252 100%);
+            color: white;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+            margin-top: 64px;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        /* Sidebar navigation */
+        .nav-sidebar {
+            flex: 0 0 250px;
+            background: #ff7b54;
+            border-radius: 12px;
+            padding: 25px 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .nav-tap {
+            padding: 18px 20px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            color: #555;
+            position: relative;
+        }
+
+        .nav-tap.active {
+            background: linear-gradient(135deg, #c93f15 0%, #f15050 100%);
+            color: white;
+            box-shadow: 0 4px 10px rgba(255, 82, 82, 0.3);
+        }
+
+        .nav-tap:not(.active):hover {
+            background-color: #f8f9fa;
+            color: #ff5252;
+        }
+
+        .nav-tap i {
+            margin-right: 12px;
+            font-size: 1.2rem;
+        }
+
+        .nav-tap.active::after {
+            content: '';
+            position: absolute;
+            right: -15px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 0;
+            height: 0;
+            border-top: 15px solid transparent;
+            border-bottom: 15px solid transparent;
+            border-left: 15px solid #ff5252;
+        }
+
+        /* Content styling */
+        .content {
+            flex: 1 1 0;
+            background: #ff7b54;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            min-width: 300px;
+        }
+
+        .content-section {
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .content-section.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            color: white;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #f0f0f0;
+        }
+
+        .content-text p {
+            margin-bottom: 15px;
+            font-size: 1.05rem;
+            color: #444;
+        }
+
+        .icon-highlight {
+            background-color: #594c4c73;
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid #ff5252;
+            margin: 20px 0;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 20px;
+            margin-top: 30px;
+            color: #777;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive design */
+        @media (max-width: 1000px) {
+            .container {
+                flex-direction: column;
+                padding: 15px;
+            }
+
+            .nav-sidebar {
+                flex: 1 1 100%;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+            }
+
+            .nav-tap {
+                flex: 1 1 45%;
+                margin: 5px 0;
+                justify-content: center;
+            }
+
+            .nav-tap.active::after {
+                display: none;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .nav-tap {
+                padding: 12px 15px;
+                font-size: 0.9rem;
+            }
+
+            .section-title {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="body1">
+        <header>
+            <div class="navbar">
+                <div class="logo"><a href="#">Witzard Foodiemyst</a></div>
+                <ul class="links">
+                    <li><a href="index.html"><i class="fa-solid fa-house"></i>Home</a></li>
+                    <li><a href="countryNew.html"><i class="fa-solid fa-bowl-rice"></i></i>Country Foods</a></li>
+                    <li><a href="reviewmainpage (1).html"><i class="fa-solid fa-receipt"></i>Review</a></li>
+                    <li><a href="repro.html"><i class="fa-solid fa-address-card"></i></i>About Us</a></li>
+                </ul>
+                <div class="toggle-btn">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+            </div>
+            <div class="dropdown-menu">
+                <li><a href="index.html"><i class="fa-solid fa-house"></i>Home</a></li>
+                <li><a href="countryNew.html"><i class="fa-solid fa-bowl-rice"></i></i>Country Foods</a></li>
+                <li><a href="reviewmainpage (1).html"><i class="fa-solid fa-receipt"></i>Review</a></li>
+                <li><a href="repro.html"><i class="fa-solid fa-address-card"></i></i>About Us</a></li>
+            </div>
+        </header>
+    </div>
+    <div class="header">
+        <h1>Discover the Cleanliness, Health & Preparation of Timor's Culinary Treasures</h1>
+    </div>
+
+    <div class="container">
+        <!-- Navigation Sidebar -->
+        <div class="nav-sidebar">
+            <div class="nav-tap active" data-tab="0">
+                <i class="fas fa-soap"></i> <span>Cleanliness</span>
+            </div>
+            <div class="nav-tap" data-tab="1">
+                <i class="fas fa-heart"></i> <span>Healthiness</span>
+            </div>
+            <div class="nav-tap" data-tab="2">
+                <i class="fas fa-utensils"></i> <span>Preparation</span>
+            </div>
+            <div class="nav-tap" data-tab="3">
+                <i class="fas fa-star"></i> <span>Special</span>
+            </div>
+        </div>
+
+        <!-- Content Area -->
+        <div class="content">
+            <div class="content-section active">
+                <h2 class="section-title">Cleanliness</h2>
+                <div class="content-text">
+                    <p>Timor-Leste, food cleanliness can vary depending on where it is prepared.</p>
+                    <div class="icon-highlight">
+                        <i class="fas fa-lightbulb"></i>If you're visiting, it's best to choose cooked foods over raw,
+                        drink bottled/boiled water, and wash fruits/vegetables carefully.
+                    </div>
+                    <p>Traditional home cooking usually uses fresh, locally grown ingredients (vegetables, cassava,
+                        maize, rice, fresh fish, and sometimes goat or chicken).</p>
+                    <p>Street food may sometimes be less hygienic depending on water access, storage, and preparation
+                        methods.</p>
+                    <p>In restaurants and hotels, food safety standards are usually higher.Grilled, boiled, or stewed,
+                        harmful bacteria are often killed in the cooking process.</p>
+                </div>
+            </div>
+
+            <div class="content-section">
+                <h2 class="section-title">Healthiness</h2>
+                <div class="content-text">
+                    <p>Timorese food is generally quite healthy and natural.</p>
+                    <h3>Staple foods </h3>
+                    <p>maize (corn), rice, cassava, sweet potatoes, and taro</p>
+                    <h3>Protein sources </h3>
+                    <p>fresh fish, seafood, chicken, goat, and beans.</p>
+                    <h3>Vegetables</h3>
+                    <p>leafy greens, pumpkin, eggplant, and beans.</p>
+                    <p>Coconut milk is often used, adding healthy fats but also extra calories.</p>
+                    <p> Meals are usually low in processed foods and high in fresh, organic produce.</p>
+                    <p>Because the diet is based on local crops and fresh catch, it is nutritious, but in rural areas,
+                        people sometimes face shortages of protein and variety.</p>
+                </div>
+            </div>
+
+            <div class="content-section">
+                <h2 class="section-title">Preparation</h2>
+                <div class="content-text">
+                    <p>Cooking methods are usually simple and traditional:
+                        Boiling and steaming (e.g., corn, cassava, rice).</p>
+                    <p>Stewing with coconut milk, spices, and vegetables.</p>
+
+
+
+                    <div class="icon-highlight">
+                        <i class="fas fa-info-circle"></i> Grilling (fish, chicken, goat, especially during
+                        celebrations).
+                    </div>
+                    <p>Fermentation is also used for some dishes.</p>
+                </div>
+            </div>
+
+            <div class="content-section">
+                <h2 class="section-title">Special</h2>
+                <div class="content-text">
+                    <p>Mix of cultures: It blends indigenous Timorese cooking with influences from Portuguese cuisine
+                        (colonial history) and nearby Indonesia.</p>
+                    <p>Ikan Sabuko grilled fish with basil and tamarind.</p>
+                    <div class="icon-highlight">
+                        <i class="fas fa-award"></i> Traditional dishes:
+
+                        Feijoada bean stew (Portuguese influence).
+
+                        Batar Da'an corn, pumpkin, and beans stew.
+
+                        Tapai fermented cassava or rice.
+
+                        Celebratory foods often include goat, pork, or buffalo cooked over open fire.
+
+                        Coffee from Timor is world-famous, organic, and one of the country's main exports.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="wave-container">
+            <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+                <defs>
+                    <path id="gentle-wave"
+                        d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+                </defs>
+                <g class="parallax">
+                    <use xlink:href="#gentle-wave" x="48" y="0" fill="#DF9881" />
+                    <use xlink:href="#gentle-wave" x="48" y="3" fill="#DF9881" />
+                    <use xlink:href="#gentle-wave" x="48" y="5" fill="#DF9881" />
+                    <use xlink:href="#gentle-wave" x="48" y="7" fill="#F6B38A" />
+                </g>
+            </svg>
+        </div>
+        <div class="footer-content">
+            <div class="footer-section">
+                <ul class="social-icon">
+                    <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+                    <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
+                    <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                </ul>
+                <ul class="menu">
+                    <li><a href="index.html"></i>Home</a></li>
+                    <li><a href="countryNew.html"></i>Country Foods</a></li>
+                    <li><a href="reviewmainpage (1).html"></i>Review</a></li>
+                    <li><a href="repro.html"></i>About Us</a></li>
+                </ul>
+                <p>Copyright ©2025 All rights reserved | We are Together <i class="fa fa-heart" style="color: red;"></i>
+                    by Bit-wizards</a></p>
+            </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const tabs = document.querySelectorAll('.nav-tap');
+            const sections = document.querySelectorAll('.content-section');
+
+            tabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    tabs.forEach(t => t.classList.remove('active'));
+                    tab.classList.add('active');
+
+                    sections.forEach(sec => sec.classList.remove('active'));
+                    sections[tab.dataset.tab].classList.add('active');
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
