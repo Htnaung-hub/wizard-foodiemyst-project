@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
     integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
   <title>Witzard Foodiemyst</title>
@@ -139,13 +139,18 @@
       font-size: 1rem;
     }
 
-    ul,
-    ol {
-      margin-left: 20px;
-      margin-bottom: 14px;
+
+    .ul ul,
+    .ul ol {
+      margin-bottom: 15px;
     }
 
-    li {
+    .ul ul,
+    .ul ol {
+      padding-left: 20px;
+    }
+
+    .ul li {
       margin-bottom: 8px;
     }
 
@@ -337,20 +342,6 @@
       </div>
     </div>
   </footer>
-  <script>
-    const toggleBtn = document.querySelector('.toggle-btn')
-    const toggleBtnIcon = document.querySelector('.toggle-btn i')
-    const dropDownMenu = document.querySelector('.dropdown-menu')
-
-    toggleBtn.onclick = function () {
-      dropDownMenu.classList.toggle('open')
-      const isOpen = dropDownMenu.classList.contains('open')
-
-      toggleBtnIcon.classList = isOpen
-        ? 'fa-solid fa-xmark'
-        : 'fa-solid fa-bars'
-    }
-  </script>
 </body>
 
 </html>
