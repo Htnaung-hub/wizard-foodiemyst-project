@@ -380,140 +380,123 @@ fill: #013E8D;
   stroke: #000000;
   stroke-width: 2px;
 }   
-@media (max-width:1024px){
-   #map-container {
-        width: 100%;
-        min-height: 1900px;
-        align-items: center;
-      }
-     svg.map{
-      display: block;
-    width:80%;
-    height: 800px;
-    margin: auto;
-  }
-   .sidemenu{
-    position: absolute;
-    top: auto;
-    right: 15%;
-    width: 80%;
-    max-width: 500px;
-    height:auto;
-    padding-top: 1%;
-    padding-left: 5%;
-    padding-right: 5%;
-  }
-  .map-img{
-    width: 120px;
-    height: 120px;
-  }
-  .imgh3{
-    width: 350px;
-    font-size: 1rem;
-    padding: 5%;
-  }
-  footer{
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        right: 0;
-      }
-} 
- @media (max-width:768px) {
-     .container{
-      width: 100%;
-      margin: 0;
-      overflow: hidden;
-     }
-      section {
-      height: auto;
-      background-position: center;
-      background-size:cover;
-      display: flex;
-      flex-direction: row;
-      align-items:center ;
-      justify-content:center;
-      margin: 0;
-      padding-bottom: 20px;
+footer{
+      width: 100%;
+      height: auto;
+    }
 
-    }
-      .para{
-        padding-top: 15%;
-        max-width: 600px;
-        min-width: 300px;
-        height: auto;
-      }
-      .para h1, .para h3{
-        font-size: 1.7rem;
-      }
-      .para h2{
-        padding: 20px;
-        font-size: 1.2rem;
-      }
-      .flags{
-        height: auto;
-      }
-      .flags a img {
-      width: 58px;
-      height: 40px;
-      margin: 20px;
-    }
-      .flavor-grid {
-        flex-direction: column;
-        align-items: center;}
-        .flavor-column{
-          padding-bottom: 20px;
-          border-bottom: 1px solid #ffe6d2;
-          border-right: none;
-        }
+    @media (max-width:1024px) {
+      #map-container {
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
 
-      #map-container {
-        width: 100%;
-        min-height: 1700px;
-        align-items: center;
-      }
-     svg.map{
-      display: block;
-    width:90%;
-    height: 700px;
-    margin: auto;
-  }
-   .sidemenu{
-    position: absolute;
-    top: auto;
-    right: 15%;
-    width: 80%;
-    max-width: 400px;
-    height:auto;
-    padding-top: 1%;
-    padding-left: 5%;
-    padding-right: 5%;
-  }
-  .map-img{
-    width: 80px;
-    height: 80px;
-    overflow: hidden;
-    align-items: center;
-  }
-  .imgh3{
-    width: 250px;
-    font-size: 1rem;
-    padding: 5%;
-    color: #373735;
-  }
-}
-@media (max-width:500px){
-    #map-container {
-        min-height: 1500px;
-      }
-      
-   svg.map{
-    height: 450px;
-  }
-   .sidemenu{
-    right: 7%;
-  }
-}
+      svg.map {
+        display: block;
+        width: 80%;
+        height: 800px;
+        margin: auto;
+        margin-bottom: 1%;
+      }
+
+      .sidemenu {
+       display: none;
+      }
+    }
+
+    @media (max-width:768px) {
+      .container {
+        width: 100%;
+        margin: 0;
+        overflow: hidden;
+      }
+
+      section {
+        height: auto;
+        background-position: center;
+        background-size: cover;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        margin: 0;
+        padding-bottom: 20px;
+
+      }
+
+      .para {
+        padding-top: 15%;
+        max-width: 600px;
+        min-width: 300px;
+        height: auto;
+      }
+
+      .para h1,
+      .para h3 {
+        font-size: 1.7rem;
+      }
+
+      .para h2 {
+        padding: 20px;
+        font-size: 1.2rem;
+      }
+
+      .flags {
+        height: auto;
+      }
+
+      .flags a img {
+        width: 58px;
+        height: 40px;
+        margin: 20px;
+      }
+
+      .flavor-grid {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .flavor-column {
+        padding-bottom: 20px;
+        border-bottom: 1px solid #ffe6d2;
+        border-right: none;
+      }
+
+      #map-container {
+        width: 100%;
+        height: auto;
+        align-items: center;
+      }
+       .mapblur {
+      width: 100%;
+      min-height: 900px;
+      max-height: 900px;
+    }
+
+      svg.map {
+        display: block;
+        width: 90%;
+        max-height: 800px;
+        margin: auto;
+      }
+    }
+    @media(max-width:500px){
+       .mapblur {
+      width: 100%;
+      min-height: 700px;
+      max-height: 700px;
+    }
+
+      svg.map {
+        display: block;
+        width: 90%;
+        max-height: 500px;
+        margin: auto;
+      }
+    }
 
   </style>
 </head>
