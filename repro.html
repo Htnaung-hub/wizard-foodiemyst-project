@@ -242,6 +242,7 @@
 
   .about-section h2 {
     font-weight: 500;
+    text-align: center;
   }
 
   .about-section {
@@ -479,6 +480,55 @@
       width: 170px;
     }
   }
+  span {
+    color: yellow;
+  }
+
+  /*ref*/
+  
+
+  .ref h1 {
+    text-align: center;
+    padding-bottom: 1%;
+  }
+
+  .ref ul {
+    display: flex;
+    justify-content: center;
+  }
+
+  .ref ul li {
+    padding: 0 50px;
+
+  }
+
+  .ref ul li a {
+    color: #373735;
+  }
+
+  .ref ul li a:hover {
+    color: rgb(227, 225, 236);
+
+  }
+
+  @media(max-width:500px) {
+    .ref {
+      padding: 30px 0;
+    }
+
+    .ref ul {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .ref ul li {
+      padding: 0 10px;
+
+    }
+
+  }
 </style>
 
 <body>
@@ -512,7 +562,7 @@
       </div>
     </div>
     <div class="mm col-lg-5 mt-5">
-      <h1 class="display-4 fw-bold">Meet Our Team</h1>
+      <h1 class="display-4 fw-bold">Meet <span> Our Team</span></h1>
       <p class="lead">The creative minds behind our project</p>
     </div>
   </header>
@@ -659,9 +709,21 @@
       Ultimately, we believe this website will inspire people worldwide to not only appreciate the art and culture of
       Asian food but also feel excited to try cooking these dishes in their own kitchens."</p>
   </section>
-
-
-
+<div class="ref ">
+<h1>Food References and Inspirations</h1>
+<ul>
+  <li><a href="https://www.allrecipes.com/" target="_blank">AllRecipes</a></li>
+  <li><a href="https://www.foodnetwork.com/" target="_blank">Food Network</a></li>
+  <li><a href="https://www.tasteofhome.com/" target="_blank">Taste of Home</a></li>
+  <li><a href="https://www.delish.com/" target="_blank">Delish</a></li>
+</ul>
+<ul>
+  <li><a href="https://www.bbcgoodfood.com/" target="_blank">BBC Good Food</a></li>
+  <li><a href="https://www.youtube.com/c/Tasty" target="_blank">Tasty (YouTube)</a></li>
+  <li><a href="https://www.youtube.com/c/GordonRamsay" target="_blank">Gordon Ramsay (YouTube)</a></li>
+  <li><a href="https://www.youtube.com/c/Food52" target="_blank">Food52 (YouTube)</a></li>
+</ul>
+</div>
   <!-- Reviews Section -->
   <section class="reviews-section">
     <div class="container">
