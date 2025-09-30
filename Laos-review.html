@@ -40,17 +40,13 @@
             left: 0;
             right: 0;
             height: 400px;
+            width: 100%;
             background: linear-gradient(to right, #e74c3c, #f39c12);
             z-index: -1;
             border-radius: 0 0 50% 50%/0 0 100% 100%;
             transform: scaleX(1.5);
         }
-         @media (max-width: 370px) {
-            body::before {
-               transform: scaleX(1.2);
-                border-radius: 0 0 40% 40%/0 0 80% 80%;
-            }
-        }
+      
         .container {
             max-width: 1200px;
             margin: 0 auto;
@@ -376,6 +372,13 @@
             margin-bottom: 2%;
         }
           @media (max-width: 370px) {
+            body::before {
+               transform: scaleX(1.2);
+                border-radius: 0 0 40% 40%/0 0 80% 80%;
+            }
+              .container{
+                  max-width: 350px;
+              }
             h1 {
                 font-size: 2.5rem;
             }
