@@ -32,7 +32,7 @@
 
   a {
     text-decoration: none;
-    color:  rgb(255, 166, 0);
+    color: rgb(177, 228, 82);
     font-size: 1.25rem;
   }
 
@@ -41,7 +41,7 @@
   }
 
   .Nav {
-    position: relative;
+    position: sticky;
     top: 0;
     left: 0;
     right: 0;
@@ -242,6 +242,7 @@
 
   .about-section h2 {
     font-weight: 500;
+    text-align: center;
   }
 
   .about-section {
@@ -479,6 +480,55 @@
       width: 170px;
     }
   }
+  span {
+    color: yellow;
+  }
+
+  /*ref*/
+  
+
+  .ref h1 {
+    text-align: center;
+    padding-bottom: 1%;
+  }
+
+  .ref ul {
+    display: flex;
+    justify-content: center;
+  }
+
+  .ref ul li {
+    padding: 0 50px;
+
+  }
+
+  .ref ul li a {
+    color: #373735;
+  }
+
+  .ref ul li a:hover {
+    color: rgb(227, 225, 236);
+
+  }
+
+  @media(max-width:500px) {
+    .ref {
+      padding: 30px 0;
+    }
+
+    .ref ul {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .ref ul li {
+      padding: 0 10px;
+
+    }
+
+  }
 </style>
 
 <body>
@@ -487,7 +537,7 @@
       <div class="logo"><a href="#">Witzard Foodiemyst</a></div>
       <ul class="links">
         <li><a href="index.html"><i class="fa-solid fa-house"></i>Home</a></li>
-        <li><a href="/Final project/countryNew.html"><i class="fa-solid fa-bowl-rice"></i></i>Country Foods</a></li>
+        <li><a href="countryNew.html"><i class="fa-solid fa-bowl-rice"></i></i>Country Foods</a></li>
         <li><a href="reviewmainpage (1).html"><i class="fa-solid fa-receipt"></i>Review</a></li>
         <li><a href="repro.html"><i class="fa-solid fa-address-card"></i></i>About Us</a></li>
       </ul>
@@ -497,7 +547,7 @@
     </div>
     <div class="dropdown-menu">
       <li><a href="index.html"><i class="fa-solid fa-house"></i>Home</a></li>
-        <li><a href="/Final project/countryNew.html"><i class="fa-solid fa-bowl-rice"></i></i>Country Foods</a></li>
+        <li><a href="countryNew.html"><i class="fa-solid fa-bowl-rice"></i></i>Country Foods</a></li>
         <li><a href="reviewmainpage (1).html"><i class="fa-solid fa-receipt"></i>Review</a></li>
         <li><a href="repro.html"><i class="fa-solid fa-address-card"></i></i>About Us</a></li>
     </div>
@@ -512,7 +562,7 @@
       </div>
     </div>
     <div class="mm col-lg-5 mt-5">
-      <h1 class="display-4 fw-bold">Meet Our Team</h1>
+      <h1 class="display-4 fw-bold">Meet <span> Our Team</span></h1>
       <p class="lead">The creative minds behind our project</p>
     </div>
   </header>
@@ -528,30 +578,26 @@
         <!-- 4 Members -->
         <div class="col-lg-3 col-md-6 col-sm-6">
           <div class="team-member">
-            <img src="/Final project/New folder (2)/xhin.jpg" alt="Member">
+            <img src="New folder (2)/xhin.jpg" alt="Member">
             <h5>Kaelyn Khuu XR</h5>
-            <p>NUCS-2410453</p>
           </div>
         </div>
         <div class="col-lg-3 col-md-6 col-sm-6">
           <div class="team-member">
-            <img src="/Final project/New folder (2)/photo_10_2025-09-13_19-06-18.jpg" alt="Member">
+            <img src="New folder (2)/photo_10_2025-09-13_19-06-18.jpg" alt="Member">
             <h5>S S</h5>
-            <p>NUCS-2410443</p>
           </div>
         </div>
         <div class="col-lg-3 col-md-6 col-sm-6">
           <div class="team-member">
-            <img src="/Final project/New folder (2)/photo_2025-09-13_19-05-39.jpg" alt="Member">
+            <img src="New folder (2)/photo_2025-09-13_19-05-39.jpg" alt="Member">
             <h5>Ethan</h5>
-            <p>NUCS-2410344</p>
           </div>
         </div>
         <div class="col-lg-3 col-md-6 col-sm-6">
           <div class="team-member">
-            <img src="/Final project/New folder (2)/photo_2025-09-13_19-05-49.jpg" alt="Member">
+            <img src="New folder (2)/photo_2025-09-13_19-05-49.jpg" alt="Member">
             <h5>C-vit</h5>
-            <p>NUCS-2410305</p>
           </div>
         </div>
       </div>
@@ -569,37 +615,32 @@
         <!-- 5 Members -->
         <div class="col-lg-4 col-md-6 col-sm-6">
           <div class="team-member">
-            <img src="/Final project/New folder (2)/photo_12_2025-09-13_19-06-18.jpg" alt="Member">
+            <img src="New folder (2)/photo_12_2025-09-13_19-06-18.jpg" alt="Member">
             <h5>Faceless(Nyi)</h5>
-            <p>NUCS-2410309</p>
           </div>
         </div>
         <div class="col-lg-4 col-md-6 col-sm-6">
           <div class="team-member">
-            <img src="/Final project/New folder (2)/photo_8_2025-09-13_19-06-18.jpg" alt="Member">
+            <img src="New folder (2)/photo_8_2025-09-13_19-06-18.jpg" alt="Member">
             <h5>Yeon</h5>
-            <p>NUCS-2410458</p>
           </div>
         </div>
         <div class="col-lg-4 col-md-6 col-sm-6">
           <div class="team-member">
-            <img src="/Final project/New folder (2)/photo_5_2025-09-13_19-06-18.jpg" alt="Member">
+            <img src="New folder (2)/photo_5_2025-09-13_19-06-18.jpg" alt="Member">
             <h5>Shinee</h5>
-            <p>NUCS-2410249</p>
           </div>
         </div>
         <div class="col-lg-6 col-md-6 col-sm-6">
           <div class="team-member">
-            <img src="/Final project/New folder (2)/photo_9_2025-09-13_19-06-18.jpg" alt="Member">
+            <img src="New folder (2)/photo_9_2025-09-13_19-06-18.jpg" alt="Member">
             <h5>Htet</h5>
-            <p>NUCS-2410451</p>
           </div>
         </div>
         <div class="col-lg-6 col-md-6 col-sm-6">
           <div class="team-member">
-            <img src="/Final project/New folder (2)/photo_4_2025-09-13_19-06-18.jpg" alt="Member">
+            <img src="New folder (2)/photo_4_2025-09-13_19-06-18.jpg" alt="Member">
             <h5>Htnaung</h5>
-            <p>NUCS-2410472</p>
           </div>
         </div>
       </div>
@@ -617,44 +658,38 @@
 
         <div class="col-lg-4 col-md-6 col-sm-6">
           <div class="team-member">
-            <img src="/Final project/New folder (2)/yanant.jpg" alt="Member">
+            <img src="New folder (2)/yanant.jpg" alt="Member">
             <h5>Yanant</h5>
-            <p>NUCS-2410291</p>
           </div>
         </div>
         <div class="col-lg-4 col-md-6 col-sm-6">
           <div class="team-member">
-            <img src="/Final project/New folder (2)/photo_2_2025-09-13_19-06-18.jpg" alt="Member">
+            <img src="New folder (2)/photo_2_2025-09-13_19-06-18.jpg" alt="Member">
             <h5>Rezel</h5>
-            <p>NUCS-2410300</p>
           </div>
         </div>
         <div class="col-lg-4 col-md-6 col-sm-6">
           <div class="team-member">
-            <img src="/Final project/New folder (2)/photo_7_2025-09-13_19-06-18.jpg" alt="Member">
+            <img src="New folder (2)/photo_7_2025-09-13_19-06-18.jpg" alt="Member">
             <h5>Yuri</h5>
-            <p>NUCS-2410551</p>
           </div>
         </div>
         <div class="col-lg-4 col-md-6 col-sm-6">
           <div class="team-member">
-            <img src="/Final project/New folder (2)/photo_6_2025-09-13_19-06-18.jpg" alt="Member">
+            <img src="New folder (2)/photo_6_2025-09-13_19-06-18.jpg" alt="Member">
             <h5>Susan</h5>
-            <p>NUCS-2410516</p>
           </div>
         </div>
         <div class="col-lg-4 col-md-6 col-sm-6">
           <div class="team-member">
-            <img src="/Final project/New folder (2)/photo_11_2025-09-13_19-06-18.jpg" alt="Member">
+            <img src="New folder (2)/photo_11_2025-09-13_19-06-18.jpg" alt="Member">
             <h5>Thaw</h5>
-            <p>NUCS-2410566</p>
           </div>
         </div>
         <div class="col-lg-4 col-md-6 col-sm-6 ">
           <div class="team-member">
-            <img src="/Final project/New folder (2)/photo_3_2025-09-13_19-06-18.jpg" alt="Member">
+            <img src="New folder (2)/photo_3_2025-09-13_19-06-18.jpg" alt="Member">
             <h5>Jammie Nar</h5>
-            <p>NUCS-2410271</p>
           </div>
         </div>
       </div>
@@ -674,9 +709,21 @@
       Ultimately, we believe this website will inspire people worldwide to not only appreciate the art and culture of
       Asian food but also feel excited to try cooking these dishes in their own kitchens."</p>
   </section>
-
-
-
+<div class="ref ">
+<h1>Food References and Inspirations</h1>
+<ul>
+  <li><a href="https://share.google/lz89nD1dy4en6wvHt" target="_blank">RecipeTin Eats</a></li>
+  <li><a href="https://www.eater.com/" target="_blank">Eater</a></li>
+  <li><a href="https://www.tasteofhome.com/" target="_blank">Taste of Home</a></li>
+  <li><a href="https://www.delish.com/" target="_blank">Delish</a></li>
+</ul>
+<ul>
+  <li><a href="https://www.bbcgoodfood.com/" target="_blank">BBC Good Food</a></li>
+  <li><a href="http://www.youtube.com/@seriouseats" target="_blank">Serious Eats (YouTube)</a></li>
+  <li><a href="http://www.youtube.com/@MarkWiens" target="_blank">Mark Wiens (YouTube)</a></li>
+  <li><a href="https://www.youtube.com/c/Food52" target="_blank">Food52 (YouTube)</a></li>
+</ul>
+</div>
   <!-- Reviews Section -->
   <section class="reviews-section">
     <div class="container">
@@ -724,7 +771,7 @@
         </ul>
         <ul class="menu">
           <li><a href="index.html"></i>Home</a></li>
-          <li><a href="/Final project/countryNew.html"></i>Country Foods</a></li>
+          <li><a href="countryNew.html"></i>Country Foods</a></li>
           <li><a href="reviewmainpage (1).html"></i>Review</a></li>
           <li><a href="repro.html"></i>About Us</a></li>
         </ul>

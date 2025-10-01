@@ -6,339 +6,504 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Witzard Foodiemyst</title>
     <link rel="icon" href="Images/favicon.ico">
-    <link rel="stylesheet" href="navi.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+        integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="navi.css">
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            color: #373735
         }
 
         body {
-            background-color: #f38f43;
-            color: #373735;
-            line-height: 1.6;
+            background-color: #F38F43;
+            min-height: 100vh;
+            padding: 20px;
+            margin: 0;
+            padding: 0;
         }
 
         .container {
-            display: flex;
-            flex-wrap: wrap;
-            max-width: 1400px;
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 20px;
-            gap: 30px;
-        }
-        .links a i{
-            color: rgb(255, 166, 0);
-        }
-        .links a i:hover{
-             color: rgb(234, 228, 217);
-        }
-        .social-icon a i{
-            color: #fff;
         }
 
-        /* Header styling */
-        .header {
-            flex: 1 1 100%;
+        .head {
             text-align: center;
-            padding: 20px;
-            background: linear-gradient(135deg, #ff7b54 0%, #ff9d52 100%);
-            color: white;
-            border-radius: 12px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            margin-bottom: 30px;
-            margin-top: 64px;
+            padding: 30px 0;
+            margin-top: 50px;
         }
 
-        .header h1 {
+        .head h1 {
             font-size: 2.5rem;
+            color: #373735;
+            text-shadow: 2px 2px 0px #cec0c0;
             margin-bottom: 10px;
-            font-weight: 700;
+            letter-spacing: 1px;
         }
 
-        /* Sidebar navigation */
-        .nav-sidebar {
-            flex: 0 0 250px;
-            background: white;
-            border-radius: 12px;
-            padding: 25px 15px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        .subtitle {
+            font-size: 1.2rem;
+            color: #373735;
+            max-width: 600px;
+            margin: 0 auto 30px;
+        }
+
+        .main-content {
+            display: flex;
+            gap: 30px;
+            margin-top: 20px;
+        }
+
+        .left-panel {
+            flex: 1;
             display: flex;
             flex-direction: column;
-            gap: 10px;
+            gap: 20px;
         }
 
-        .nav-tap {
-            padding: 18px 20px;
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            font-weight: 600;
-            color: #555;
-            position: relative;
-        }
-
-        .nav-tap.active {
-            background: linear-gradient(135deg, #f38f43 0%, #f15050 100%);
-            color: white;
-            box-shadow: 0 4px 10px rgba(255, 82, 82, 0.3);
-        }
-
-        .nav-tap:not(.active):hover {
-            background: linear-gradient(135deg, #f15050 0%, #f38f43 100%);
-            color: white;
-        }
-
-        .nav-tap i {
-            margin-right: 12px;
-            font-size: 1.2rem;
-        }
-
-        .nav-tap.active::after {
-            content: '';
-            position: absolute;
-            right: -15px;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 0;
-            height: 0;
-            border-top: 15px solid transparent;
-            border-bottom: 15px solid transparent;
-            border-left: 15px solid #ff5252;
-        }
-
-        /* Content styling */
-        .content {
-            flex: 1 1 0;
-            background: #f0f0f0;
+        .food-image {
             border-radius: 12px;
-            padding: 30px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            min-width: 300px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s ease;
         }
 
-        .content-section {
-            display: none;
-            animation: fadeIn 0.5s ease;
+        .food-image:hover {
+            transform: translateY(-5px);
         }
 
-        .content-section.active {
+        .food-image img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
             display: block;
         }
 
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(10px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .section-title {
-            font-size: 1.8rem;
-            color: #373735;
-            margin-bottom: 20px;
-            padding-bottom: 10px;
-            border-bottom: 2px solid #f0f0f0;
-        }
-
-        .content-text p {
-            margin-bottom: 15px;
-            font-size: 1.05rem;
-            color: #444;
-        }
-
-        .icon-highlight {
-            background-color: #594c4c73;
+        .image-caption {
+            background: #da763c;
             padding: 20px;
-            border-radius: 10px;
-            border-left: 4px solid #ff5252;
-            margin: 20px 0;
-        }
-
-        /* Footer */
-        .footer {
             text-align: center;
-            padding: 20px;
-            margin-top: 30px;
-            color: #777;
+            font-weight: 600;
+            color: #373735;
+        }
+
+        .right-panel {
+            flex: 1;
+            background: #da763c;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .country-selector {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .country-card {
+            position: relative;
+            background: #ff8c45;
+            border-radius: 12px;
+            padding: 12px 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100px;
+            color: 373735;
+            font-weight: 600;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+            overflow: hidden;
+        }
+
+        .country-card::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 28px;
+            height: 28px;
+            background: inherit;
+            border-top-left-radius: 8px;
+        }
+
+        .country-card:hover {
+            transform: translateY(-6px);
+            background: #e67328;
+            box-shadow: 0 10px 16px rgba(0, 0, 0, 0.25);
+        }
+
+        .country-card.active {
+            background: linear-gradient(135deg, #f9a826 0%, #e25822 100%);
+            box-shadow: inset 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .country-flag img {
+            width: 40px;
+            height: auto;
+            border-radius: 4px;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .flag img {
+            width: 50px;
+            height: auto;
+            border-radius: 4px;
+            margin-right: 15px;
+        }
+
+        .country-name {
             font-size: 0.9rem;
         }
 
-        /* Responsive design */
-        @media (max-width: 1000px) {
-            .container {
-                flex-direction: column;
-                padding: 15px;
-            }
-
-            .nav-sidebar {
-                flex: 1 1 100%;
-                display: flex;
-                flex-wrap: wrap;
-                justify-content: space-between;
-            }
-
-            .nav-tap {
-                flex: 1 1 45%;
-                margin: 5px 0;
-                justify-content: center;
-            }
-
-            .nav-tap.active::after {
-                display: none;
-            }
+        .review-content {
+            min-height: 300px;
         }
 
-        @media (max-width: 600px) {
-            .header h1 {
-                font-size: 2rem;
-            }
+        .review-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
 
-            .nav-tap {
-                padding: 12px 15px;
-                font-size: 0.9rem;
-            }
+        .country-name-large {
+            font-size: 1.8rem;
+            color: #373735;
+        }
 
-            .section-title {
-                font-size: 1.5rem;
-            }
+        .dish-name {
+            font-size: 1.4rem;
+            color: #373735;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px dashed #eff310;
+        }
+
+        .rating {
+            color: yellow;
+            margin-bottom: 15px;
+        }
+
+        .review-text {
+            line-height: 1.6;
+            color: #373735;
+        }
+
+        .highlight {
+            color: rgb(219, 11, 11);
+            font-weight: 600;
+        }
+
+        .review-btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 18px;
+            background: #eb6004;
+            color: #373735;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: background 0.3s ease;
+        }
+
+        .review-btn:hover {
+            background: #d16a26;
         }
     </style>
+
 </head>
 
 <body>
-    <div class="body1">
-        <header>
-            <div class="navbar">
-                <div class="logo"><a href="#">Witzard Foodiemyst</a></div>
-                <ul class="links">
-                    <li><a href="index.html"><i class="fa-solid fa-house"></i>Home</a></li>
-                    <li><a href="countryNew.html"><i class="fa-solid fa-bowl-rice"></i></i>Country Foods</a></li>
-                    <li><a href="reviewmainpage (1).html"><i class="fa-solid fa-receipt"></i>Review</a></li>
-                    <li><a href="repro.html"><i class="fa-solid fa-address-card"></i></i>About Us</a></li>
-                </ul>
-                <div class="toggle-btn">
-                    <i class="fa-solid fa-bars"></i>
-                </div>
-            </div>
-            <div class="dropdown-menu">
-                <li><a href="index.html"><i class="fa-solid fa-house"></i>Home</a></li>
-                <li><a href="countryNew.html"><i class="fa-solid fa-bowl-rice"></i></i>Country Foods</a></li>
-                <li><a href="reviewmainpage (1).html"><i class="fa-solid fa-receipt"></i>Review</a></li>
-                <li><a href="repro.html"><i class="fa-solid fa-address-card"></i></i>About Us</a></li>
-            </div>
-        </header>
-    </div>
-    <div class="header">
-        <h1>Discover the Cleanliness, Health & Preparation of Singapore's Culinary Treasures</h1>
-    </div>
 
     <div class="container">
-        <!-- Navigation Sidebar -->
-        <div class="nav-sidebar">
-            <div class="nav-tap active" data-tab="0">
-                <i class="fas fa-soap"></i> <span>Cleanliness</span>
-            </div>
-            <div class="nav-tap" data-tab="1">
-                <i class="fas fa-heart"></i> <span>Healthiness</span>
-            </div>
-            <div class="nav-tap" data-tab="2">
-                <i class="fas fa-utensils"></i> <span>Preparation</span>
-            </div>
-            <div class="nav-tap" data-tab="3">
-                <i class="fas fa-star"></i> <span>Special</span>
-            </div>
+        <div class="body1">
+            <header>
+                <div class="navbar">
+                    <div class="logo"><a href="#">Witzard Foodiemyst</a></div>
+                    <ul class="links">
+                        <li><a href="index.html"><i class="fa-solid fa-house"></i>Home</a></li>
+                        <li><a href="countryNew.html"><i class="fa-solid fa-bowl-rice"></i></i>Country
+                                Foods</a></li>
+                        <li><a href="reviewmainpage (1).html"><i class="fa-solid fa-receipt"></i>Review</a></li>
+                        <li><a href="repro.html"><i class="fa-solid fa-address-card"></i></i>About Us</a></li>
+                    </ul>
+                    <div class="toggle-btn">
+                        <i class="fa-solid fa-bars"></i>
+                    </div>
+                </div>
+                <div class="dropdown-menu">
+                    <li><a href="index.html"><i class="fa-solid fa-house"></i>Home</a></li>
+                    <li><a href="countryNew.html"><i class="fa-solid fa-bowl-rice"></i></i>Country
+                            Foods</a></li>
+                    <li><a href="reviewmainpage (1).html"><i class="fa-solid fa-receipt"></i>Review</a></li>
+                    <li><a href="repro.html"><i class="fa-solid fa-address-card"></i></i>About Us</a></li>
+                </div>
+            </header>
         </div>
-
-        <!-- Content Area -->
-        <div class="content">
-            <div class="content-section active">
-                <h2 class="section-title">Cleanliness</h2>
-                <div class="content-text">
-                    <p>In Singapore, food cleanliness is generally very high due to strict hygiene regulations.</p>
-                    <div class="icon-highlight">
-                        <i class="fas fa-lightbulb"></i>Visitors can safely enjoy both cooked and raw foods, drink tap
-                        water, and eat fruits and vegetables without special precautions.
-                    </div>
-                    <p>Singapore's cleanliness is a real phenomenon from its streets to parks to the disciplined
-                        cleanliness that has earned it the title of the world's most hygienic city. </p>
+        <div class="head">
+            <h1>Review of Southeast Asia food</h1>
+            <p class="subtitle">Explore the reviews of 11 Southeast Asian countries<br>through our culinary journey</p>
+        </div>
+        <div class="main-content">
+            <div class="left-panel">
+                <div class="food-image">
+                    <img src="https://t3.ftcdn.net/jpg/02/00/65/72/360_F_200657270_VhnFpd1lPyAksU6SEShzWbXBePqkAipW.jpg"
+                        alt="Pho - Vietnamese Noodle Soup">
+                    <div class="image-caption">Pho - Vietnam's Famous Noodle Soup</div>
+                </div>
+                <div class="food-image">
+                    <img src="https://i.ytimg.com/vi/xgxwlNvlHac/maxresdefault.jpg" alt="Thai Green Curry">
+                    <div class="image-caption">Hainanese Chicken Rice - Singapore's Poached Chicken Dish</div>
+                </div>
+                <div class="food-image">
+                    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhx1VG5CJxC3vkX_P4dGctAssFTSMzXHRd3F7D8PBuoxG6UJoEcwAA00yHAb4hE9BD7RvX4TI5JkIAL2_jqzWhEI-0cOT0yNEG5lTCm4_ctkZF7tYrVlTNav_PydQMqBZLHEFlX99PT10FP-YjIfIKNnAC65yvMfmY5fjURbhKistTH0PxzKDTSQNvv-kw/s864/beef-rendang-rick-stein.webp"
+                        alt="Beef Rendang - Indonesian Spicy Beef Stew">
+                    <div class="image-caption">Beef Rendang - Indonesian Spicy Beef Stew</div>
                 </div>
             </div>
 
-            <div class="content-section">
-                <h2 class="section-title">Healthiness</h2>
-                <div class="content-text">
-                    <p>Potential Health Consequences in Singapore Gastroenteritis In Singapore, there are still cases of
-                        gastroenteritis caused by poor hygiene in restaurants, with about 20-25 cases a year, especially
-                        in restaurants and catering services.
-
-                        Foodborne Illnesses Some restaurants are pore to hygiene lapses, and they are dangerous because
-                        of craked tiles, poorly maintained equipment, and so on , which can breed bacteria.
-
-                        Poor Nutrition in Singapore, energy-dense nutrient- poor foods are readily available and
-                        inexpensive, and they are commonly consumed by many people,which can contribute to obesity and
-                        chronic diseases.
-
-                        Labor-Related Risks Food safety gaps are often caused by the lack of trained food handlers in
-                        some restaurants and the mass hiring in some restaurents andthe mass hiring of part-time staff
-                        through social media.
-                    </p>
-                </div>
-            </div>
-
-            <div class="content-section">
-                <h2 class="section-title">Preparation</h2>
-                <div class="content-text">
-                    <p>Singapores cuisine is a blend of various flavours such as Chinese, Malay, Indian,and is evident
-                        in its combination of flavours such as sweet, sour,spicy and savoury, cas well as the Hawker
-                        Centre Style (simplicity) and Restaurant Plating style,which retains the original flavours and
-                        can also be adapted into new modern plating, fusion style, natural colour enhancement and
-                        serving ware upgrades.</p>
-
-
-
-                    <div class="icon-highlight">
-                        <i class="fas fa-info-circle"></i> Rempah (spice paste made from blended chilies, garlic,
-                        shallots, and other aromatics) is a crucial base in many dishes and requires careful frying to
-                        release its full flavor.
+            <div class="right-panel">
+                <div class="country-selector">
+                    <div class="country-card active" data-country="thailand">
+                        <div class="country-flag"><img src="https://flagcdn.com/w40/th.png" alt="Thailand flag">
+                        </div>
+                        <div class="country-name">Thailand</div>
                     </div>
-                    <p>The key preparation in Singaporean dishes is making **rempah**, a spice paste that builds rich,
-                        layered flavor.
-                    </p>
-                </div>
-            </div>
-
-            <div class="content-section">
-                <h2 class="section-title">Special</h2>
-                <div class="content-text">
-                    <p>Singapore's hotels and restaurants have a sleek and sleek design, ranging from highend laxury
-                        class hotels to boutique style hotels and service apartments, and restaurants with a wide range
-                        of options such as Fine Dining Restaurant, Rooftop Bar & Cafe, Hawker Centre,etc.,and the
-                        amenities are neatly arranged.</p>
-                    <div class="icon-highlight">
-                        <i class="fas fa-award"></i> Traditional dishes in Singapore include **Hainanese Chicken Rice**,
-                        **Chilli Crab**, **Laksa**, and **Satay**. Celebratory foods often feature **roast suckling
-                        pig** and the infamous **durian**. Local coffee, called **kopi**, is brewed strong and served
-                        with condensed milk. **Kaya Toast**, a sweet coconut jam on toasted bread, is a popular
-                        breakfast snack.
-
+                    <div class="country-card active" data-country="vietnam">
+                        <div class="country-flag"><img src="https://flagcdn.com/w40/vn.png" alt="Vietnam flag">
+                        </div>
+                        <div class="country-name">Vietnam</div>
                     </div>
+                    <div class="country-card active" data-country="malaysia">
+                        <div class="country-flag"><img src="https://flagcdn.com/w40/my.png" alt="Malaysia flag">
+                        </div>
+                        <div class="country-name">Malaysia</div>
+                    </div>
+                    <div class="country-card active" data-country="indonesia">
+                        <div class="country-flag"><img src="https://flagcdn.com/w40/id.png" alt="Indonesia flag">
+                        </div>
+                        <div class="country-name">Indonesia</div>
+                    </div>
+                    <div class="country-card active" data-country="philippines">
+                        <div class="country-flag"><img src="https://flagcdn.com/w40/ph.png" alt="Philippines flag">
+                        </div>
+                        <div class="country-name">Philippines</div>
+                    </div>
+                    <div class="country-card active" data-country="singapore">
+                        <div class="country-flag"><img src="https://flagcdn.com/w40/sg.png" alt="Singapore flag">
+                        </div>
+                        <div class="country-name">Singapore</div>
+                    </div>
+                    <div class="country-card active" data-country="myanmar">
+                        <div class="country-flag"><img src="https://flagcdn.com/w40/mm.png" alt="Myanmar flag">
+                        </div>
+                        <div class="country-name">Myanmar</div>
+                    </div>
+                    <div class="country-card active" data-country="cambodia">
+                        <div class="country-flag"><img src="https://flagcdn.com/w40/kh.png" alt="Cambodia flag">
+                        </div>
+                        <div class="country-name">Cambodia</div>
+                    </div>
+                    <div class="country-card active" data-country="laos">
+                        <div class="country-flag"><img src="https://flagcdn.com/w40/la.png" alt="Laos flag"></div>
+                        <div class="country-name">Laos</div>
+                    </div>
+                    <div class="country-card active" data-country="brunei">
+                        <div class="country-flag"><img src="https://flagcdn.com/w40/bn.png" alt="Brunei flag"></div>
+                        <div class="country-name">Brunei</div>
+                    </div>
+                    <div class="country-card active" data-country="east-timor">
+                        <div class="country-flag"><img src="https://flagcdn.com/w40/tl.png" alt="East Timor flag">
+                        </div>
+                        <div class="country-name">East Timor</div>
+                    </div>
+                </div>
+
+                <div class="review-content" id="review-content">
+
+                    <p>Select a country to see its review</p>
                 </div>
             </div>
         </div>
     </div>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const countryCards = document.querySelectorAll('.country-card');
+            const reviewContent = document.getElementById('review-content');
+
+            const reviews = {
+                thailand: {
+                    flag: '<img src="https://flagcdn.com/w40/th.png" alt="Thailand flag">',
+                    country: 'Thailand',
+                    dish: 'Tom Yum Goong',
+                    rating: 4.5,
+                    review: `<p>A harmonious blend of <span class="highlight">spicy, sour, and aromatic flavors</span>, Tom Yum Goong is Thailand's iconic hot and sour shrimp soup. The broth is infused with lemongrass, kaffir lime leaves, galangal, and chili, creating an explosion of flavors that dance on your palate.</p>
+                            <p>The addition of plump shrimp and mushrooms adds substance to this fragrant soup. Served steaming hot, it's a perfect representation of Thai cuisine's balance between heat, acidity, and herbal notes.</p>`,
+                    link: "Thai-review.html"
+                },
+
+                vietnam: {
+                    flag: '<img src="https://flagcdn.com/w40/vn.png" alt="Vietnam flag">',
+                    country: 'Vietnam',
+                    dish: 'Phở',
+                    rating: 4.8,
+                    review: `<p>Vietnam's most famous culinary export, <span class="highlight">Phở</span> is a soul-warming noodle soup that embodies comfort food. The clear aromatic broth, simmered for hours with spices and beef bones, is poured over rice noodles and thinly sliced beef.</p>
+                            <p>Garnished with fresh herbs, bean sprouts, lime, and chili, each bowl allows you to customize the flavor to your preference. The depth of flavor in the broth is what separates exceptional Phở from merely good ones.</p>`,
+                    link: "vietnam-review.html"
+                },
+
+                malaysia: {
+                    flag: '<img src="https://flagcdn.com/w40/my.png" alt="Malaysia flag">',
+                    country: 'Malaysia',
+                    dish: 'Nasi Lemak',
+                    rating: 4.7,
+                    review: `<p>Considered Malaysia's national dish, <span class="highlight">Nasi Lemak</span> is a fragrant rice dish cooked in coconut milk and pandan leaf. Served with sambal, crispy anchovies, toasted peanuts, and hard-boiled egg, it's a perfect balance of flavors and textures.</p>
+                            <p>The creamy richness of the coconut rice contrasts beautifully with the spicy sambal and the crunch of the peanuts and anchovies. This dish is traditionally eaten for breakfast but is enjoyed at any time of day.</p>`,
+                    link: "malay-review.html"
+                },
+
+                indonesia: {
+                    flag: '<img src="https://flagcdn.com/w40/id.png" alt="Indonesia flag">',
+                    country: 'Indonesia',
+                    dish: 'Rendang',
+                    rating: 4.6,
+                    review: `<p>Hailing from West Sumatra, <span class="highlight">Rendang</span> is often mistakenly called a curry. It's actually a slow-cooked dry beef dish simmered in coconut milk and a mixture of spices until the liquid evaporates and the meat becomes tender and flavorful.</p>
+                            <p>The complex spice paste includes ginger, turmeric, galangal, and chilies, which caramelize during the long cooking process. This dish is so beloved that it was voted the world's most delicious food in a CNN poll.</p>`,
+                    link: "Indo review.html"
+                },
+
+                philippines: {
+                    flag: '<img src="https://flagcdn.com/w40/ph.png" alt="Philippines flag">',
+                    country: 'Philippines',
+                    dish: 'Adobo',
+                    rating: 4.4,
+                    review: `<p>The Philippines' national dish, <span class="highlight">Adobo</span>, is a cooking method that involves marinating meat (usually chicken or pork) in vinegar, soy sauce, garlic, and black peppercorns, then simmering it until tender.</p>
+                            <p>The result is a savory, slightly tangy, and garlicky dish with meat that falls off the bone. Each family has their own variation, making Adobo a deeply personal comfort food for Filipinos everywhere.</p>`,
+                    link: "philip-review.html"
+                },
+
+                singapore: {
+                    flag: '<img src="https://flagcdn.com/w40/sg.png" alt="Singapore flag">',
+                    country: 'Singapore',
+                    dish: 'Hainanese Chicken Rice',
+                    rating: 4.7,
+                    review: `<p>Deceptively simple yet incredibly flavorful, <span class="highlight">Hainanese Chicken Rice</span> is Singapore's signature dish. Tender poached chicken is served with fragrant rice cooked in chicken stock and accompanied by chili sauce, ginger paste, and dark soy sauce.</p>
+                            <p>The secret lies in the preparation—the chicken is poached at controlled temperatures to maintain its silky texture, while the rice is sautéed with garlic and pandan leaves before being cooked in the chicken broth. This dish exemplifies the perfection of simple ingredients prepared expertly.</p>`,
+                    link: "Singapore-review.html"
+                },
+
+                myanmar: {
+                    flag: '<img src="https://flagcdn.com/w40/mm.png" alt="Myanmar flag">',
+                    country: 'Myanmar',
+                    dish: 'Mohinga',
+                    rating: 4.3,
+                    review: `<p>Considered Myanmar's national dish, <span class="highlight">Mohinga</span> is a rice noodle and fish soup typically eaten for breakfast. The broth is made from catfish, lemongrass, ginger, banana stem, and other aromatics, thickened with chickpea flour.</p>
+                            <p>Served with rice noodles, hard-boiled eggs, and various garnishes, Mohinga is a comforting, flavorful start to the day. The balance of fish flavor with herbal notes and slight heat makes it uniquely satisfying.</p>`,
+                    link: "myan-review.html"
+                },
+
+                cambodia: {
+                    flag: '<img src="https://flagcdn.com/w40/kh.png" alt="Cambodia flag">',
+                    country: 'Cambodia',
+                    dish: 'Fish Amok',
+                    rating: 4.2,
+                    review: `<p>Cambodia's most famous dish, <span class="highlight">Fish Amok</span>, is a delicate steamed fish curry with a rich coconut base. The fish is mixed with kroeung (a Cambodian spice paste), coconut milk, and egg, then steamed in banana leaf cups.</p>
+                            <p>The result is a fragrant, mellow curry with a texture similar to a custard or soufflé. Unlike Thai curries, Amok is not overly spicy, allowing the flavors of lemongrass, turmeric, and galangal to shine through.</p>`,
+                    link: "cambo-review.html"
+                },
+
+                laos: {
+                    flag: '<img src="https://flagcdn.com/w40/la.png" alt="Laos flag">',
+                    country: 'Laos',
+                    dish: 'Larb',
+                    rating: 4.5,
+                    review: `<p>Laos' most famous culinary export, <span class="highlight">Larb</span> is a minced meat salad flavored with fish sauce, lime juice, roasted rice powder, and fresh herbs. Typically made with chicken, beef, duck, or fish, it's a refreshing yet hearty dish.</p>
+                            <p>The combination of savory, sour, and herbal flavors makes Larb incredibly moreish. The toasted rice powder adds a nutty flavor and distinctive texture. This dish represents the fresh, vibrant flavors of Lao cuisine.</p>`,
+                    link: "Laos-review.html"
+                },
+
+                brunei: {
+                    flag: '<img src="https://flagcdn.com/w40/bn.png" alt="Brunei flag">',
+                    country: 'Brunei',
+                    dish: 'Ambuyat',
+                    rating: 4.0,
+                    review: `<p>Brunei's national dish, <span class="highlight">Ambuyat</span>, is a unique starchy paste made from the interior trunk of the sago palm. It has a glue-like consistency and is eaten by twirling it around bamboo sticks called candas, then dipped into various sauces.</p>
+                            <p>The most common accompaniment is cacah, a sour and spicy fruit sauce. Ambuyat is typically served with side dishes like fried fish, vegetables, or beef. Eating Ambuyat is a cultural experience that represents Brunei's culinary heritage.</p>`,
+                    link: "Brunei-review.html"
+                },
+
+                'east-timor': {
+                    flag: '<img src="https://flagcdn.com/w40/tl.png" alt="East Timor flag">',
+                    country: 'East Timor',
+                    dish: 'Ikan Sabuko',
+                    rating: 4.1,
+                    review: `<p>A signature dish of East Timor, <span class="highlight">Ikan Sabuko</span> is a flavorful Spanish mackerel dish in a rich tamarind and basil sauce. The fish is first grilled or fried, then simmered in a sauce made from tamarind, basil, garlic, and other spices.</p>
+                            <p>The tangy tamarind complements the oily richness of the mackerel, while the basil adds a fresh aromatic note. Served with rice, this dish represents the blend of indigenous Timorese and Portuguese influences in the country's cuisine.</p>`,
+                    link: "timor-review.html"
+                }
+            };
+
+            countryCards.forEach(card => {
+                card.addEventListener('click', function () {
+                    const country = this.getAttribute('data-country');
+                    updateReview(reviews[country]);
+                });
+            });
+
+            function updateReview(data) {
+                reviewContent.innerHTML = `    
+            <div class="review-header">    
+                <div class="flag">${data.flag}</div>    
+                <h2 class="country-name-large">${data.country}</h2>    
+            </div>    
+            <h3 class="dish-name">${data.dish}</h3>    
+            <div class="rating">${generateStars(data.rating)} <span>${data.rating}/5</span></div>    
+            <div class="review-text">${data.review}</div>    
+            <a href="${data.link}" class="review-btn">Read Full Review</a> <!-- ✅ button -->
+        `;
+            }
+
+            function generateStars(rating) {
+                let stars = '';
+                const fullStars = Math.floor(rating);
+                const hasHalfStar = rating % 1 >= 0.5;
+                for (let i = 0; i < fullStars; i++) { stars += '<i class="fas fa-star"></i>'; }
+                if (hasHalfStar) { stars += '<i class="fas fa-star-half-alt"></i>'; }
+                const emptyStars = 5 - fullStars - (hasHalfStar ? 1 : 0);
+                for (let i = 0; i < emptyStars; i++) { stars += '<i class="far fa-star"></i>'; }
+                return stars;
+            }
+        });
+
+
+    </script>
+
+    <script>
+        const toggleBtn = document.querySelector('.toggle-btn')
+        const toggleBtnIcon = document.querySelector('.toggle-btn i')
+        const dropDownMenu = document.querySelector('.dropdown-menu')
+
+        toggleBtn.onclick = function () {
+            dropDownMenu.classList.toggle('open')
+            const isOpen = dropDownMenu.classList.contains('open')
+
+            toggleBtnIcon.classList = isOpen
+                ? 'fa-solid fa-xmark'
+                : 'fa-solid fa-bars'
+        }
+    </script>
     <footer>
         <div class="wave-container">
             <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -363,32 +528,16 @@
                     <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
                 </ul>
                 <ul class="menu">
-                    <li><a href="index.html"></i>Home</a></li>
-                    <li><a href="countryNew.html"></i>Country Foods</a></li>
-                    <li><a href="reviewmainpage (1).html"></i>Review</a></li>
-                    <li><a href="repro.html"></i>About Us</a></li>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="countryNew.html">Country Foods</a></li>
+                    <li><a href="reviewmainpage (1).html">Review</a></li>
+                    <li><a href="repro.html">About Us</a></li>
                 </ul>
                 <p>Copyright ©2025 All rights reserved | We are Together <i class="fa fa-heart" style="color: red;"></i>
-                    by Bit-wizards</a></p>
+                    by Bit-wizards</p>
             </div>
+        </div>
     </footer>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const tabs = document.querySelectorAll('.nav-tap');
-            const sections = document.querySelectorAll('.content-section');
-
-            tabs.forEach(tab => {
-                tab.addEventListener('click', () => {
-                    tabs.forEach(t => t.classList.remove('active'));
-                    tab.classList.add('active');
-
-                    sections.forEach(sec => sec.classList.remove('active'));
-                    sections[tab.dataset.tab].classList.add('active');
-                });
-            });
-        });
-    </script>
 </body>
 
 </html>

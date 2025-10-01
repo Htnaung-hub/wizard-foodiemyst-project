@@ -5,6 +5,7 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  overflow-x: hidden;
 }
 
 .body1 {
@@ -31,7 +32,7 @@ li {
 
 a {
   text-decoration: none;
-  color: rgb(255, 166, 0);
+  color: rgb(177, 228, 82);
   font-size: 1.25rem;
 }
 

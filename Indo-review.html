@@ -14,7 +14,7 @@
             padding: 0;
             box-sizing: border-box;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            color: #373735
+            
         }
 
         body {
@@ -32,10 +32,17 @@
             gap: 30px;
         }
         .links a i{
-            color: rgb(255, 166, 0);
+            color: rgb(177, 228, 82);
         }
         .links a i:hover{
              color: rgb(234, 228, 217);
+        }
+         .dropdown-menu li a i {
+            color: rgb(177, 228, 82);
+        }
+
+        .dropdown-menu li a i:hover {
+            color: rgb(234, 228, 217);
         }
         .social-icon a i{
             color: #fff;
@@ -47,7 +54,7 @@
             text-align: center;
             padding: 20px;
             background-color: #D28254;
-            color: white;
+            color: #373735;
             border-radius: 12px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
             margin-bottom: 30px;
@@ -389,6 +396,20 @@
                 });
             });
         });
+    </script>
+     <script>
+        const toggleBtn = document.querySelector('.toggle-btn')
+        const toggleBtnIcon = document.querySelector('.toggle-btn i')
+        const dropDownMenu = document.querySelector('.dropdown-menu')
+
+        toggleBtn.onclick = function () {
+            dropDownMenu.classList.toggle('open')
+            const isOpen = dropDownMenu.classList.contains('open')
+
+            toggleBtnIcon.classList = isOpen
+                ? 'fa-solid fa-xmark'
+                : 'fa-solid fa-bars'
+        }
     </script>
 </body>
 

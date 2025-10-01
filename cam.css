@@ -84,12 +84,15 @@ html {
         height: 200px;
         margin: auto;
     }
-    .h1{
+
+    .h1 {
         font-size: 1.5em;
     }
-    .s-tytle{
+
+    .s-tytle {
         font-size: 130%;
     }
+
     .gallery span {
         width: 50%;
         height: 80px;
@@ -99,6 +102,32 @@ html {
         transform: rotateY(calc(var(--i) * 45deg)) translateZ(180px);
     }
 }
+
+@media (max-width:350px) {
+    .gallery {
+        width: 50%;
+        height: 200px;
+        margin: auto;
+    }
+
+    .h1 {
+        font-size: 1.5em;
+    }
+
+    .s-tytle {
+        font-size: 130%;
+    }
+
+    .gallery span {
+        width: 50%;
+        height: 80px;
+        margin: 20% 20%;
+        transform-origin: center;
+        transform-style: preserve-3d;
+        transform: rotateY(calc(var(--i) * 45deg)) translateZ(180px);
+    }
+}
+
 .image {
     margin-top: 5%;
     margin-left: 3%;
@@ -199,6 +228,7 @@ button {
     margin: 40px;
     box-sizing: border-box;
 }
+
 .cycle {
     width: 100px;
     height: 100px;
