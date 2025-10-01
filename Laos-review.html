@@ -40,12 +40,13 @@
             left: 0;
             right: 0;
             height: 400px;
+            width: 100%;
             background: linear-gradient(to right, #e74c3c, #f39c12);
             z-index: -1;
             border-radius: 0 0 50% 50%/0 0 100% 100%;
             transform: scaleX(1.5);
         }
-
+      
         .container {
             max-width: 1200px;
             margin: 0 auto;
@@ -369,6 +370,27 @@
 
         h3 {
             margin-bottom: 2%;
+        }
+          @media (max-width: 500px) {
+            body::before {
+               transform: scaleX(1.2);
+                border-radius: 0 0 60% 60%/0 0 80% 80%;
+            }
+              .container{
+                  max-width: 350px;
+              }
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            .grid-2,
+            .grid-3 {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-tabs {
+                flex-direction: column;
+            }
         }
     </style>
 </head>
@@ -797,6 +819,20 @@
             });
         });
     </script>
+    <script>
+    const toggleBtn = document.querySelector('.toggle-btn')
+    const toggleBtnIcon = document.querySelector('.toggle-btn i')
+    const dropDownMenu = document.querySelector('.dropdown-menu')
+
+    toggleBtn.onclick = function () {
+      dropDownMenu.classList.toggle('open')
+      const isOpen = dropDownMenu.classList.contains('open')
+
+      toggleBtnIcon.classList = isOpen
+        ? 'fa-solid fa-xmark'
+        : 'fa-solid fa-bars'
+    }
+  </script>
 </body>
 
 </html>

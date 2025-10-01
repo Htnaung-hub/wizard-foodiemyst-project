@@ -1,3 +1,4 @@
+<<<<<<< HEAD
  @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
  .body1 .navbar .logo a {
     color: #ede3e5;
@@ -232,3 +233,240 @@ footer p{
 
 
 
+=======
+ @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+ .body1 .navbar .logo a {
+    color: #ede3e5;
+  }
+
+  li {
+    list-style: none;
+  }
+
+  a {
+    text-decoration: none;
+    color: rgb(177, 228, 82);
+    font-size: 1.25rem;
+  }
+
+  a:hover {
+    color: rgb(234, 228, 217);
+  }
+
+  header {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    padding: 0 2rem;
+    background-color: #371e22;
+
+  }
+
+  .navbar {
+    width: 100%;
+    height: 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+  }
+
+  .navbar .logo a {
+    font-size: 1.7rem;
+    font-weight: bold;
+    color: white;
+  }
+
+  .navbar .links {
+    display: flex;
+    gap: 4rem;
+  }
+
+  .navbar .toggle-btn {
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: none;
+  }
+
+  .dropdown-menu {
+    display: none;
+    position: absolute;
+    right: 2rem;
+    top: 60px;
+    height: 0;
+    width: 300px;
+    background: rgba(225, 225, 225, 0.1);
+    backdrop-filter: blur(15px);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: height 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+
+  .dropdown-menu.open {
+    height: 200px;
+  }
+
+  .dropdown-menu li {
+    padding: 0.7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  @media(max-width: 900px) {
+    .navbar .links {
+      display: none;
+    }
+
+    .navbar .toggle-btn {
+      display: block;
+    }
+
+    .dropdown-menu {
+      display: block;
+    }
+  }
+
+  @media(max-width: 576px) {
+    .dropdown-menu {
+      left: 2rem;
+      width: unset;
+    }
+  }
+/* nav section end */
+footer {
+    position: relative;
+    background-color: #F6B38A;
+    color: white;
+    margin-top: 100px;
+    padding-top: 0px;
+    text-align: center;
+    height: 250px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.footer-section {
+    padding: 20px;
+    text-align: left;
+    flex: 1;
+    min-width: 200px;
+    margin-top: -90px;
+}
+footer .social-icon, 
+footer .menu{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  margin: 10px 0;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+footer .social-icon li,
+footer .menu li{
+  list-style: none;
+}
+footer .social-icon li a{
+  font-size: 2em;
+  color: #fff;
+  margin: 0 10px;
+  display: inline-block;
+  transition: 0.5s;
+}
+footer .social-icon li a:hover{
+  transform: translateY(-10px);
+}
+footer .menu li a{
+  font-size: 1.2em;
+  color: #fff;
+  margin: 0 10px;
+  display: inline-block;
+  transition: 0.5s;
+  text-decoration: none;
+ 
+}
+footer .menu li a:hover{
+  color: orange;
+}
+footer p{
+  color: #fff;
+  text-align: center;
+  margin-top: 15px;
+  margin-bottom: 10px;
+  font-size: 1.1em;
+}
+
+.wave-container {
+    position: relative;
+    top: -100px; 
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+@media(max-width:775px){
+  .wave-container{
+    top: -90px;
+  }
+  footer{
+    height: 300px;
+  }
+}
+.waves {
+    position: relative;
+    width: 100%;
+    height: 100px; 
+    min-height: 100px;
+    max-height: 150px;
+}
+
+.parallax > use {
+    animation: move-forever 25s cubic-bezier(.55, .5, .45, .5)     infinite;
+}
+.parallax > use:nth-child(1) {
+    animation-delay: -2s;
+    animation-duration: 7s;
+}
+.parallax > use:nth-child(2) {
+    animation-delay: -3s;
+    animation-duration: 10s;
+}
+.parallax > use:nth-child(3) {
+    animation-delay: -4s;
+    animation-duration: 13s;
+}
+.parallax > use:nth-child(4) {
+    animation-delay: -5s;
+    animation-duration: 20s;
+}
+
+@keyframes move-forever {
+    0% {
+        transform: translate3d(-90px, 0, 0);
+    }
+    100% {
+        transform: translate3d(85px, 0, 0);
+    }
+
+}
+
+
+
+
+
+
+
+>>>>>>> 4b0c10fa826a4c5cbcad2de83ac7f158e595833a

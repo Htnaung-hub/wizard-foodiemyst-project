@@ -187,11 +187,7 @@
             color: #373735;
         }
 
-        .foot {
-            text-align: center;
-            margin-top: 3rem;
-            color: #6c757d;
-        }
+        
 
         @media (max-width: 768px) {
             .content-grid {
@@ -222,7 +218,7 @@
                 <ul class="links">
                     <li><a href="index.html"><i class="fa-solid fa-house"></i>Home</a></li>
                     <li><a href="countryNew.html"><i class="fa-solid fa-bowl-rice"></i></i>Country Foods</a></li>
-                    <li><a href="reviewmainpage (1).html"><i class="fa-solid fa-receipt"></i>Review</a></li>
+                    <li><a href="reviewmainpage.html"><i class="fa-solid fa-receipt"></i>Review</a></li>
                     <li><a href="repro.html"><i class="fa-solid fa-address-card"></i></i>About Us</a></li>
                 </ul>
                 <div class="toggle-btn">
@@ -232,7 +228,7 @@
             <div class="dropdown-menu">
                 <li><a href="index.html"><i class="fa-solid fa-house"></i>Home</a></li>
                 <li><a href="countryNew.html"><i class="fa-solid fa-bowl-rice"></i></i>Country Foods</a></li>
-                <li><a href="reviewmainpage (1).html"><i class="fa-solid fa-receipt"></i>Review</a></li>
+                <li><a href="reviewmainpage.html"><i class="fa-solid fa-receipt"></i>Review</a></li>
                 <li><a href="repro.html"><i class="fa-solid fa-address-card"></i></i>About Us</a></li>
             </div>
         </header>
@@ -371,12 +367,6 @@
             </div>
         </section>
     </div>
-
-    <div class="foot">
-        <div class="container">
-            <p>Explore the unique and delicious cuisine of Brunei! | © 2025 Brunei Cuisine Explorer</p>
-        </div>
-    </div>
     <footer>
         <div class="wave-container">
             <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -403,13 +393,25 @@
                 <ul class="menu">
                     <li><a href="index.html"></i>Home</a></li>
                     <li><a href="countryNew.html"></i>Country Foods</a></li>
-                    <li><a href="reviewmainpage (1).html"></i>Review</a></li>
+                    <li><a href="reviewmainpage.html"></i>Review</a></li>
                     <li><a href="repro.html"></i>About Us</a></li>
                 </ul>
-                <p>Copyright ©2025 All rights reserved | We are Together <i class="fa fa-heart" style="color: red;"></i>
-                    by Bit-wizards</a></p>
             </div>
     </footer>
+    <script>
+    const toggleBtn = document.querySelector('.toggle-btn')
+    const toggleBtnIcon = document.querySelector('.toggle-btn i')
+    const dropDownMenu = document.querySelector('.dropdown-menu')
+
+    toggleBtn.onclick = function () {
+      dropDownMenu.classList.toggle('open')
+      const isOpen = dropDownMenu.classList.contains('open')
+
+      toggleBtnIcon.classList = isOpen
+        ? 'fa-solid fa-xmark'
+        : 'fa-solid fa-bars'
+    }
+  </script>
 </body>
 
 </html>

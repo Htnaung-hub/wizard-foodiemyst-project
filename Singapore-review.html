@@ -17,6 +17,10 @@
             padding: 0;
             box-sizing: border-box;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+<<<<<<< HEAD
+=======
+            
+>>>>>>> 4b0c10fa826a4c5cbcad2de83ac7f158e595833a
         }
 
         body {
@@ -30,12 +34,43 @@
         .container {
             max-width: 1200px;
             margin: 0 auto;
+<<<<<<< HEAD
+=======
+            padding: 20px;
+            gap: 30px;
+        }
+        .links a i{
+            color: rgb(177, 228, 82);
+        }
+        .links a i:hover{
+             color: rgb(234, 228, 217);
+        }
+         .dropdown-menu li a i {
+            color: rgb(177, 228, 82);
+        }
+
+        .dropdown-menu li a i:hover {
+            color: rgb(234, 228, 217);
+        }
+        .social-icon a i{
+            color: #fff;
+>>>>>>> 4b0c10fa826a4c5cbcad2de83ac7f158e595833a
         }
 
         .head {
             text-align: center;
+<<<<<<< HEAD
             padding: 30px 0;
             margin-top: 50px;
+=======
+            padding: 20px;
+            background: linear-gradient(135deg, #ff7b54 0%, #ff9d52 100%);
+            color: #373735;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+            margin-top: 64px;
+>>>>>>> 4b0c10fa826a4c5cbcad2de83ac7f158e595833a
         }
 
         .head h1 {
@@ -538,6 +573,40 @@
             </div>
         </div>
     </footer>
+<<<<<<< HEAD
+=======
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const tabs = document.querySelectorAll('.nav-tap');
+            const sections = document.querySelectorAll('.content-section');
+
+            tabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    tabs.forEach(t => t.classList.remove('active'));
+                    tab.classList.add('active');
+
+                    sections.forEach(sec => sec.classList.remove('active'));
+                    sections[tab.dataset.tab].classList.add('active');
+                });
+            });
+        });
+    </script>
+     <script>
+        const toggleBtn = document.querySelector('.toggle-btn')
+        const toggleBtnIcon = document.querySelector('.toggle-btn i')
+        const dropDownMenu = document.querySelector('.dropdown-menu')
+
+        toggleBtn.onclick = function () {
+            dropDownMenu.classList.toggle('open')
+            const isOpen = dropDownMenu.classList.contains('open')
+
+            toggleBtnIcon.classList = isOpen
+                ? 'fa-solid fa-xmark'
+                : 'fa-solid fa-bars'
+        }
+    </script>
+>>>>>>> 4b0c10fa826a4c5cbcad2de83ac7f158e595833a
 </body>
 
 </html>
