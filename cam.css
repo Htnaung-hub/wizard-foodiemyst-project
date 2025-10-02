@@ -84,12 +84,7 @@ html {
         height: 200px;
         margin: auto;
     }
-<<<<<<< HEAD
-
-    .h1 {
-=======
     .h1{
-        margin-top: 20%;
         font-size: 1.5em;
     }
     .s-tytle{
@@ -104,7 +99,6 @@ html {
         transform: rotateY(calc(var(--i) * 45deg)) translateZ(180px);
     }
 }
-
 @media (max-width:500px) {
     .gallery {
         width: 50%;
@@ -112,15 +106,12 @@ html {
         margin: auto;
     }
     .h1{
-        margin-top: 20%;
->>>>>>> 4b0c10fa826a4c5cbcad2de83ac7f158e595833a
-        font-size: 1.5em;
+        margin-top: 21%;
+        font-size: 1.1em;
     }
-
-    .s-tytle {
-        font-size: 130%;
+    .s-tytle{
+        font-size: 1em;
     }
-
     .gallery span {
         width: 50%;
         height: 80px;
@@ -130,32 +121,6 @@ html {
         transform: rotateY(calc(var(--i) * 45deg)) translateZ(180px);
     }
 }
-
-@media (max-width:350px) {
-    .gallery {
-        width: 50%;
-        height: 200px;
-        margin: auto;
-    }
-
-    .h1 {
-        font-size: 1.5em;
-    }
-
-    .s-tytle {
-        font-size: 130%;
-    }
-
-    .gallery span {
-        width: 50%;
-        height: 80px;
-        margin: 20% 20%;
-        transform-origin: center;
-        transform-style: preserve-3d;
-        transform: rotateY(calc(var(--i) * 45deg)) translateZ(180px);
-    }
-}
-
 .image {
     margin-top: 5%;
     margin-left: 3%;
@@ -256,7 +221,6 @@ button {
     margin: 40px;
     box-sizing: border-box;
 }
-
 .cycle {
     width: 100px;
     height: 100px;
